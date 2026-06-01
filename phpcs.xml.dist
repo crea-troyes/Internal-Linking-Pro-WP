@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ruleset name="ILP Internal Linking Pro">
+    <description>WordPress Coding Standards configuration for the plugin.</description>
+
+    <file>crea-maillage-audit.php</file>
+    <file>uninstall.php</file>
+    <file>includes</file>
+
+    <exclude-pattern>assets/vendor/*</exclude-pattern>
+
+    <arg name="extensions" value="php"/>
+    <arg value="sp"/>
+    <arg name="colors"/>
+
+    <rule ref="WordPress"/>
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array" value="crea-maillage-audit"/>
+        </properties>
+    </rule>
+</ruleset>

@@ -1,0 +1,12 @@
+/.git
+/.github
+/.gitignore
+/.gitattributes
+/.editorconfig
+/.distignore
+/docs
+/CONTRIBUTING.md
+/CODE_OF_CONDUCT.md
+/SECURITY.md
+/THIRD_PARTY_NOTICES.md
+/phpcs.xml.dist

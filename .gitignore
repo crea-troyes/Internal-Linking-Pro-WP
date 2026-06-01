@@ -1,0 +1,30 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.log
+.idea/
+.vscode/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+auth.json
+
+# Dependency directories, if local tooling is added later
+vendor/
+node_modules/
+
+# Test and quality-tool output
+.phpunit.result.cache
+coverage/
+.phpcs-cache
+build/
+dist/
+
+# WordPress development environments
+wp-env.json
+.wp-env/
