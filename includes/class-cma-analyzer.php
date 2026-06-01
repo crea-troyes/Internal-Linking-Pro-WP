@@ -1480,7 +1480,7 @@ final class CMA_Analyzer {
             'critical' => $severity_counts['critical'],
             'medium' => $severity_counts['medium'],
             'light' => $severity_counts['light'],
-            'affected_articles' => count($article_ids),
+            'affected_posts' => count($article_ids),
             'top_cluster' => !empty($clusters) ? (string)array_key_first($clusters) : '',
             'top_topic' => !empty($topics) ? (string)array_key_first($topics) : '',
         ];
