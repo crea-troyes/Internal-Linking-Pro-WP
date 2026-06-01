@@ -135,7 +135,7 @@ final class CMA_Admin {
         }
         
         echo '<header class="header-cma">';
-            echo '<h1><strong>Internal linking PRO</strong> | ' . esc_html__('Internal Linking Audit', 'crea-maillage-audit') . '</h1>';
+            echo '<h1><img class="cma-header-logo" src="' . esc_url(CMA_URL . 'img/logo.webp') . '" alt="' . esc_attr__('Internal Linking Pro', 'crea-maillage-audit') . '"><span class="cma-header-separator">|</span><span class="cma-header-title">' . esc_html__('Internal Linking Audit', 'crea-maillage-audit') . '</span></h1>';
             echo '<p class="description">';
                 echo esc_html__('Manual scan. Results are cached to avoid any front-end performance impact.', 'crea-maillage-audit');
             echo '</p>';

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ILP - Internal Linking Pro
  * Description: Advanced internal linking audit tool (orphan pages, link graph, PageRank, clusters). Admin-only with manual scan.
- * Version: 2.5.8
+ * Version: 2.0.1
  * Author: GUILLIER Alban
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -14,7 +14,7 @@
 
 if (!defined('ABSPATH')) exit;
 
-define('CMA_VERSION', '2.5.8');
+define('CMA_VERSION', '2.0.1');
 define('CMA_PATH', plugin_dir_path(__FILE__));
 define('CMA_URL', plugin_dir_url(__FILE__));
 define('CMA_OPTION_KEY', 'cma_scan_data');
