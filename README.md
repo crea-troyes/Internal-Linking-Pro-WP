@@ -108,16 +108,6 @@ Utilisez les [issues GitHub](../../issues) pour signaler un bug reproductible ou
 
 Consultez [`CONTRIBUTING.md`](CONTRIBUTING.md) et [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
 
-### Versioning et releases
-
-Le projet suit [Semantic Versioning](https://semver.org/lang/fr/). Pour chaque release :
-
-1. mettez à jour la version dans `crea-maillage-audit.php` ;
-2. mettez à jour `Stable tag` dans `readme.txt` ;
-3. documentez les changements dans `changelog.txt` ;
-4. créez un tag Git annoté, par exemple `v2.1.0` ;
-5. publiez une GitHub Release avec une archive installable.
-
 ### Licence et crédits
 
 Le plugin est distribué sous licence [`GPL-2.0-or-later`](LICENSE). La cartographie utilise `vis-network`; consultez [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
@@ -220,16 +210,6 @@ Use [GitHub issues](../../issues) to report a reproducible bug or request an imp
 ### Contributing
 
 Read [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
-
-### Versioning and Releases
-
-The project follows [Semantic Versioning](https://semver.org/). For each release:
-
-1. update the version in `crea-maillage-audit.php`;
-2. update `Stable tag` in `readme.txt`;
-3. document changes in `changelog.txt`;
-4. create an annotated Git tag, for example `v2.1.0`;
-5. publish a GitHub Release with an installable archive.
 
 ### License and Credits
 
