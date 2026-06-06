@@ -1072,3 +1072,7 @@ msgstr "Relevancia"
 
 #~ msgid "Internal linking health"
 #~ msgstr "Salud del enlazado"
+
+#: includes/views/dashboard.php includes/views/render_table.php
+msgid "Home"
+msgstr "Inicio"

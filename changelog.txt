@@ -3,48 +3,32 @@
 All notable changes to ILP - Internal Linking Pro are documented in this file.
 The project follows Semantic Versioning.
 
-## [2.5.8] - 2026-06-01
+## [2.1.0] - 2026-06-06
 
 ### Added
 
-- GitHub and WordPress.org publication files.
-- GPL-2.0-or-later license metadata.
-- Third-party notice for the bundled `vis-network` library.
-- PHPCS configuration for WordPress Coding Standards.
+- Responsive administration layouts for laptop, tablet, and mobile screens.
+- Modern icons and visual states for the administration tabs and controls.
+- Cluster URLs below cluster titles on the dashboard, opening in a new tab.
+- `Accueil` as the fallback title for unnamed pages in the content list, most-linked list, and dashboard cluster list.
 
 ### Changed
 
-- Loads the vendored `vis-network` library only on the graph tab.
+- Redesigned dashboard statistics, score, analyzed-content, most-linked, suggestions, and cluster sections.
+- Modernized the cluster table, conflict overview, summary cards, and insights.
+- Redesigned the graph node details panel.
+- Harmonized borders, shadows, spacing, buttons, filters, and cards across administration tabs.
+- Improved Gutenberg suggestion ranking and refreshed candidates from current published content.
+- Preserved the existing desktop layout above 1440 pixels while improving smaller viewports.
+- Reduced administration asset loading outside the graph view.
 
 ### Security
 
-- Added the missing direct-access guard to the link-suggestions administration view.
-- Extended uninstall cleanup to remove dynamic Gutenberg suggestion transients.
+- Added direct-access protection to the link-suggestions administration view.
+- Extended uninstall cleanup for dynamic Gutenberg suggestion transients.
 
-## [2.5.7] - 2026-06-01
-
-### Changed
-
-- Gutenberg suggestions now prioritize direct and close title matches before context.
-
-## [2.5.6] - 2026-06-01
+## [2.0.2] - 2026-05-31
 
 ### Changed
 
-- Refreshed Gutenberg candidates from the current published-content catalogue.
-- Preserved cached graph metrics while filtering obsolete catalogue entries.
-
-## [2.5.5] - 2026-06-01
-
-### Changed
-
-- Reduced contextual influence in Gutenberg suggestions.
-- Prioritized the exact selected expression and direct title relevance.
-
-## [2.5.0] - 2026-06-01
-
-### Added
-
-- Gutenberg internal-link suggestion panel.
-- SEO cannibalization conflict analysis.
-- French and Spanish translations.
+- Maintenance release preceding the 2.1 responsive interface update.

@@ -145,13 +145,27 @@ final class CMA_Admin {
 
         $tab = static function(string $k, string $label) use ($base_url, $view, $filter) {
             $cls = ($view === $k) ? 'nav-tab nav-tab-active' : 'nav-tab';
+            $icons = [
+                'dashboard'      => 'dashicons-grid-view',
+                'table'          => 'dashicons-list-view',
+                'isolated_posts' => 'dashicons-media-document',
+                'orphans'        => 'dashicons-admin-links',
+                'suggestions'    => 'dashicons-lightbulb',
+                'conflict'       => 'dashicons-warning',
+                'silos'          => 'dashicons-database',
+                'graph'          => 'dashicons-location-alt',
+                'settings'       => 'dashicons-admin-settings',
+            ];
             $args = ['view' => $k];
             if ($k !== 'settings') {
                 $args['filter'] = $filter;
             }
             $url = add_query_arg($args, $base_url);
 
-            echo '<a class="' . esc_attr($cls) . '" href="' . esc_url($url) . '">' . esc_html($label) . '</a>';
+            echo '<a class="' . esc_attr($cls) . '" href="' . esc_url($url) . '">';
+            echo '<span class="dashicons ' . esc_attr($icons[$k] ?? 'dashicons-marker') . '" aria-hidden="true"></span>';
+            echo '<span class="cma-tab-label">' . esc_html($label) . '</span>';
+            echo '</a>';
         };
 
         $analyzer = null;
@@ -171,7 +185,7 @@ final class CMA_Admin {
             }
         }
 
-        echo '<h2 class="nav-tab-wrapper">';
+        echo '<h2 class="nav-tab-wrapper cma-tabs">';
         
         $tab('dashboard', __('Dashboard', 'crea-maillage-audit'));
         $tab('table', sprintf(__('Table (%d)', 'crea-maillage-audit'), $table_count));
@@ -207,12 +221,14 @@ final class CMA_Admin {
 
         echo '</div>';
 
-        echo '<div class="cma-block">';
-        echo '<button class="button button-primary" id="cma-run-scan">'
+        echo '<div class="cma-block cma-actions">';
+        echo '<button class="button button-primary cma-action-button cma-action-button-primary" id="cma-run-scan">'
+            . '<span class="dashicons dashicons-controls-play" aria-hidden="true"></span>'
             . esc_html__('Run scan', 'crea-maillage-audit')
             . '</button> ';
 
-        echo '<button class="button" id="cma-clear-scan">'
+        echo '<button class="button cma-action-button cma-action-button-secondary" id="cma-clear-scan">'
+            . '<span class="dashicons dashicons-database" aria-hidden="true"></span>'
             . esc_html__('Clear cache', 'crea-maillage-audit')
             . '</button> ';
 

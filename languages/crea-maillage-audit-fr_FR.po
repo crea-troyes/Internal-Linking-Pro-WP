@@ -147,7 +147,7 @@ msgstr ""
 
 #: includes/class-cma-admin.php:170
 msgid "Dashboard"
-msgstr "Tableau de bord"
+msgstr "Dashboard"
 
 #: includes/class-cma-admin.php:171
 #, php-format
@@ -162,7 +162,7 @@ msgstr "Articles isolés (%d)"
 #: includes/class-cma-admin.php:173
 #, php-format
 msgid "Global orphans (%d)"
-msgstr "Sans lien interne entrant (%d)"
+msgstr "Sans lien entrant (%d)"
 
 #: includes/class-cma-admin.php:175
 #, php-format
@@ -790,7 +790,7 @@ msgstr "Isolées"
 
 #: includes/views/dashboard.php:126 includes/views/dashboard.php:204
 msgid "Without outgoing internal links"
-msgstr "Sans liens internes sortants"
+msgstr "Sans liens sortants"
 
 #: includes/views/dashboard.php:134
 msgid "Most linked"
@@ -943,10 +943,6 @@ msgstr "↓ = maillage interne faible"
 msgid "↑ = overload"
 msgstr "↑ = surcharge"
 
-#: includes/views/render_table.php:30
-msgid "Use only natural and relevant links."
-msgstr "Utilisez uniquement des liens naturels et pertinents."
-
 #: includes/views/render_table.php:41
 msgid "No results found."
 msgstr "Aucun résultat."
@@ -1098,3 +1094,7 @@ msgstr "Pertinence"
 
 #~ msgid "xx"
 #~ msgstr "xx"
+
+#: includes/views/dashboard.php includes/views/render_table.php
+msgid "Home"
+msgstr "Accueil"

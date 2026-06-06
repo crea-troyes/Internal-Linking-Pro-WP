@@ -10,3 +10,6 @@
 /SECURITY.md
 /THIRD_PARTY_NOTICES.md
 /phpcs.xml.dist
+/modele*.png
+.DS_Store
+**/.DS_Store

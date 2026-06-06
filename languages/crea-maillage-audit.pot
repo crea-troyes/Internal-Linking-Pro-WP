@@ -1012,3 +1012,7 @@ msgstr ""
 #: includes/views/suggestions.php:15
 msgid "Relevance"
 msgstr ""
+
+#: includes/views/dashboard.php includes/views/render_table.php
+msgid "Home"
+msgstr ""

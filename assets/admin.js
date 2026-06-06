@@ -778,15 +778,20 @@ jQuery(document).ready(function($) {
 
     panel.innerHTML = `
       <div class="cma-graph-card">
-        <h3>${escapeHtml(node.label || node.title || (i18n.untitled || 'Untitled'))}</h3>
-        <p><strong>${escapeHtml(i18n.type || 'Type')}:</strong> ${escapeHtml(typeLabel)}</p>
-        <p><strong>${escapeHtml(i18n.incomingLinks || 'Incoming links')}:</strong> ${incoming}</p>
-        <p><strong>${escapeHtml(i18n.outgoingLinks || 'Outgoing links')}:</strong> ${outgoing}</p>
-        ${isPillar(node) ? `<p><strong>${escapeHtml(i18n.role || 'Role')}:</strong> ${escapeHtml(i18n.pillarPage || 'Pillar page')}</p>` : ''}
-        ${cluster ? `<p><strong>${escapeHtml(i18n.cluster || 'Cluster')}:</strong> ${escapeHtml(cluster.label)}</p>` : ''}
-        ${cluster ? `<p><strong>${escapeHtml(i18n.clusterScore || 'Cluster score')}:</strong> ${cluster.score}/100</p>` : ''}
+        <div class="cma-graph-card-header">
+          <span class="cma-graph-card-icon dashicons dashicons-media-document" aria-hidden="true"></span>
+          <h3>${escapeHtml(node.label || node.title || (i18n.untitled || 'Untitled'))}</h3>
+        </div>
+        <div class="cma-graph-detail-list">
+          <p><span class="cma-graph-detail-icon dashicons dashicons-media-document" aria-hidden="true"></span><span><strong>${escapeHtml(i18n.type || 'Type')}:</strong> ${escapeHtml(typeLabel)}</span></p>
+          <p><span class="cma-graph-detail-icon dashicons dashicons-external" aria-hidden="true"></span><span><strong>${escapeHtml(i18n.incomingLinks || 'Incoming links')}:</strong> ${incoming}</span></p>
+          <p><span class="cma-graph-detail-icon dashicons dashicons-external" aria-hidden="true"></span><span><strong>${escapeHtml(i18n.outgoingLinks || 'Outgoing links')}:</strong> ${outgoing}</span></p>
+          ${isPillar(node) ? `<p><span class="cma-graph-detail-icon dashicons dashicons-star-filled" aria-hidden="true"></span><span><strong>${escapeHtml(i18n.role || 'Role')}:</strong> ${escapeHtml(i18n.pillarPage || 'Pillar page')}</span></p>` : ''}
+          ${cluster ? `<p><span class="cma-graph-detail-icon dashicons dashicons-networking" aria-hidden="true"></span><span><strong>${escapeHtml(i18n.cluster || 'Cluster')}:</strong> ${escapeHtml(cluster.label)}</span></p>` : ''}
+          ${cluster ? `<p><span class="cma-graph-detail-icon dashicons dashicons-star-empty" aria-hidden="true"></span><span><strong>${escapeHtml(i18n.clusterScore || 'Cluster score')}:</strong> ${cluster.score}/100</span></p>` : ''}
+        </div>
         ${node.is_isolated ? `<p class="cma-warning"><strong>${escapeHtml(i18n.warning || 'Warning')}:</strong> ${escapeHtml(i18n.isolatedContent || 'Isolated content')}.</p>` : ''}
-        ${nodeUrl ? `<p><a href="${escapeHtml(nodeUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(i18n.openContent || 'Open content')}</a></p>` : ''}
+        ${nodeUrl ? `<p class="cma-graph-open-row"><a href="${escapeHtml(nodeUrl)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(i18n.openContent || 'Open content')}</span><span class="dashicons dashicons-arrow-right-alt" aria-hidden="true"></span></a></p>` : ''}
       </div>
     `;
   }

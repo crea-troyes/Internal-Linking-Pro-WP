@@ -1,10 +1,10 @@
 === ILP - Internal Linking Pro ===
-Contributors: guillieralban
+Contributors: creatroyes
 Tags: seo, internal links, gutenberg, pagerank, content audit
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.5.8
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,15 +65,17 @@ Select text in a paragraph or heading. The sidebar prioritizes direct title matc
 
 == Changelog ==
 
-= 2.5.8 =
+= 2.1.0 =
 
-* Improved Gutenberg suggestion ranking by prioritizing title matches.
-* Added a current published-content catalogue for editor suggestions.
-* Prepared project metadata and documentation for open-source distribution.
-* Reduced administration asset loading outside the graph view.
+* Redesigned the administration interface across the dashboard, tabs, conflicts, and graph details.
+* Added responsive layouts for laptop, tablet, and mobile screens while preserving the large-screen interface.
+* Modernized dashboard statistics, cluster tables, filters, and scan controls.
+* Added cluster URLs to the dashboard and improved empty-title handling with an Accueil fallback.
+* Improved Gutenberg suggestion ranking and refreshed candidates from published content.
+* Improved administration asset loading, security guards, and uninstall cleanup.
 
 == Upgrade Notice ==
 
-= 2.5.8 =
+= 2.1.0 =
 
-Prepares a clean open-source package and reduces administration asset loading.
+Introduces a responsive administration interface and improves audit readability across all plugin tabs.

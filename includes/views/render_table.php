@@ -26,8 +26,7 @@ echo '<th title="' . esc_html__('Outbound internal links per 100 words', 'crea-m
                 <strong>'. esc_html__('Internal links per 100 words', 'crea-maillage-audit').'</strong><br>
                     '. esc_html__('Ideal:', 'crea-maillage-audit').' <strong>0.8 to 1.5</strong><br>
                     '. esc_html__('↓ = low internal linking', 'crea-maillage-audit').'<br>
-                    '. esc_html__('↑ = overload', 'crea-maillage-audit').'<br>
-                    '. esc_html__('Use only natural and relevant links.', 'crea-maillage-audit').'
+                    '. esc_html__('↑ = overload', 'crea-maillage-audit').'
             </span>
         </span>
     </th>';
@@ -45,7 +44,10 @@ if (empty($rows)) {
 
     foreach ($rows as $r) {
 
-        echo '<tr class="cma-row" data-title="' . esc_attr(strtolower((string)$r['title'])) . '">';
+        $display_title = trim(strip_tags((string)($r['title'] ?? '')));
+        $display_title = $display_title !== '' ? $display_title : __('Home', 'crea-maillage-audit');
+
+        echo '<tr class="cma-row" data-title="' . esc_attr(strtolower($display_title)) . '">';
 
         $type       = $r['type'] === 'Article' ? 'post' : 'page';
         $type_label = $r['type'] === 'Article'
@@ -64,7 +66,7 @@ if (empty($rows)) {
         $relative_url = str_replace($site_url, '', $r['url']);
 
         echo '<strong class="' . esc_attr($title_class) . '">'
-            . esc_html($r['title'])
+            . esc_html($display_title)
             . '</strong><br>';
 
         echo '<small><a class="link_post_cma" href="'

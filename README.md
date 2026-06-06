@@ -3,7 +3,7 @@
 [![WordPress](https://img.shields.io/badge/WordPress-6.0%2B%20%7C%207.0-tested-21759b?logo=wordpress)](https://wordpress.org/)
 [![PHP](https://img.shields.io/badge/PHP-7.4%2B-777bb4?logo=php)](https://www.php.net/)
 [![License](https://img.shields.io/badge/license-GPL--2.0--or--later-green.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2.5.8-blue.svg)](changelog.txt)
+[![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)](changelog.txt)
 
 Audit de maillage interne pour WordPress avec cartographie, silos SEO, détection de cannibalisation et suggestions Gutenberg.
 
@@ -115,7 +115,7 @@ Le projet suit [Semantic Versioning](https://semver.org/lang/fr/). Pour chaque r
 1. mettez à jour la version dans `crea-maillage-audit.php` ;
 2. mettez à jour `Stable tag` dans `readme.txt` ;
 3. documentez les changements dans `changelog.txt` ;
-4. créez un tag Git annoté, par exemple `v2.5.8` ;
+4. créez un tag Git annoté, par exemple `v2.1.0` ;
 5. publiez une GitHub Release avec une archive installable.
 
 ### Licence et crédits
@@ -228,7 +228,7 @@ The project follows [Semantic Versioning](https://semver.org/). For each release
 1. update the version in `crea-maillage-audit.php`;
 2. update `Stable tag` in `readme.txt`;
 3. document changes in `changelog.txt`;
-4. create an annotated Git tag, for example `v2.5.8`;
+4. create an annotated Git tag, for example `v2.1.0`;
 5. publish a GitHub Release with an installable archive.
 
 ### License and Credits
