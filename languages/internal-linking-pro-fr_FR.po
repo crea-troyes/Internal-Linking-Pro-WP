@@ -1098,3 +1098,11 @@ msgstr "Pertinence"
 
 #~ msgid "xx"
 #~ msgstr "xx"
+
+#: includes/class-cma-gutenberg.php:109
+msgid "A valid post or page is required."
+msgstr "Un article ou une page valide est requis."
+
+#: includes/class-cma-gutenberg.php:118
+msgid "You are not allowed to edit this content."
+msgstr "Vous n’êtes pas autorisé à modifier ce contenu."

@@ -77,7 +77,7 @@ final class CMA_Gutenberg {
             'args' => [
                 'postId' => [
                     'type' => 'integer',
-                    'required' => false,
+                    'required' => true,
                     'sanitize_callback' => 'absint',
                 ],
                 'title' => $this->cma_editor_rest_text_arg(500),
@@ -99,14 +99,27 @@ final class CMA_Gutenberg {
         ];
     }
 
-    public function cma_editor_can_request_suggestions(WP_REST_Request $request): bool {
+    public function cma_editor_can_request_suggestions(WP_REST_Request $request) {
         $post_id = (int)$request->get_param('postId');
+        $post = $post_id > 0 ? get_post($post_id) : null;
 
-        if ($post_id > 0) {
-            return current_user_can('edit_post', $post_id);
+        if (!$post || !in_array($post->post_type, ['post', 'page'], true)) {
+            return new WP_Error(
+                'cma_invalid_post',
+                __('A valid post or page is required.', 'internal-linking-pro'),
+                ['status' => 400]
+            );
         }
 
-        return current_user_can('edit_posts');
+        if (!current_user_can('edit_post', $post_id)) {
+            return new WP_Error(
+                'cma_forbidden_post',
+                __('You are not allowed to edit this content.', 'internal-linking-pro'),
+                ['status' => 403]
+            );
+        }
+
+        return true;
     }
 
     public function cma_link_suggestions_rest_response(WP_REST_Request $request): WP_REST_Response {
@@ -123,16 +136,25 @@ final class CMA_Gutenberg {
         $catalog = $this->cma_link_suggestions_get_published_catalog();
         $scan_version = is_array($scan_data) ? (string)($scan_data['generated_at'] ?? 'fallback') : 'fallback';
         $excluded_signature = implode(',', $this->cma_link_suggestions_get_excluded_ids());
-        $hash = md5($scan_version . ':' . $catalog['signature'] . ':' . $excluded_signature . ':' . wp_json_encode($payload));
-        $cache_key = 'cma_editor_suggestions_v12_' . $hash;
+        $context_hash = hash('sha256', $scan_version . ':' . $catalog['signature'] . ':' . $excluded_signature . ':' . wp_json_encode($payload));
+        $cache_key = 'cma_editor_suggestions_v13_' . get_current_user_id() . '_' . $payload['post_id'];
         $cached = get_transient($cache_key);
 
-        if (is_array($cached)) {
-            return rest_ensure_response($cached);
+        if (
+            is_array($cached)
+            && isset($cached['context_hash'], $cached['response'])
+            && is_string($cached['context_hash'])
+            && hash_equals($cached['context_hash'], $context_hash)
+            && is_array($cached['response'])
+        ) {
+            return rest_ensure_response($cached['response']);
         }
 
         $response = $this->cma_link_suggestions_get_recommendations($payload);
-        set_transient($cache_key, $response, 10 * MINUTE_IN_SECONDS);
+        set_transient($cache_key, [
+            'context_hash' => $context_hash,
+            'response' => $response,
+        ], 10 * MINUTE_IN_SECONDS);
 
         return rest_ensure_response($response);
     }

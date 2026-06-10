@@ -1012,3 +1012,11 @@ msgstr ""
 #: includes/views/suggestions.php:15
 msgid "Relevance"
 msgstr ""
+
+#: includes/class-cma-gutenberg.php:109
+msgid "A valid post or page is required."
+msgstr ""
+
+#: includes/class-cma-gutenberg.php:118
+msgid "You are not allowed to edit this content."
+msgstr ""

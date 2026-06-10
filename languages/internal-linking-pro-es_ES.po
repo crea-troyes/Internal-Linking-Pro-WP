@@ -1072,3 +1072,11 @@ msgstr "Relevancia"
 
 #~ msgid "Internal linking health"
 #~ msgstr "Salud del enlazado"
+
+#: includes/class-cma-gutenberg.php:109
+msgid "A valid post or page is required."
+msgstr "Se requiere una entrada o página válida."
+
+#: includes/class-cma-gutenberg.php:118
+msgid "You are not allowed to edit this content."
+msgstr "No tienes permiso para editar este contenido."
