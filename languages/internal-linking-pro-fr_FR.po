@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: crea-maillage-audit\n"
+"Project-Id-Version: internal-linking-pro\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-31 17:40+0200\n"
 "PO-Revision-Date: \n"
@@ -58,15 +58,15 @@ msgstr "Calcul de la cartographie..."
 msgid "Isolated content"
 msgstr "Contenu isolé"
 
-#: includes/class-cma-admin.php:66 includes/views/render_table.php:16
+#: includes/class-cma-admin.php:66 includes/views/content-table.php:16
 msgid "Type"
 msgstr "Type"
 
-#: includes/class-cma-admin.php:67 includes/views/render_table.php:53
+#: includes/class-cma-admin.php:67 includes/views/content-table.php:53
 msgid "Page"
 msgstr "Page"
 
-#: includes/class-cma-admin.php:68 includes/views/render_table.php:52
+#: includes/class-cma-admin.php:68 includes/views/content-table.php:52
 msgid "Post"
 msgstr "Article"
 
@@ -772,7 +772,7 @@ msgstr ""
 msgid "Recommended action"
 msgstr "Action recommandée"
 
-#: includes/views/dashboard.php:59 includes/views/render_table.php:35
+#: includes/views/dashboard.php:59 includes/views/content-table.php:35
 msgid "Internal linking score"
 msgstr "Score du maillage"
 
@@ -891,118 +891,118 @@ msgstr "Score"
 msgid "Anchors:"
 msgstr "Ancres :"
 
-#: includes/views/render_table.php:7
+#: includes/views/content-table.php:7
 msgid "Incoming links (pages)"
 msgstr "Liens entrants (pages)"
 
-#: includes/views/render_table.php:8
+#: includes/views/content-table.php:8
 msgid "Incoming links (posts + pages)"
 msgstr "Liens entrants (articles + pages)"
 
-#: includes/views/render_table.php:13
+#: includes/views/content-table.php:13
 msgid "Search content..."
 msgstr "Rechercher un contenu..."
 
-#: includes/views/render_table.php:17
+#: includes/views/content-table.php:17
 msgid "Title"
 msgstr "Titre"
 
-#: includes/views/render_table.php:18
+#: includes/views/content-table.php:18
 msgid "Incoming links (posts)"
 msgstr "Liens entrants (articles)"
 
-#: includes/views/render_table.php:20
+#: includes/views/content-table.php:20
 msgid "Internal outgoing links"
 msgstr "Liens internes sortants"
 
-#: includes/views/render_table.php:21
+#: includes/views/content-table.php:21
 msgid "External outgoing links"
 msgstr "Liens externes sortants"
 
-#: includes/views/render_table.php:22
+#: includes/views/content-table.php:22
 msgid "Outbound internal links per 100 words"
 msgstr "Nombre de lien interne sortant tous les 100 mots"
 
-#: includes/views/render_table.php:22
+#: includes/views/content-table.php:22
 msgid "Internal links / 100 words"
 msgstr "Liens interne / 100 mots"
 
-#: includes/views/render_table.php:26
+#: includes/views/content-table.php:26
 msgid "Internal links per 100 words"
 msgstr "Liens internes pour 100 mots"
 
-#: includes/views/render_table.php:27
+#: includes/views/content-table.php:27
 msgid "Ideal:"
 msgstr "Idéal :"
 
-#: includes/views/render_table.php:28
+#: includes/views/content-table.php:28
 msgid "↓ = low internal linking"
 msgstr "↓ = maillage interne faible"
 
-#: includes/views/render_table.php:29
+#: includes/views/content-table.php:29
 msgid "↑ = overload"
 msgstr "↑ = surcharge"
 
-#: includes/views/render_table.php:30
+#: includes/views/content-table.php:30
 msgid "Use only natural and relevant links."
 msgstr "Utilisez uniquement des liens naturels et pertinents."
 
-#: includes/views/render_table.php:41
+#: includes/views/content-table.php:41
 msgid "No results found."
 msgstr "Aucun résultat."
 
-#: includes/views/render_table.php:162
+#: includes/views/content-table.php:162
 msgid "content item(s) found"
 msgstr "contenu(s) trouvé(s)"
 
-#: includes/views/setting.php:19
+#: includes/views/settings.php:19
 msgid "Excluded content"
 msgstr "Contenus exclus de l’analyse"
 
-#: includes/views/setting.php:22
+#: includes/views/settings.php:22
 msgid ""
 "Define which pages should be ignored during the internal linking analysis."
 msgstr ""
 "Entrez les IDs des articles ou pages à ignorer lors de l’analyse du maillage "
 "interne."
 
-#: includes/views/setting.php:25
+#: includes/views/settings.php:25
 msgid "IDs to exclude"
 msgstr "ID à exclure"
 
-#: includes/views/setting.php:32
+#: includes/views/settings.php:32
 msgid "Separate IDs with commas, spaces or line breaks."
 msgstr "Séparer les IDs par des virgules."
 
-#: includes/views/setting.php:36
+#: includes/views/settings.php:36
 msgid "Example: sponsored articles, legal pages, temporary campaigns."
 msgstr ""
 "Exemple : articles sponsorisés, pages saisonnières, pages de voeux, pages "
 "légales, etc."
 
-#: includes/views/setting.php:46
+#: includes/views/settings.php:46
 msgid "Cluster settings"
 msgstr "Paramètres des clusters"
 
-#: includes/views/setting.php:49
+#: includes/views/settings.php:49
 msgid "Control how clusters are detected based on internal linking strength."
 msgstr ""
 "Définissez comment les clusters sont détectés en fonction du maillage "
 "interne."
 
-#: includes/views/setting.php:53
+#: includes/views/settings.php:53
 msgid "Minimum incoming links"
 msgstr "Nombre minimum de liens entrants"
 
-#: includes/views/setting.php:67
+#: includes/views/settings.php:67
 msgid "3 = weak"
 msgstr "3 = faible"
 
-#: includes/views/setting.php:68
+#: includes/views/settings.php:68
 msgid "8–10 = strong cluster"
 msgstr "8–10 = cluster solide"
 
-#: includes/views/setting.php:78
+#: includes/views/settings.php:78
 msgid "Save settings"
 msgstr "Enregistrer les paramètres"
 

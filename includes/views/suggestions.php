@@ -4,17 +4,17 @@ if (!defined('ABSPATH')) exit;
 $suggestions = $analyzer->get_link_suggestions();
 ?>
 
-<p><?= esc_html__('Internal linking suggestions', 'crea-maillage-audit'); ?></p>
+<p><?= esc_html__('Internal linking suggestions', 'internal-linking-pro'); ?></p>
 
 <div class="suggest">
 
   <table class="cma-dynamic-table suggest-table">
     <thead>
       <tr>
-        <th><?= esc_html__('From', 'crea-maillage-audit'); ?></th>
+        <th><?= esc_html__('From', 'internal-linking-pro'); ?></th>
         <th></th>
-        <th><?= esc_html__('To', 'crea-maillage-audit'); ?></th>
-        <th><?= esc_html__('Relevance', 'crea-maillage-audit'); ?></th>
+        <th><?= esc_html__('To', 'internal-linking-pro'); ?></th>
+        <th><?= esc_html__('Relevance', 'internal-linking-pro'); ?></th>
       </tr>
     </thead>
 

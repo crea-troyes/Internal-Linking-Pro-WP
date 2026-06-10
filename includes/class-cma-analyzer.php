@@ -1089,41 +1089,41 @@ final class CMA_Analyzer {
         $recommendations = [];
 
         if ($internal_outgoing === 0) {
-            $issues[] = __('No usable internal links detected in this silo.', 'crea-maillage-audit');
-            $recommendations[] = __('Add contextual links between the pillar page and the silo member pages.', 'crea-maillage-audit');
+            $issues[] = __('No usable internal links detected in this silo.', 'internal-linking-pro');
+            $recommendations[] = __('Add contextual links between the pillar page and the silo member pages.', 'internal-linking-pro');
         } elseif ($coherence < 50) {
-            $issues[] = sprintf(__('Weak internal structure: %d%% consistency.', 'crea-maillage-audit'), $coherence);
-            $recommendations[] = __('Prioritize links between related content and return links from the pillar page.', 'crea-maillage-audit');
+            $issues[] = sprintf(__('Weak internal structure: %d%% consistency.', 'internal-linking-pro'), $coherence);
+            $recommendations[] = __('Prioritize links between related content and return links from the pillar page.', 'internal-linking-pro');
         } elseif ($coherence < 70) {
-            $issues[] = sprintf(__('Internal structure needs improvement: %d%% consistency.', 'crea-maillage-audit'), $coherence);
-            $recommendations[] = __('Add contextual links between complementary pages to strengthen the silo journey.', 'crea-maillage-audit');
+            $issues[] = sprintf(__('Internal structure needs improvement: %d%% consistency.', 'internal-linking-pro'), $coherence);
+            $recommendations[] = __('Add contextual links between complementary pages to strengthen the silo journey.', 'internal-linking-pro');
         }
 
         if ($fuite > 30) {
-            $issues[] = sprintf(__('High internal leakage: %d%% of internal links leave the silo.', 'crea-maillage-audit'), $fuite);
-            $recommendations[] = __('Review links to other topics: keep useful links and strengthen links within the silo to rebalance distribution.', 'crea-maillage-audit');
+            $issues[] = sprintf(__('High internal leakage: %d%% of internal links leave the silo.', 'internal-linking-pro'), $fuite);
+            $recommendations[] = __('Review links to other topics: keep useful links and strengthen links within the silo to rebalance distribution.', 'internal-linking-pro');
         } elseif ($fuite > 15) {
-            $issues[] = sprintf(__('Internal leakage to monitor: %d%% of internal links leave the silo.', 'crea-maillage-audit'), $fuite);
-            $recommendations[] = __('Check that links to other silos are intentional and add a relevant internal link when it improves the journey.', 'crea-maillage-audit');
+            $issues[] = sprintf(__('Internal leakage to monitor: %d%% of internal links leave the silo.', 'internal-linking-pro'), $fuite);
+            $recommendations[] = __('Check that links to other silos are intentional and add a relevant internal link when it improves the journey.', 'internal-linking-pro');
         }
 
         if ($pillar_redistribution < 40) {
-            $issues[] = sprintf(__('Pillar page distributes too little: it links to %d%% of the silo pages.', 'crea-maillage-audit'), $pillar_redistribution);
-            $recommendations[] = __('Add links from the pillar page to priority member pages to distribute internal authority more effectively.', 'crea-maillage-audit');
+            $issues[] = sprintf(__('Pillar page distributes too little: it links to %d%% of the silo pages.', 'internal-linking-pro'), $pillar_redistribution);
+            $recommendations[] = __('Add links from the pillar page to priority member pages to distribute internal authority more effectively.', 'internal-linking-pro');
         }
 
         if ($lateral_coverage < 35 && count($pages_ids) > 1) {
-            $issues[] = sprintf(__('Insufficient lateral links: only %d%% of pages link to complementary silo content.', 'crea-maillage-audit'), $lateral_coverage);
-            $recommendations[] = __('Link member pages when they answer complementary questions without adding artificial links.', 'crea-maillage-audit');
+            $issues[] = sprintf(__('Insufficient lateral links: only %d%% of pages link to complementary silo content.', 'internal-linking-pro'), $lateral_coverage);
+            $recommendations[] = __('Link member pages when they answer complementary questions without adding artificial links.', 'internal-linking-pro');
         }
 
         if ($external_links >= $page_count && $external_ratio > 55) {
-            $issues[] = sprintf(__('Many external links: %d%% of outgoing links go to third-party sites.', 'crea-maillage-audit'), $external_ratio);
-            $recommendations[] = __('Keep useful external sources, but ensure they do not overshadow links to your related content.', 'crea-maillage-audit');
+            $issues[] = sprintf(__('Many external links: %d%% of outgoing links go to third-party sites.', 'internal-linking-pro'), $external_ratio);
+            $recommendations[] = __('Keep useful external sources, but ensure they do not overshadow links to your related content.', 'internal-linking-pro');
         }
 
         if (empty($issues)) {
-            $recommendations[] = __('Consistent silo: maintain the linking structure and monitor future publications.', 'crea-maillage-audit');
+            $recommendations[] = __('Consistent silo: maintain the linking structure and monitor future publications.', 'internal-linking-pro');
         }
 
         return [
@@ -1588,14 +1588,14 @@ final class CMA_Analyzer {
     private function cma_conflicts_detect_types(int $title_similarity, int $slug_similarity, array $common_anchors, array $common_expressions, bool $same_cluster, array $common_sources): array {
         $types = [];
 
-        if ($title_similarity >= 55) $types[] = __('Very similar titles', 'crea-maillage-audit');
-        if ($slug_similarity >= 55) $types[] = __('Similar slugs', 'crea-maillage-audit');
-        if (!empty($common_anchors)) $types[] = __('Similar internal anchors', 'crea-maillage-audit');
-        if (!empty($common_expressions)) $types[] = __('Same important expressions', 'crea-maillage-audit');
-        if ($same_cluster) $types[] = __('Content in the same cluster with similar intent', 'crea-maillage-audit');
-        if (!empty($common_sources)) $types[] = __('Competing internal links to multiple similar pages', 'crea-maillage-audit');
+        if ($title_similarity >= 55) $types[] = __('Very similar titles', 'internal-linking-pro');
+        if ($slug_similarity >= 55) $types[] = __('Similar slugs', 'internal-linking-pro');
+        if (!empty($common_anchors)) $types[] = __('Similar internal anchors', 'internal-linking-pro');
+        if (!empty($common_expressions)) $types[] = __('Same important expressions', 'internal-linking-pro');
+        if ($same_cluster) $types[] = __('Content in the same cluster with similar intent', 'internal-linking-pro');
+        if (!empty($common_sources)) $types[] = __('Competing internal links to multiple similar pages', 'internal-linking-pro');
 
-        return empty($types) ? [__('Combined weak signals', 'crea-maillage-audit')] : $types;
+        return empty($types) ? [__('Combined weak signals', 'internal-linking-pro')] : $types;
     }
 
     private function cma_conflicts_get_severity(int $score): string {
@@ -1628,32 +1628,32 @@ final class CMA_Analyzer {
             $this->cma_conflicts_get_tokens($article_b['title'])
         );
 
-        return !empty($tokens) ? implode(' ', array_slice($tokens, 0, 3)) : __('Related topic', 'crea-maillage-audit');
+        return !empty($tokens) ? implode(' ', array_slice($tokens, 0, 3)) : __('Related topic', 'internal-linking-pro');
     }
 
     private function cma_conflicts_get_recommendation(string $severity, bool $same_cluster, int $anchor_count, int $source_count): string {
         if ($severity === 'critical') {
-            return __('Define primary content, then merge or redirect overlapping content.', 'crea-maillage-audit');
+            return __('Define primary content, then merge or redirect overlapping content.', 'internal-linking-pro');
         }
 
         if ($same_cluster && $anchor_count > 0) {
-            return __('Reorient content toward a different intent and use more distinct internal anchors.', 'crea-maillage-audit');
+            return __('Reorient content toward a different intent and use more distinct internal anchors.', 'internal-linking-pro');
         }
 
         if ($source_count > 0) {
-            return __('Strengthen links to the primary content and differentiate links to the secondary content.', 'crea-maillage-audit');
+            return __('Strengthen links to the primary content and differentiate links to the secondary content.', 'internal-linking-pro');
         }
 
         if ($severity === 'medium') {
-            return __('Update H1 headings or SEO titles to clearly separate each content intent.', 'crea-maillage-audit');
+            return __('Update H1 headings or SEO titles to clearly separate each content intent.', 'internal-linking-pro');
         }
 
-        return __('Monitor only, or add differentiating internal links if rankings overlap.', 'crea-maillage-audit');
+        return __('Monitor only, or add differentiating internal links if rankings overlap.', 'internal-linking-pro');
     }
 
     private function cma_conflicts_get_risk_explanation(int $score, array $types): string {
         return sprintf(
-            __('Risk score %1$d/100 based on: %2$s. This content may send overly similar topical signals to Google.', 'crea-maillage-audit'),
+            __('Risk score %1$d/100 based on: %2$s. This content may send overly similar topical signals to Google.', 'internal-linking-pro'),
             $score,
             implode(', ', $types)
         );

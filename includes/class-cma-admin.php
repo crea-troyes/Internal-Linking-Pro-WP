@@ -19,8 +19,8 @@ final class CMA_Admin {
     public function register_menu(): void {
         add_submenu_page(
             'tools.php',
-            __('Internal Linking Pro', 'crea-maillage-audit'),
-            __('Internal Linking', 'crea-maillage-audit'),
+            __('Internal Linking Pro', 'internal-linking-pro'),
+            __('Internal Linking', 'internal-linking-pro'),
             'manage_options',
             $this->slug,
             [$this, 'render_page']
@@ -60,29 +60,29 @@ final class CMA_Admin {
             'ajaxUrl' => admin_url('admin-ajax.php'),
             'nonce'   => wp_create_nonce('cma_scan_nonce'),
             'i18n'    => [
-                'scanRunning' => __('Scan in progress... Do not close this page.', 'crea-maillage-audit'),
-                'unknownError' => __('Unknown error.', 'crea-maillage-audit'),
-                'ajaxError' => __('AJAX error. A server timeout may have occurred.', 'crea-maillage-audit'),
-                'confirmClearCache' => __('Delete the cached analysis?', 'crea-maillage-audit'),
-                'clearingCache' => __('Clearing cache...', 'crea-maillage-audit'),
-                'details' => __('Details', 'crea-maillage-audit'),
-                'hide' => __('Hide', 'crea-maillage-audit'),
-                'mapLoading' => __('Calculating map...', 'crea-maillage-audit'),
-                'isolatedContent' => __('Isolated content', 'crea-maillage-audit'),
-                'type' => __('Type', 'crea-maillage-audit'),
-                'page' => __('Page', 'crea-maillage-audit'),
-                'post' => __('Post', 'crea-maillage-audit'),
-                'incomingLinks' => __('Incoming links', 'crea-maillage-audit'),
-                'outgoingLinks' => __('Outgoing links', 'crea-maillage-audit'),
-                'role' => __('Role', 'crea-maillage-audit'),
-                'pillarPage' => __('Pillar page', 'crea-maillage-audit'),
-                'cluster' => __('Cluster', 'crea-maillage-audit'),
-                'clusterScore' => __('Cluster score', 'crea-maillage-audit'),
-                'warning' => __('Warning', 'crea-maillage-audit'),
-                'openContent' => __('Open content', 'crea-maillage-audit'),
-                'untitled' => __('Untitled', 'crea-maillage-audit'),
-                'anchor' => __('Anchor', 'crea-maillage-audit'),
-                'contentItems' => __('content items', 'crea-maillage-audit'),
+                'scanRunning' => __('Scan in progress... Do not close this page.', 'internal-linking-pro'),
+                'unknownError' => __('Unknown error.', 'internal-linking-pro'),
+                'ajaxError' => __('AJAX error. A server timeout may have occurred.', 'internal-linking-pro'),
+                'confirmClearCache' => __('Delete the cached analysis?', 'internal-linking-pro'),
+                'clearingCache' => __('Clearing cache...', 'internal-linking-pro'),
+                'details' => __('Details', 'internal-linking-pro'),
+                'hide' => __('Hide', 'internal-linking-pro'),
+                'mapLoading' => __('Calculating map...', 'internal-linking-pro'),
+                'isolatedContent' => __('Isolated content', 'internal-linking-pro'),
+                'type' => __('Type', 'internal-linking-pro'),
+                'page' => __('Page', 'internal-linking-pro'),
+                'post' => __('Post', 'internal-linking-pro'),
+                'incomingLinks' => __('Incoming links', 'internal-linking-pro'),
+                'outgoingLinks' => __('Outgoing links', 'internal-linking-pro'),
+                'role' => __('Role', 'internal-linking-pro'),
+                'pillarPage' => __('Pillar page', 'internal-linking-pro'),
+                'cluster' => __('Cluster', 'internal-linking-pro'),
+                'clusterScore' => __('Cluster score', 'internal-linking-pro'),
+                'warning' => __('Warning', 'internal-linking-pro'),
+                'openContent' => __('Open content', 'internal-linking-pro'),
+                'untitled' => __('Untitled', 'internal-linking-pro'),
+                'anchor' => __('Anchor', 'internal-linking-pro'),
+                'contentItems' => __('content items', 'internal-linking-pro'),
             ],
         ]);
     }
@@ -94,14 +94,14 @@ final class CMA_Admin {
             extract($vars, EXTR_SKIP);
             include $file;
         } else {
-            echo '<p>' . esc_html(sprintf(__('View not found: %s', 'crea-maillage-audit'), $view)) . '</p>';
+            echo '<p>' . esc_html(sprintf(__('View not found: %s', 'internal-linking-pro'), $view)) . '</p>';
         }
     }
 
     public function render_page(): void {
 
         if (!current_user_can('manage_options')) {
-            wp_die(__('Access denied.', 'crea-maillage-audit'));
+            wp_die(__('Access denied.', 'internal-linking-pro'));
         }
 
         $data = $this->cma_apply_current_exclusions_to_scan_data(get_option(CMA_OPTION_KEY));
@@ -122,22 +122,22 @@ final class CMA_Admin {
         
         if (isset($_GET['settings-updated']) && $_GET['settings-updated'] === '1') {
             $cma_toasts[] = [
-                'message' => __('Settings saved successfully.', 'crea-maillage-audit'),
+                'message' => __('Settings saved successfully.', 'internal-linking-pro'),
                 'type' => 'success'
             ];
         }
 
         if (isset($_GET['conflicts-recalculated']) && $_GET['conflicts-recalculated'] === '1') {
             $cma_toasts[] = [
-                'message' => __('Cannibalization conflicts recalculated.', 'crea-maillage-audit'),
+                'message' => __('Cannibalization conflicts recalculated.', 'internal-linking-pro'),
                 'type' => 'success'
             ];
         }
         
         echo '<header class="header-cma">';
-            echo '<h1><img class="cma-header-logo" src="' . esc_url(CMA_URL . 'img/logo.webp') . '" alt="' . esc_attr__('Internal Linking Pro', 'crea-maillage-audit') . '"><span class="cma-header-separator">|</span><span class="cma-header-title">' . esc_html__('Internal Linking Audit', 'crea-maillage-audit') . '</span></h1>';
+            echo '<h1><img class="cma-header-logo" src="' . esc_url(CMA_URL . 'img/logo.webp') . '" alt="' . esc_attr__('Internal Linking Pro', 'internal-linking-pro') . '"><span class="cma-header-separator">|</span><span class="cma-header-title">' . esc_html__('Internal Linking Audit', 'internal-linking-pro') . '</span></h1>';
             echo '<p class="description">';
-                echo esc_html__('Manual scan. Results are cached to avoid any front-end performance impact.', 'crea-maillage-audit');
+                echo esc_html__('Manual scan. Results are cached to avoid any front-end performance impact.', 'internal-linking-pro');
             echo '</p>';
         echo '</header>';
 
@@ -187,24 +187,24 @@ final class CMA_Admin {
 
         echo '<h2 class="nav-tab-wrapper cma-tabs">';
         
-        $tab('dashboard', __('Dashboard', 'crea-maillage-audit'));
-        $tab('table', sprintf(__('Table (%d)', 'crea-maillage-audit'), $table_count));
-        $tab('isolated_posts', sprintf(__('Isolated posts (%d)', 'crea-maillage-audit'), $isolated_count));
-        $tab('orphans', sprintf(__('Global orphans (%d)', 'crea-maillage-audit'), $orphans_count));
+        $tab('dashboard', __('Dashboard', 'internal-linking-pro'));
+        $tab('table', sprintf(__('Table (%d)', 'internal-linking-pro'), $table_count));
+        $tab('isolated_posts', sprintf(__('Isolated posts (%d)', 'internal-linking-pro'), $isolated_count));
+        $tab('orphans', sprintf(__('Global orphans (%d)', 'internal-linking-pro'), $orphans_count));
         $suggestions_label = in_array($view, ['dashboard', 'suggestions'], true)
-            ? sprintf(__('Link suggestions (%d)', 'crea-maillage-audit'), $suggestions_count)
-            : __('Link suggestions', 'crea-maillage-audit');
+            ? sprintf(__('Link suggestions (%d)', 'internal-linking-pro'), $suggestions_count)
+            : __('Link suggestions', 'internal-linking-pro');
 
         $tab('suggestions', $suggestions_label);
-        $tab('conflict', __('Conflicts', 'crea-maillage-audit'));
-        $tab('silos', __('Silos', 'crea-maillage-audit'));
-        $tab('graph', __('Graph view', 'crea-maillage-audit'));
-        $tab('settings', __('Settings', 'crea-maillage-audit'));
+        $tab('conflict', __('Conflicts', 'internal-linking-pro'));
+        $tab('silos', __('Silos', 'internal-linking-pro'));
+        $tab('graph', __('Graph view', 'internal-linking-pro'));
+        $tab('settings', __('Settings', 'internal-linking-pro'));
         
         echo '</h2>';
 
         if ($view === 'settings') {
-            $this->render_view('setting', [
+            $this->render_view('settings', [
                 'analyzer' => $analyzer,
                 'filter'   => $filter
             ]);
@@ -213,23 +213,23 @@ final class CMA_Admin {
 
         echo '<div class="cma-controls">';
         echo '<div class="cma-block cma-filtre">';
-        echo '<strong>' . esc_html__('Display filter:', 'crea-maillage-audit') . '</strong> ';
+        echo '<strong>' . esc_html__('Display filter:', 'internal-linking-pro') . '</strong> ';
 
-        echo $this->radio_link('filter', 'post', __('Posts', 'crea-maillage-audit'), $filter);
-        echo $this->radio_link('filter', 'page', __('Pages', 'crea-maillage-audit'), $filter);
-        echo $this->radio_link('filter', 'both', __('Posts + Pages', 'crea-maillage-audit'), $filter);
+        echo $this->radio_link('filter', 'post', __('Posts', 'internal-linking-pro'), $filter);
+        echo $this->radio_link('filter', 'page', __('Pages', 'internal-linking-pro'), $filter);
+        echo $this->radio_link('filter', 'both', __('Posts + Pages', 'internal-linking-pro'), $filter);
 
         echo '</div>';
 
         echo '<div class="cma-block cma-actions">';
         echo '<button class="button button-primary cma-action-button cma-action-button-primary" id="cma-run-scan">'
             . '<span class="dashicons dashicons-controls-play" aria-hidden="true"></span>'
-            . esc_html__('Run scan', 'crea-maillage-audit')
+            . esc_html__('Run scan', 'internal-linking-pro')
             . '</button> ';
 
         echo '<button class="button cma-action-button cma-action-button-secondary" id="cma-clear-scan">'
             . '<span class="dashicons dashicons-database" aria-hidden="true"></span>'
-            . esc_html__('Clear cache', 'crea-maillage-audit')
+            . esc_html__('Clear cache', 'internal-linking-pro')
             . '</button> ';
 
         echo '<span class="cma-status" id="cma-status"></span>';
@@ -238,7 +238,7 @@ final class CMA_Admin {
 
         if (!$has_data) {
 
-            echo esc_html__('No cached analysis found. Click Run Scan.', 'crea-maillage-audit');
+            echo esc_html__('No cached analysis found. Click Run Scan.', 'internal-linking-pro');
             return;
         }
 
@@ -254,29 +254,29 @@ final class CMA_Admin {
 
         } elseif ($view === 'table') {
 
-            $this->render_view('render_table', [
+            $this->render_view('content-table', [
                 'analyzer' => $analyzer,
                 'filter'   => $filter,
                 'rows'     => $analyzer->get_table_rows($filter),
-                'intro'    => __('Global overview based on current filter.', 'crea-maillage-audit')
+                'intro'    => __('Global overview based on current filter.', 'internal-linking-pro')
             ]);
 
         } elseif ($view === 'isolated_posts') {
 
-            $this->render_view('render_table', [
+            $this->render_view('content-table', [
                 'analyzer' => $analyzer,
                 'filter'   => $filter,
                 'rows'     => $filter === 'page' ? [] : $analyzer->get_isolated_posts(),
-                'intro'    => __('Posts without internal links from other posts.', 'crea-maillage-audit')
+                'intro'    => __('Posts without internal links from other posts.', 'internal-linking-pro')
             ]);
 
         } elseif ($view === 'orphans') {
 
-            $this->render_view('render_table', [
+            $this->render_view('content-table', [
                 'analyzer' => $analyzer,
                 'filter'   => $filter,
                 'rows'     => $analyzer->get_orphans_global($filter),
-                'intro'    => __('Content without internal incoming links based on current filter.', 'crea-maillage-audit')
+                'intro'    => __('Content without internal incoming links based on current filter.', 'internal-linking-pro')
             ]);
 
         } elseif ($view === 'suggestions') {
@@ -305,24 +305,24 @@ final class CMA_Admin {
 
             $graph = $analyzer->get_graph_payload($filter);
 
-            echo "<p>" . esc_html__('You can zoom and drag the graph.', 'crea-maillage-audit') . "</p>";
+            echo "<p>" . esc_html__('You can zoom and drag the graph.', 'internal-linking-pro') . "</p>";
 
             echo '<div id="cma-graph-wrapper">';
                 $threshold = (int) get_option('cma_cluster_threshold', 5);
                 echo '<div id="cma-graph"
                 data-threshold="' . $threshold . '"
                 data-graph=\'' . esc_attr(wp_json_encode($graph)) . '\'></div>';
-                echo '<div id="cma-graph-info" data-empty-label="' . esc_attr__('Click a graph node to display SEO details.', 'crea-maillage-audit') . '"></div>';
+                echo '<div id="cma-graph-info" data-empty-label="' . esc_attr__('Click a graph node to display SEO details.', 'internal-linking-pro') . '"></div>';
             echo '</div>';
             
 
         } elseif ($view === 'dead_end') {
 
-            $this->render_view('render_table', [
+            $this->render_view('content-table', [
                 'analyzer' => $analyzer,
                 'filter'   => $filter,
                 'rows'     => $analyzer->get_dead_end_pages($filter),
-                'intro'    => __('Pages or posts without any outgoing internal links.', 'crea-maillage-audit')
+                'intro'    => __('Pages or posts without any outgoing internal links.', 'internal-linking-pro')
             ]);
 
         }
@@ -330,7 +330,7 @@ final class CMA_Admin {
         if (!empty($data['generated_at'])) {
             echo '<p class="cma-meta">'
                 . sprintf(
-                    __('Last scan: %s', 'crea-maillage-audit'),
+                    __('Last scan: %s', 'internal-linking-pro'),
                     '<strong>' . esc_html(date_i18n('d/m/Y H:i', (int) $data['generated_at'])) . '</strong>'
                 )
                 . '</p>';
@@ -362,7 +362,7 @@ final class CMA_Admin {
 
     public function handle_save_settings(): void {
         if (!current_user_can('manage_options')) {
-            wp_die(__('Access denied.', 'crea-maillage-audit'));
+            wp_die(__('Access denied.', 'internal-linking-pro'));
         }
 
         check_admin_referer('cma_save_settings_action', 'cma_settings_nonce');
@@ -391,7 +391,7 @@ final class CMA_Admin {
 
     public function cma_conflicts_handle_recalculate(): void {
         if (!current_user_can('manage_options')) {
-            wp_die(__('Access denied.', 'crea-maillage-audit'));
+            wp_die(__('Access denied.', 'internal-linking-pro'));
         }
 
         check_admin_referer('cma_conflicts_recalculate_action', 'cma_conflicts_nonce');
@@ -542,7 +542,7 @@ final class CMA_Admin {
 
         if (!current_user_can('manage_options')) {
             wp_send_json_error([
-                'message' => __('Access denied.', 'crea-maillage-audit')
+                'message' => __('Access denied.', 'internal-linking-pro')
             ], 403);
         }
 
@@ -557,7 +557,7 @@ final class CMA_Admin {
         delete_transient('cma_conflicts_cache');
 
         wp_send_json_success([
-            'message' => __('Scan completed successfully.', 'crea-maillage-audit'),
+            'message' => __('Scan completed successfully.', 'internal-linking-pro'),
             'counts'  => [
                 'items' => count($data['items'] ?? []),
                 'edges' => count($data['edges'] ?? []),
@@ -569,7 +569,7 @@ final class CMA_Admin {
 
         if (!current_user_can('manage_options')) {
             wp_send_json_error([
-                'message' => __('Access denied.', 'crea-maillage-audit')
+                'message' => __('Access denied.', 'internal-linking-pro')
             ], 403);
         }
 
@@ -579,7 +579,7 @@ final class CMA_Admin {
         delete_transient('cma_conflicts_cache');
 
         wp_send_json_success([
-            'message' => __('Cache cleared successfully.', 'crea-maillage-audit')
+            'message' => __('Cache cleared successfully.', 'internal-linking-pro')
         ]);
     }
 

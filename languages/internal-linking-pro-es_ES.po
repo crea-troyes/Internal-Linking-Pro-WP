@@ -1,325 +1,337 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the crea-maillage-audit package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: crea-maillage-audit\n"
+"Project-Id-Version: internal-linking-pro\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-31 17:40+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2026-05-31 13:16+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: includes/class-cma-admin.php:22
 msgid "Internal Linking Pro"
-msgstr ""
+msgstr "Maillage interno Pro"
 
 #: includes/class-cma-admin.php:23
 msgid "Internal Linking"
-msgstr ""
+msgstr "Maillage interno"
 
 #: includes/class-cma-admin.php:57
 msgid "Scan in progress... Do not close this page."
-msgstr ""
+msgstr "Análisis en curso... No cierre esta página."
 
 #: includes/class-cma-admin.php:58
 msgid "Unknown error."
-msgstr ""
+msgstr "Error desconocido."
 
 #: includes/class-cma-admin.php:59
 msgid "AJAX error. A server timeout may have occurred."
 msgstr ""
+"Error AJAX. Es posible que el servidor haya agotado el tiempo de espera."
 
 #: includes/class-cma-admin.php:60
 msgid "Delete the cached analysis?"
-msgstr ""
+msgstr "¿Eliminar el análisis almacenado en caché?"
 
 #: includes/class-cma-admin.php:61
 msgid "Clearing cache..."
-msgstr ""
+msgstr "Eliminando caché..."
 
 #: includes/class-cma-admin.php:62 includes/views/conflict.php:259
 #: includes/views/dashboard.php:330
 msgid "Details"
-msgstr ""
+msgstr "Detalles"
 
 #: includes/class-cma-admin.php:63
 msgid "Hide"
-msgstr ""
+msgstr "Ocultar"
 
 #: includes/class-cma-admin.php:64
 msgid "Calculating map..."
-msgstr ""
+msgstr "Calculando el mapa..."
 
 #: includes/class-cma-admin.php:65
 msgid "Isolated content"
-msgstr ""
+msgstr "Contenido aislado"
 
-#: includes/class-cma-admin.php:66 includes/views/render_table.php:16
+#: includes/class-cma-admin.php:66 includes/views/content-table.php:16
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
-#: includes/class-cma-admin.php:67 includes/views/render_table.php:53
+#: includes/class-cma-admin.php:67 includes/views/content-table.php:53
 msgid "Page"
-msgstr ""
+msgstr "Página"
 
-#: includes/class-cma-admin.php:68 includes/views/render_table.php:52
+#: includes/class-cma-admin.php:68 includes/views/content-table.php:52
 msgid "Post"
-msgstr ""
+msgstr "Entrada"
 
 #: includes/class-cma-admin.php:69 includes/views/conflict.php:295
 msgid "Incoming links"
-msgstr ""
+msgstr "Enlaces entrantes"
 
 #: includes/class-cma-admin.php:70 includes/views/conflict.php:296
 msgid "Outgoing links"
-msgstr ""
+msgstr "Enlaces salientes"
 
 #: includes/class-cma-admin.php:71
 msgid "Role"
-msgstr ""
+msgstr "Rol"
 
 #: includes/class-cma-admin.php:72
 msgid "Pillar page"
-msgstr ""
+msgstr "Página pilar"
 
 #: includes/class-cma-admin.php:73 includes/views/conflict.php:297
 msgid "Cluster"
-msgstr ""
+msgstr "Clúster"
 
 #: includes/class-cma-admin.php:74
 msgid "Cluster score"
-msgstr ""
+msgstr "Puntuación del clúster"
 
 #: includes/class-cma-admin.php:75
 msgid "Warning"
-msgstr ""
+msgstr "Aviso"
 
 #: includes/class-cma-admin.php:76
 msgid "Open content"
-msgstr ""
+msgstr "Abrir contenido"
 
 #: includes/class-cma-admin.php:77 includes/views/conflict.php:287
 #: includes/views/conflict.php:333
 msgid "Untitled"
-msgstr ""
+msgstr "Sin título"
 
 #: includes/class-cma-admin.php:78
 msgid "Anchor"
-msgstr ""
+msgstr "Ancla"
 
 #: includes/class-cma-admin.php:79 includes/views/conflict.php:240
 msgid "content items"
-msgstr ""
+msgstr "contenidos"
 
 #: includes/class-cma-admin.php:91
 #, php-format
 msgid "View not found: %s"
-msgstr ""
+msgstr "Vista no encontrada: %s"
 
 #: includes/class-cma-admin.php:98 includes/class-cma-admin.php:343
 #: includes/class-cma-admin.php:372 includes/class-cma-admin.php:523
 #: includes/class-cma-admin.php:550
 msgid "Access denied."
-msgstr ""
+msgstr "Acceso denegado."
 
 #: includes/class-cma-admin.php:119
 msgid "Settings saved successfully."
-msgstr ""
+msgstr "Configuración guardada correctamente."
 
 #: includes/class-cma-admin.php:126
 msgid "Cannibalization conflicts recalculated."
-msgstr ""
+msgstr "Conflictos de canibalización recalculados."
 
 #: includes/class-cma-admin.php:132
 msgid "Internal Linking Audit"
-msgstr ""
+msgstr "Auditoría de enlazado interno"
 
 #: includes/class-cma-admin.php:134
 msgid ""
 "Manual scan. Results are cached to avoid any front-end performance impact."
 msgstr ""
+"Análisis manual. Los resultados se almacenan en caché para evitar cualquier "
+"impacto en el front-end."
 
 #: includes/class-cma-admin.php:170
 msgid "Dashboard"
-msgstr ""
+msgstr "Panel de control"
 
 #: includes/class-cma-admin.php:171
 #, php-format
 msgid "Table (%d)"
-msgstr ""
+msgstr "Tabla (%d)"
 
 #: includes/class-cma-admin.php:172
 #, php-format
 msgid "Isolated posts (%d)"
-msgstr ""
+msgstr "Entradas aisladas (%d)"
 
 #: includes/class-cma-admin.php:173
 #, php-format
 msgid "Global orphans (%d)"
-msgstr ""
+msgstr "Huérfanos globales (%d)"
 
 #: includes/class-cma-admin.php:175
 #, php-format
 msgid "Link suggestions (%d)"
-msgstr ""
+msgstr "Sugerencias de enlaces (%d)"
 
 #: includes/class-cma-admin.php:176
 msgid "Link suggestions"
-msgstr ""
+msgstr "Sugerencias de enlaces"
 
 #: includes/class-cma-admin.php:179
 msgid "Conflicts"
-msgstr ""
+msgstr "Conflictos"
 
 #: includes/class-cma-admin.php:180
 msgid "Silos"
-msgstr ""
+msgstr "Silos"
 
 #: includes/class-cma-admin.php:181
 msgid "Graph view"
-msgstr ""
+msgstr "Vista del gráfico"
 
 #: includes/class-cma-admin.php:182
 msgid "Settings"
-msgstr ""
+msgstr "Configuración"
 
 #: includes/class-cma-admin.php:196
 msgid "Display filter:"
-msgstr ""
+msgstr "Filtro de visualización:"
 
 #: includes/class-cma-admin.php:198
 msgid "Posts"
-msgstr ""
+msgstr "Entradas"
 
 #: includes/class-cma-admin.php:199 includes/views/dashboard.php:295
 #: includes/views/silos.php:30
 msgid "Pages"
-msgstr ""
+msgstr "Páginas"
 
 #: includes/class-cma-admin.php:200
 msgid "Posts + Pages"
-msgstr ""
+msgstr "Entradas + Páginas"
 
 #: includes/class-cma-admin.php:206
 msgid "Run scan"
-msgstr ""
+msgstr "Ejecutar análisis"
 
 #: includes/class-cma-admin.php:210
 msgid "Clear cache"
-msgstr ""
+msgstr "Vaciar caché"
 
 #: includes/class-cma-admin.php:219
 msgid "No cached analysis found. Click Run Scan."
 msgstr ""
+"No se encontró ningún análisis en caché. Haga clic en Ejecutar análisis."
 
 #: includes/class-cma-admin.php:239
 msgid "Global overview based on current filter."
-msgstr ""
+msgstr "Vista general según el filtro actual."
 
 #: includes/class-cma-admin.php:248
 msgid "Posts without internal links from other posts."
-msgstr ""
+msgstr "Entradas sin enlaces internos desde otras entradas."
 
 #: includes/class-cma-admin.php:257
 msgid "Content without internal incoming links based on current filter."
-msgstr ""
+msgstr "Contenido sin enlaces internos entrantes según el filtro actual."
 
 #: includes/class-cma-admin.php:286
 msgid "You can zoom and drag the graph."
-msgstr ""
+msgstr "Puede hacer zoom y mover el gráfico."
 
 #: includes/class-cma-admin.php:293
 msgid "Click a graph node to display SEO details."
-msgstr ""
+msgstr "Haga clic en un nodo del gráfico para mostrar los detalles SEO."
 
 #: includes/class-cma-admin.php:303
 msgid "Pages or posts without any outgoing internal links."
-msgstr ""
+msgstr "Páginas o entradas sin ningún enlace interno saliente."
 
 #: includes/class-cma-admin.php:311
 #, php-format
 msgid "Last scan: %s"
-msgstr ""
+msgstr "Último análisis: %s"
 
 #: includes/class-cma-admin.php:538
 msgid "Scan completed successfully."
-msgstr ""
+msgstr "Análisis completado correctamente."
 
 #: includes/class-cma-admin.php:560
 msgid "Cache cleared successfully."
-msgstr ""
+msgstr "Caché eliminada correctamente."
 
 #: includes/class-cma-analyzer.php:863
 msgid "No usable internal links detected in this silo."
-msgstr ""
+msgstr "No se han detectado enlaces internos utilizables en este silo."
 
 #: includes/class-cma-analyzer.php:864
 msgid "Add contextual links between the pillar page and the silo member pages."
 msgstr ""
+"Añada enlaces contextuales entre la página pilar y las páginas del silo."
 
 #: includes/class-cma-analyzer.php:866
 #, php-format
 msgid "Weak internal structure: %d%% consistency."
-msgstr ""
+msgstr "Estructura interna débil: %d%% de coherencia."
 
 #: includes/class-cma-analyzer.php:867
 msgid ""
 "Prioritize links between related content and return links from the pillar "
 "page."
 msgstr ""
+"Priorice los enlaces entre contenidos relacionados y los enlaces de retorno "
+"desde la página pilar."
 
 #: includes/class-cma-analyzer.php:869
 #, php-format
 msgid "Internal structure needs improvement: %d%% consistency."
-msgstr ""
+msgstr "La estructura interna debe mejorar: %d%% de coherencia."
 
 #: includes/class-cma-analyzer.php:870
 msgid ""
 "Add contextual links between complementary pages to strengthen the silo "
 "journey."
 msgstr ""
+"Añada enlaces contextuales entre páginas complementarias para reforzar el "
+"recorrido del silo."
 
 #: includes/class-cma-analyzer.php:874
 #, php-format
 msgid "High internal leakage: %d%% of internal links leave the silo."
-msgstr ""
+msgstr "Fuga interna elevada: el %d%% de los enlaces internos salen del silo."
 
 #: includes/class-cma-analyzer.php:875
 msgid ""
 "Review links to other topics: keep useful links and strengthen links within "
 "the silo to rebalance distribution."
 msgstr ""
+"Revise los enlaces a otros temas: conserve los enlaces útiles y refuerce los "
+"enlaces del silo para reequilibrar la distribución."
 
 #: includes/class-cma-analyzer.php:877
 #, php-format
 msgid "Internal leakage to monitor: %d%% of internal links leave the silo."
 msgstr ""
+"Fuga interna que debe vigilarse: el %d%% de los enlaces internos salen del "
+"silo."
 
 #: includes/class-cma-analyzer.php:878
 msgid ""
 "Check that links to other silos are intentional and add a relevant internal "
 "link when it improves the journey."
 msgstr ""
+"Compruebe que los enlaces a otros silos sean intencionados y añada un enlace "
+"interno pertinente cuando mejore el recorrido."
 
 #: includes/class-cma-analyzer.php:882
 #, php-format
 msgid "Pillar page distributes too little: it links to %d%% of the silo pages."
 msgstr ""
+"La página pilar distribuye poco: enlaza al %d%% de las páginas del silo."
 
 #: includes/class-cma-analyzer.php:883
 msgid ""
 "Add links from the pillar page to priority member pages to distribute "
 "internal authority more effectively."
 msgstr ""
+"Añada enlaces desde la página pilar a las páginas prioritarias para "
+"distribuir mejor la autoridad interna."
 
 #: includes/class-cma-analyzer.php:887
 #, php-format
@@ -327,88 +339,107 @@ msgid ""
 "Insufficient lateral links: only %d%% of pages link to complementary silo "
 "content."
 msgstr ""
+"Enlaces laterales insuficientes: solo el %d%% de las páginas enlazan "
+"contenido complementario del silo."
 
 #: includes/class-cma-analyzer.php:888
 msgid ""
 "Link member pages when they answer complementary questions without adding "
 "artificial links."
 msgstr ""
+"Enlace las páginas del silo cuando respondan a preguntas complementarias sin "
+"añadir enlaces artificiales."
 
 #: includes/class-cma-analyzer.php:892
 #, php-format
 msgid "Many external links: %d%% of outgoing links go to third-party sites."
 msgstr ""
+"Muchos enlaces externos: el %d%% de los enlaces salientes van a sitios de "
+"terceros."
 
 #: includes/class-cma-analyzer.php:893
 msgid ""
 "Keep useful external sources, but ensure they do not overshadow links to "
 "your related content."
 msgstr ""
+"Conserve las fuentes externas útiles, pero compruebe que no eclipsen los "
+"enlaces a su contenido relacionado."
 
 #: includes/class-cma-analyzer.php:897
 msgid ""
 "Consistent silo: maintain the linking structure and monitor future "
 "publications."
 msgstr ""
+"Silo coherente: mantenga el enlazado y vigile las futuras publicaciones."
 
 #: includes/class-cma-analyzer.php:1361
 msgid "Very similar titles"
-msgstr ""
+msgstr "Títulos muy similares"
 
 #: includes/class-cma-analyzer.php:1362
 msgid "Similar slugs"
-msgstr ""
+msgstr "Slugs similares"
 
 #: includes/class-cma-analyzer.php:1363
 msgid "Similar internal anchors"
-msgstr ""
+msgstr "Anclas internas similares"
 
 #: includes/class-cma-analyzer.php:1364
 msgid "Same important expressions"
-msgstr ""
+msgstr "Mismas expresiones importantes"
 
 #: includes/class-cma-analyzer.php:1365
 msgid "Content in the same cluster with similar intent"
-msgstr ""
+msgstr "Contenido del mismo clúster con intención similar"
 
 #: includes/class-cma-analyzer.php:1366
 msgid "Competing internal links to multiple similar pages"
-msgstr ""
+msgstr "Enlaces internos competidores hacia varias páginas similares"
 
 #: includes/class-cma-analyzer.php:1368
 msgid "Combined weak signals"
-msgstr ""
+msgstr "Señales débiles combinadas"
 
 #: includes/class-cma-analyzer.php:1401 includes/class-cma-gutenberg.php:531
 #: includes/views/conflict.php:232
 msgid "Related topic"
-msgstr ""
+msgstr "Tema relacionado"
 
 #: includes/class-cma-analyzer.php:1406
 msgid "Define primary content, then merge or redirect overlapping content."
 msgstr ""
+"Defina un contenido principal y después fusione o redirija el contenido "
+"solapado."
 
 #: includes/class-cma-analyzer.php:1410
 msgid ""
 "Reorient content toward a different intent and use more distinct internal "
 "anchors."
 msgstr ""
+"Reoriente el contenido hacia una intención diferente y utilice anclas "
+"internas más distintas."
 
 #: includes/class-cma-analyzer.php:1414
 msgid ""
 "Strengthen links to the primary content and differentiate links to the "
 "secondary content."
 msgstr ""
+"Refuerce los enlaces al contenido principal y diferencie los enlaces al "
+"contenido secundario."
 
 #: includes/class-cma-analyzer.php:1418
 msgid ""
 "Update H1 headings or SEO titles to clearly separate each content intent."
 msgstr ""
+"Modifique los H1 o los títulos SEO para separar claramente la intención de "
+"cada contenido."
 
 #: includes/class-cma-analyzer.php:1421
 msgid ""
 "Monitor only, or add differentiating internal links if rankings overlap."
 msgstr ""
+"Vigile únicamente o añada enlaces internos diferenciadores si las posiciones "
+"se solapan."
 
 #: includes/class-cma-analyzer.php:1426
 #, php-format
@@ -416,551 +447,563 @@ msgid ""
 "Risk score %1$d/100 based on: %2$s. This content may send overly similar "
 "topical signals to Google."
 msgstr ""
+"Puntuación de riesgo %1$d/100 basada en: %2$s. Estos contenidos pueden "
+"enviar señales temáticas demasiado similares a Google."
 
 #: includes/class-cma-gutenberg.php:49
 msgid "Suggested anchors"
-msgstr ""
+msgstr "Anclas sugeridas"
 
 #: includes/class-cma-gutenberg.php:50
 msgid "Link inserted"
-msgstr ""
+msgstr "Enlace insertado"
 
 #: includes/class-cma-gutenberg.php:51
 msgid "Insert link"
-msgstr ""
+msgstr "Insertar enlace"
 
 #: includes/class-cma-gutenberg.php:52
 msgid "Select the text again in the content and retry."
-msgstr ""
+msgstr "Seleccione de nuevo el texto en el contenido e inténtelo otra vez."
 
 #: includes/class-cma-gutenberg.php:53
 msgid "Detected expression"
-msgstr ""
+msgstr "Expresión detectada"
 
 #: includes/class-cma-gutenberg.php:54
 msgid "Add link"
-msgstr ""
+msgstr "Añadir enlace"
 
 #: includes/class-cma-gutenberg.php:55 includes/views/suggestions.php:5
 msgid "Internal linking suggestions"
-msgstr ""
+msgstr "Sugerencias de enlazado interno"
 
 #: includes/class-cma-gutenberg.php:56
 msgid "Recommended content to strengthen your internal linking."
-msgstr ""
+msgstr "Contenido recomendado para reforzar su enlazado interno."
 
 #: includes/class-cma-gutenberg.php:57
 msgid "Analyzed selection"
-msgstr ""
+msgstr "Selección analizada"
 
 #: includes/class-cma-gutenberg.php:58
 msgid "Analyzing..."
-msgstr ""
+msgstr "Analizando..."
 
 #: includes/class-cma-gutenberg.php:59
 msgid "Loading error."
-msgstr ""
+msgstr "Error de carga."
 
 #: includes/class-cma-gutenberg.php:60
 msgid "Run a dashboard scan to enrich suggestions."
-msgstr ""
+msgstr "Ejecute un análisis desde el panel para enriquecer las sugerencias."
 
 #: includes/class-cma-gutenberg.php:61
 msgid "Suggestions found"
-msgstr ""
+msgstr "Sugerencias encontradas"
 
 #: includes/class-cma-gutenberg.php:62
 msgid "No relevant suggestions at this time."
-msgstr ""
+msgstr "No hay sugerencias pertinentes en este momento."
 
 #: includes/class-cma-gutenberg.php:63
 msgid "Detected opportunities"
-msgstr ""
+msgstr "Oportunidades detectadas"
 
 #: includes/class-cma-gutenberg.php:530
 msgid "Same cluster"
-msgstr ""
+msgstr "Mismo clúster"
 
 #: includes/class-cma-gutenberg.php:532
 msgid "Complementary"
-msgstr ""
+msgstr "Complementario"
 
 #: includes/class-cma-gutenberg.php:533
 msgid "Pillar content"
-msgstr ""
+msgstr "Contenido pilar"
 
 #: includes/class-cma-gutenberg.php:534
 msgid "Orphan content to strengthen"
-msgstr ""
+msgstr "Contenido huérfano que reforzar"
 
 #: includes/class-cma-gutenberg.php:535
 msgid "Strong SEO potential"
-msgstr ""
+msgstr "Alto potencial SEO"
 
 #: includes/class-cma-gutenberg.php:537
 msgid "Strategic content"
-msgstr ""
+msgstr "Contenido estratégico"
 
 #: includes/class-cma-gutenberg.php:696
 msgid ""
 "This content belongs to the same cluster and strengthens silo consistency."
 msgstr ""
+"Este contenido pertenece al mismo clúster y refuerza la coherencia del silo."
 
 #: includes/class-cma-gutenberg.php:700
 msgid "The topic is closely related to the content being edited."
-msgstr ""
+msgstr "El tema está estrechamente relacionado con el contenido editado."
 
 #: includes/class-cma-gutenberg.php:703
 msgid ""
 "This content complements the topic and can improve the internal journey."
 msgstr ""
+"Este contenido complementa el tema y puede mejorar el recorrido interno."
 
 #: includes/views/conflict.php:24 includes/views/conflict.php:118
 #: includes/views/conflict.php:177
 msgid "Critical"
-msgstr ""
+msgstr "Crítico"
 
 #: includes/views/conflict.php:25 includes/views/conflict.php:126
 #: includes/views/conflict.php:178
 msgid "Medium"
-msgstr ""
+msgstr "Medio"
 
 #: includes/views/conflict.php:26 includes/views/conflict.php:29
 #: includes/views/conflict.php:134 includes/views/conflict.php:179
 msgid "Light"
-msgstr ""
+msgstr "Leve"
 
 #: includes/views/conflict.php:37 includes/views/conflict.php:156
 #: includes/views/conflict.php:163
 msgid "Not available"
-msgstr ""
+msgstr "No disponible"
 
 #: includes/views/conflict.php:77
 msgid "Editorial analysis"
-msgstr ""
+msgstr "Análisis editorial"
 
 #: includes/views/conflict.php:80
 msgid "Cannibalization conflicts"
-msgstr ""
+msgstr "Conflictos de canibalización"
 
 #: includes/views/conflict.php:82
 msgid ""
 "Identify content that may compete in Google and prioritize the most "
 "impactful fixes."
 msgstr ""
+"Identifique el contenido que puede competir en Google y priorice las "
+"correcciones con mayor impacto."
 
 #: includes/views/conflict.php:84
 msgid "affected content"
-msgstr ""
+msgstr "contenidos afectados"
 
 #: includes/views/conflict.php:85
 msgid "displayed results"
-msgstr ""
+msgstr "resultados mostrados"
 
 #: includes/views/conflict.php:87
 msgid "Analysis from"
-msgstr ""
+msgstr "Análisis del"
 
 #: includes/views/conflict.php:97
 msgid "Recalculate conflicts"
-msgstr ""
+msgstr "Recalcular conflictos"
 
 #: includes/views/conflict.php:104
 msgid "Some data is not yet available to enrich this analysis."
-msgstr ""
+msgstr "Algunos datos aún no están disponibles para enriquecer este análisis."
 
 #: includes/views/conflict.php:108
 msgid "Conflict summary"
-msgstr ""
+msgstr "Resumen de conflictos"
 
 #: includes/views/conflict.php:110
 msgid "Total detected"
-msgstr ""
+msgstr "Total detectado"
 
 #: includes/views/conflict.php:115
 msgid "Conflicts to review"
-msgstr ""
+msgstr "Conflictos que revisar"
 
 #: includes/views/conflict.php:123
 msgid "Top priority"
-msgstr ""
+msgstr "Prioridad máxima"
 
 #: includes/views/conflict.php:131
 msgid "Needs review"
-msgstr ""
+msgstr "Requiere revisión"
 
 #: includes/views/conflict.php:139
 msgid "Monitor"
-msgstr ""
+msgstr "Vigilar"
 
 #: includes/views/conflict.php:142 includes/views/conflict.php:197
 msgid "Affected content"
-msgstr ""
+msgstr "Contenido afectado"
 
 #: includes/views/conflict.php:147
 msgid "Impacted scope"
-msgstr ""
+msgstr "Ámbito afectado"
 
 #: includes/views/conflict.php:151
 msgid "Key insights"
-msgstr ""
+msgstr "Puntos clave"
 
 #: includes/views/conflict.php:155
 msgid "Most affected cluster"
-msgstr ""
+msgstr "Clúster más afectado"
 
 #: includes/views/conflict.php:162
 msgid "Most involved expression"
-msgstr ""
+msgstr "Expresión más implicada"
 
 #: includes/views/conflict.php:170
 msgid "Detected conflicts"
-msgstr ""
+msgstr "Conflictos detectados"
 
 #: includes/views/conflict.php:171
 #, php-format
 msgid "%d result for this filter"
 msgid_plural "%d results for this filter"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d resultado para este filtro"
+msgstr[1] "%d resultados para este filtro"
 
 #: includes/views/conflict.php:173
 msgid "Filter conflicts"
-msgstr ""
+msgstr "Filtrar conflictos"
 
 #: includes/views/conflict.php:176
 msgid "All"
-msgstr ""
+msgstr "Todos"
 
 #: includes/views/conflict.php:195
 msgid "Severity"
-msgstr ""
+msgstr "Gravedad"
 
 #: includes/views/conflict.php:196
 msgid "Expression or topic"
-msgstr ""
+msgstr "Expresión o tema"
 
 #: includes/views/conflict.php:198
 msgid "Similarity"
-msgstr ""
+msgstr "Similitud"
 
 #: includes/views/conflict.php:199
 msgid "Conflict type"
-msgstr ""
+msgstr "Tipo de conflicto"
 
 #: includes/views/conflict.php:200
 msgid "Recommendation"
-msgstr ""
+msgstr "Recomendación"
 
 #: includes/views/conflict.php:201
 msgid "Action"
-msgstr ""
+msgstr "Acción"
 
 #: includes/views/conflict.php:210
 msgid "No conflicts found with this filter."
-msgstr ""
+msgstr "No se encontraron conflictos con este filtro."
 
 #: includes/views/conflict.php:211
 msgid "Run a recalculation after your next editorial changes."
-msgstr ""
+msgstr "Ejecute un recálculo después de sus próximos cambios editoriales."
 
 #: includes/views/conflict.php:256 includes/views/conflict.php:348
 msgid "Monitor only"
-msgstr ""
+msgstr "Vigilar únicamente"
 
 #: includes/views/conflict.php:269
 msgid "Risk analysis"
-msgstr ""
+msgstr "Análisis del riesgo"
 
 #: includes/views/conflict.php:270
 msgid "Editorial conflict"
-msgstr ""
+msgstr "Conflicto editorial"
 
 #: includes/views/conflict.php:273
 msgid "Global score"
-msgstr ""
+msgstr "Puntuación global"
 
 #: includes/views/conflict.php:283
 msgid "Suggested primary content"
-msgstr ""
+msgstr "Contenido principal sugerido"
 
 #: includes/views/conflict.php:285
 msgid "Competing content"
-msgstr ""
+msgstr "Contenido competidor"
 
 #: includes/views/conflict.php:293
 msgid "Updated"
-msgstr ""
+msgstr "Actualizado"
 
 #: includes/views/conflict.php:294
 msgid "Internal score"
-msgstr ""
+msgstr "Puntuación interna"
 
 #: includes/views/conflict.php:294 includes/views/conflict.php:295
 #: includes/views/conflict.php:296 includes/views/conflict.php:297
 msgid "N/A"
-msgstr ""
+msgstr "N/D"
 
 #: includes/views/conflict.php:305
 msgid "Shared expressions"
-msgstr ""
+msgstr "Expresiones comunes"
 
 #: includes/views/conflict.php:310
 msgid "No specific expression detected."
-msgstr ""
+msgstr "No se detectó ninguna expresión específica."
 
 #: includes/views/conflict.php:314
 msgid "Shared anchors"
-msgstr ""
+msgstr "Anclas comunes"
 
 #: includes/views/conflict.php:319
 msgid "No shared anchors detected."
-msgstr ""
+msgstr "No se detectaron anclas comunes."
 
 #: includes/views/conflict.php:326
 msgid "Simplified link map"
-msgstr ""
+msgstr "Mapa simplificado de enlaces"
 
 #: includes/views/conflict.php:327
 msgid "The suggested primary content is highlighted."
-msgstr ""
+msgstr "El contenido principal sugerido está resaltado."
 
 #: includes/views/conflict.php:341
 msgid ""
 "These contents cover a similar editorial scope and may compete in search "
 "results."
 msgstr ""
+"Estos contenidos cubren un ámbito editorial similar y pueden competir en los "
+"resultados de búsqueda."
 
 #: includes/views/conflict.php:347
 msgid "Recommended action"
-msgstr ""
+msgstr "Acción recomendada"
 
-#: includes/views/dashboard.php:59 includes/views/render_table.php:35
+#: includes/views/dashboard.php:59 includes/views/content-table.php:35
 msgid "Internal linking score"
-msgstr ""
+msgstr "Puntuación del enlazado interno"
 
 #: includes/views/dashboard.php:83
 msgid "Analyzed content"
-msgstr ""
+msgstr "Contenido analizado"
 
 #: includes/views/dashboard.php:110
 msgid "Correct"
-msgstr ""
+msgstr "Correcto"
 
 #: includes/views/dashboard.php:118 includes/views/dashboard.php:209
 msgid "Isolated"
-msgstr ""
+msgstr "Aislado"
 
 #: includes/views/dashboard.php:126 includes/views/dashboard.php:204
 msgid "Without outgoing internal links"
-msgstr ""
+msgstr "Sin enlaces internos salientes"
 
 #: includes/views/dashboard.php:134
 msgid "Most linked"
-msgstr ""
+msgstr "Más enlazados"
 
 #: includes/views/dashboard.php:154
 msgid "Links suggestions"
-msgstr ""
+msgstr "Sugerencias de enlaces"
 
 #: includes/views/dashboard.php:172
 msgid "View opportunities"
-msgstr ""
+msgstr "Ver oportunidades"
 
 #: includes/views/dashboard.php:183
 msgid "Orphans"
-msgstr ""
+msgstr "Huérfanos"
 
 #: includes/views/dashboard.php:186
 msgid "Pages or posts without incoming internal links"
-msgstr ""
+msgstr "Páginas o entradas sin enlaces internos entrantes"
 
 #: includes/views/dashboard.php:191
 msgid "Without incoming internal links"
-msgstr ""
+msgstr "Sin enlaces internos entrantes"
 
 #: includes/views/dashboard.php:196
 msgid "Without outgoing links"
-msgstr ""
+msgstr "Sin enlaces salientes"
 
 #: includes/views/dashboard.php:199
 msgid "Pages or posts without outgoing internal links"
-msgstr ""
+msgstr "Páginas o entradas sin enlaces internos salientes"
 
 #: includes/views/dashboard.php:212
 msgid "Posts without internal links from other posts"
-msgstr ""
+msgstr "Entradas sin enlaces internos desde otras entradas"
 
 #: includes/views/dashboard.php:217
 msgid "Unlinked"
-msgstr ""
+msgstr "Sin enlazar"
 
 #: includes/views/dashboard.php:222 includes/views/dashboard.php:230
 msgid "Clusters"
-msgstr ""
+msgstr "Clústeres"
 
 #: includes/views/dashboard.php:225
 #, php-format
 msgid "Total number of clusters with %d links"
-msgstr ""
+msgstr "Número total de clústeres con %d enlaces"
 
 #: includes/views/dashboard.php:235
 msgid "Average links"
-msgstr ""
+msgstr "Media de enlaces"
 
 #: includes/views/dashboard.php:238
 msgid "Average links per page or post"
-msgstr ""
+msgstr "Media de enlaces por página o entrada"
 
 #: includes/views/dashboard.php:243 includes/views/dashboard.php:256
 #: includes/views/dashboard.php:269 includes/views/dashboard.php:277
 msgid "Links"
-msgstr ""
+msgstr "Enlaces"
 
 #: includes/views/dashboard.php:248
 msgid "Internal links"
-msgstr ""
+msgstr "Enlaces internos"
 
 #: includes/views/dashboard.php:251
 msgid "Total internal links on pages or posts"
-msgstr ""
+msgstr "Total de enlaces internos en páginas o entradas"
 
 #: includes/views/dashboard.php:261
 msgid "External links"
-msgstr ""
+msgstr "Enlaces externos"
 
 #: includes/views/dashboard.php:264
 msgid "Total external links on pages or posts"
-msgstr ""
+msgstr "Total de enlaces externos en páginas o entradas"
 
 #: includes/views/dashboard.php:274
 msgid "Link / 100 words"
-msgstr ""
+msgstr "Enlace / 100 palabras"
 
 #: includes/views/dashboard.php:292
 msgid "Cluster list | Average size"
-msgstr ""
+msgstr "Lista de clústeres | Tamaño medio"
 
 #: includes/views/dashboard.php:292
 msgid "Minimum cluster size"
-msgstr ""
+msgstr "Tamaño mínimo del clúster"
 
 #: includes/views/dashboard.php:296
 msgid "Score"
-msgstr ""
+msgstr "Puntuación"
 
 #: includes/views/dashboard.php:348 includes/views/dashboard.php:350
 msgid "Anchors:"
-msgstr ""
+msgstr "Anclas:"
 
-#: includes/views/render_table.php:7
+#: includes/views/content-table.php:7
 msgid "Incoming links (pages)"
-msgstr ""
+msgstr "Enlaces entrantes (páginas)"
 
-#: includes/views/render_table.php:8
+#: includes/views/content-table.php:8
 msgid "Incoming links (posts + pages)"
-msgstr ""
+msgstr "Enlaces entrantes (entradas + páginas)"
 
-#: includes/views/render_table.php:13
+#: includes/views/content-table.php:13
 msgid "Search content..."
-msgstr ""
+msgstr "Buscar contenido..."
 
-#: includes/views/render_table.php:17
+#: includes/views/content-table.php:17
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
-#: includes/views/render_table.php:18
+#: includes/views/content-table.php:18
 msgid "Incoming links (posts)"
-msgstr ""
+msgstr "Enlaces entrantes (entradas)"
 
-#: includes/views/render_table.php:20
+#: includes/views/content-table.php:20
 msgid "Internal outgoing links"
-msgstr ""
+msgstr "Enlaces internos salientes"
 
-#: includes/views/render_table.php:21
+#: includes/views/content-table.php:21
 msgid "External outgoing links"
-msgstr ""
+msgstr "Enlaces externos salientes"
 
-#: includes/views/render_table.php:22
+#: includes/views/content-table.php:22
 msgid "Outbound internal links per 100 words"
-msgstr ""
+msgstr "Número de enlaces internos salientes por cada 100 palabras"
 
-#: includes/views/render_table.php:22
+#: includes/views/content-table.php:22
 msgid "Internal links / 100 words"
-msgstr ""
+msgstr "Enlaces internos / 100 palabras"
 
-#: includes/views/render_table.php:26
+#: includes/views/content-table.php:26
 msgid "Internal links per 100 words"
-msgstr ""
+msgstr "Enlaces internos por 100 palabras"
 
-#: includes/views/render_table.php:27
+#: includes/views/content-table.php:27
 msgid "Ideal:"
-msgstr ""
+msgstr "Ideal:"
 
-#: includes/views/render_table.php:28
+#: includes/views/content-table.php:28
 msgid "↓ = low internal linking"
-msgstr ""
+msgstr "↓ = enlazado interno débil"
 
-#: includes/views/render_table.php:29
+#: includes/views/content-table.php:29
 msgid "↑ = overload"
-msgstr ""
+msgstr "↑ = sobrecarga"
 
-#: includes/views/render_table.php:30
+#: includes/views/content-table.php:30
 msgid "Use only natural and relevant links."
-msgstr ""
+msgstr "Utilice únicamente enlaces naturales y pertinentes."
 
-#: includes/views/render_table.php:41
+#: includes/views/content-table.php:41
 msgid "No results found."
-msgstr ""
+msgstr "No se encontraron resultados."
 
-#: includes/views/render_table.php:162
+#: includes/views/content-table.php:162
 msgid "content item(s) found"
-msgstr ""
+msgstr "contenido(s) encontrado(s)"
 
-#: includes/views/setting.php:19
+#: includes/views/settings.php:19
 msgid "Excluded content"
-msgstr ""
+msgstr "Contenido excluido"
 
-#: includes/views/setting.php:22
+#: includes/views/settings.php:22
 msgid ""
 "Define which pages should be ignored during the internal linking analysis."
 msgstr ""
+"Defina qué páginas deben ignorarse durante el análisis del enlazado interno."
 
-#: includes/views/setting.php:25
+#: includes/views/settings.php:25
 msgid "IDs to exclude"
-msgstr ""
+msgstr "IDs que excluir"
 
-#: includes/views/setting.php:32
+#: includes/views/settings.php:32
 msgid "Separate IDs with commas, spaces or line breaks."
-msgstr ""
+msgstr "Separe los IDs con comas, espacios o saltos de línea."
 
-#: includes/views/setting.php:36
+#: includes/views/settings.php:36
 msgid "Example: sponsored articles, legal pages, temporary campaigns."
 msgstr ""
+"Ejemplo: artículos patrocinados, páginas legales o campañas temporales."
 
-#: includes/views/setting.php:46
+#: includes/views/settings.php:46
 msgid "Cluster settings"
-msgstr ""
+msgstr "Ajustes de clústeres"
 
-#: includes/views/setting.php:49
+#: includes/views/settings.php:49
 msgid "Control how clusters are detected based on internal linking strength."
 msgstr ""
+"Controle cómo se detectan los clústeres según la intensidad del enlazado "
+"interno."
 
-#: includes/views/setting.php:53
+#: includes/views/settings.php:53
 msgid "Minimum incoming links"
-msgstr ""
+msgstr "Enlaces entrantes mínimos"
 
-#: includes/views/setting.php:67
+#: includes/views/settings.php:67
 msgid "3 = weak"
-msgstr ""
+msgstr "3 = débil"
 
-#: includes/views/setting.php:68
+#: includes/views/settings.php:68
 msgid "8–10 = strong cluster"
-msgstr ""
+msgstr "8–10 = clúster sólido"
 
-#: includes/views/setting.php:78
+#: includes/views/settings.php:78
 msgid "Save settings"
-msgstr ""
+msgstr "Guardar configuración"
 
 #: includes/views/silos.php:21
 msgid ""
@@ -968,47 +1011,64 @@ msgid ""
 "Leakage measures only internal links sent outside the silo; external links "
 "are diagnosed separately."
 msgstr ""
+"Compruebe si sus páginas están enlazadas y organizadas en silos SEO "
+"coherentes. La fuga mide únicamente los enlaces internos enviados fuera del "
+"silo; los enlaces externos se diagnostican por separado."
 
 #: includes/views/silos.php:29
 msgid "Silo"
-msgstr ""
+msgstr "Silo"
 
 #: includes/views/silos.php:31
 msgid "Coherence"
-msgstr ""
+msgstr "Coherencia"
 
 #: includes/views/silos.php:32
 msgid "Leakage"
-msgstr ""
+msgstr "Fuga"
 
 #: includes/views/silos.php:33
 msgid "Issues"
-msgstr ""
+msgstr "Problemas"
 
 #: includes/views/silos.php:34
 msgid "Recommendations"
-msgstr ""
+msgstr "Recomendaciones"
 
 #: includes/views/silos.php:72
 #, php-format
 msgid "%1$d%% retained · %2$d%% lateral"
-msgstr ""
+msgstr "%1$d%% retenidos · %2$d%% laterales"
 
 #: includes/views/silos.php:81
 #, php-format
 msgid "%d link outside silo"
 msgid_plural "%d links outside silo"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d enlace fuera del silo"
+msgstr[1] "%d enlaces fuera del silo"
 
 #: includes/views/suggestions.php:12
 msgid "From"
-msgstr ""
+msgstr "Desde"
 
 #: includes/views/suggestions.php:14
 msgid "To"
-msgstr ""
+msgstr "Hacia"
 
 #: includes/views/suggestions.php:15
 msgid "Relevance"
-msgstr ""
+msgstr "Relevancia"
+
+#~ msgid "Posts without post-to-post linking. Filter not applied on this tab."
+#~ msgstr ""
+#~ "Entradas sin enlazado entre entradas. El filtro no se aplica en esta "
+#~ "pestaña."
+
+#~ msgid "Dead end pages (%d)"
+#~ msgstr "Página en callejón sin salida (%d)"
+
+#~ msgid "Dead end pages"
+#~ msgstr "Páginas sin enlaces salientes"
+
+#~ msgid "Internal linking health"
+#~ msgstr "Salud del enlazado"

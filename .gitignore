@@ -15,7 +15,7 @@ Thumbs.db
 auth.json
 
 # Dependency directories, if local tooling is added later
-vendor/
+/vendor/
 node_modules/
 
 # Test and quality-tool output

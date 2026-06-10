@@ -2,19 +2,19 @@
 /**
  * Plugin Name: ILP - Internal Linking Pro
  * Description: Advanced internal linking audit tool (orphan pages, link graph, PageRank, clusters). Admin-only with manual scan.
- * Version: 2.2.0
+ * Version: 2.3.0
  * Author: GUILLIER Alban
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: crea-maillage-audit
+ * Text Domain: internal-linking-pro
  * Domain Path: /languages
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('CMA_VERSION', '2.1.0');
+define('CMA_VERSION', '2.3.0');
 define('CMA_PATH', plugin_dir_path(__FILE__));
 define('CMA_URL', plugin_dir_url(__FILE__));
 define('CMA_OPTION_KEY', 'cma_scan_data');
@@ -25,7 +25,7 @@ define('CMA_EXCLUDED_IDS_OPTION', 'cma_excluded_ids');
  */
 function cma_load_textdomain() {
     load_plugin_textdomain(
-        'crea-maillage-audit',
+        'internal-linking-pro',
         false,
         dirname(plugin_basename(__FILE__)) . '/languages'
     );

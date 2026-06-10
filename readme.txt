@@ -4,7 +4,7 @@ Tags: seo, internal links, gutenberg, pagerank, content audit
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.5.8
+Stable tag: 2.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,7 +65,7 @@ Select text in a paragraph or heading. The sidebar prioritizes direct title matc
 
 == Changelog ==
 
-= 2.5.8 =
+= 2.3.0 =
 
 * Improved Gutenberg suggestion ranking by prioritizing title matches.
 * Added a current published-content catalogue for editor suggestions.
@@ -74,6 +74,6 @@ Select text in a paragraph or heading. The sidebar prioritizes direct title matc
 
 == Upgrade Notice ==
 
-= 2.5.8 =
+= 2.3.0 =
 
 Prepares a clean open-source package and reduces administration asset loading.

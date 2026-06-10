@@ -50,21 +50,21 @@ final class CMA_Gutenberg {
             'restPath' => '/cma/v1/link-suggestions',
             'nonce' => wp_create_nonce('wp_rest'),
             'i18n' => [
-                'suggestedAnchors' => __('Suggested anchors', 'crea-maillage-audit'),
-                'linkInserted' => __('Link inserted', 'crea-maillage-audit'),
-                'insertLink' => __('Insert link', 'crea-maillage-audit'),
-                'reselectText' => __('Select the text again in the content and retry.', 'crea-maillage-audit'),
-                'detectedExpression' => __('Detected expression', 'crea-maillage-audit'),
-                'addLink' => __('Add link', 'crea-maillage-audit'),
-                'suggestionsPanel' => __('Internal linking suggestions', 'crea-maillage-audit'),
-                'recommendationsHelp' => __('Recommended content to strengthen your internal linking.', 'crea-maillage-audit'),
-                'analyzedSelection' => __('Analyzed selection', 'crea-maillage-audit'),
-                'loading' => __('Analyzing...', 'crea-maillage-audit'),
-                'loadingError' => __('Loading error.', 'crea-maillage-audit'),
-                'runScanNotice' => __('Run a dashboard scan to enrich suggestions.', 'crea-maillage-audit'),
-                'suggestionsFound' => __('Suggestions found', 'crea-maillage-audit'),
-                'noSuggestion' => __('No relevant suggestions at this time.', 'crea-maillage-audit'),
-                'detectedOpportunities' => __('Detected opportunities', 'crea-maillage-audit'),
+                'suggestedAnchors' => __('Suggested anchors', 'internal-linking-pro'),
+                'linkInserted' => __('Link inserted', 'internal-linking-pro'),
+                'insertLink' => __('Insert link', 'internal-linking-pro'),
+                'reselectText' => __('Select the text again in the content and retry.', 'internal-linking-pro'),
+                'detectedExpression' => __('Detected expression', 'internal-linking-pro'),
+                'addLink' => __('Add link', 'internal-linking-pro'),
+                'suggestionsPanel' => __('Internal linking suggestions', 'internal-linking-pro'),
+                'recommendationsHelp' => __('Recommended content to strengthen your internal linking.', 'internal-linking-pro'),
+                'analyzedSelection' => __('Analyzed selection', 'internal-linking-pro'),
+                'loading' => __('Analyzing...', 'internal-linking-pro'),
+                'loadingError' => __('Loading error.', 'internal-linking-pro'),
+                'runScanNotice' => __('Run a dashboard scan to enrich suggestions.', 'internal-linking-pro'),
+                'suggestionsFound' => __('Suggestions found', 'internal-linking-pro'),
+                'noSuggestion' => __('No relevant suggestions at this time.', 'internal-linking-pro'),
+                'detectedOpportunities' => __('Detected opportunities', 'internal-linking-pro'),
             ],
         ]);
     }
@@ -791,14 +791,14 @@ final class CMA_Gutenberg {
     private function cma_link_suggestions_get_relation_types(bool $same_cluster, int $semantic_score, int $pagerank, int $incoming, int $outgoing, int $posts_only_in): array {
         $relations = [];
 
-        if ($same_cluster) $relations[] = __('Same cluster', 'crea-maillage-audit');
-        if ($semantic_score >= 65) $relations[] = __('Related topic', 'crea-maillage-audit');
-        if ($semantic_score >= 35 && $semantic_score < 65) $relations[] = __('Complementary', 'crea-maillage-audit');
-        if ($pagerank >= 70) $relations[] = __('Pillar content', 'crea-maillage-audit');
-        if ($incoming === 0 || $posts_only_in === 0) $relations[] = __('Orphan content to strengthen', 'crea-maillage-audit');
-        if ($pagerank >= 45 && $outgoing >= 2) $relations[] = __('Strong SEO potential', 'crea-maillage-audit');
+        if ($same_cluster) $relations[] = __('Same cluster', 'internal-linking-pro');
+        if ($semantic_score >= 65) $relations[] = __('Related topic', 'internal-linking-pro');
+        if ($semantic_score >= 35 && $semantic_score < 65) $relations[] = __('Complementary', 'internal-linking-pro');
+        if ($pagerank >= 70) $relations[] = __('Pillar content', 'internal-linking-pro');
+        if ($incoming === 0 || $posts_only_in === 0) $relations[] = __('Orphan content to strengthen', 'internal-linking-pro');
+        if ($pagerank >= 45 && $outgoing >= 2) $relations[] = __('Strong SEO potential', 'internal-linking-pro');
 
-        return empty($relations) ? [__('Strategic content', 'crea-maillage-audit')] : array_values(array_unique($relations));
+        return empty($relations) ? [__('Strategic content', 'internal-linking-pro')] : array_values(array_unique($relations));
     }
 
     public function cma_link_suggestions_generate_anchors(array $item, array $context_tokens = []): array {
@@ -957,14 +957,14 @@ final class CMA_Gutenberg {
 
     private function cma_link_suggestions_get_reason(array $relations, bool $same_cluster, int $semantic_score): string {
         if ($same_cluster) {
-            return __('This content belongs to the same cluster and strengthens silo consistency.', 'crea-maillage-audit');
+            return __('This content belongs to the same cluster and strengthens silo consistency.', 'internal-linking-pro');
         }
 
         if ($semantic_score >= 65) {
-            return __('The topic is closely related to the content being edited.', 'crea-maillage-audit');
+            return __('The topic is closely related to the content being edited.', 'internal-linking-pro');
         }
 
-        return __('This content complements the topic and can improve the internal journey.', 'crea-maillage-audit');
+        return __('This content complements the topic and can improve the internal journey.', 'internal-linking-pro');
     }
 
     private function cma_link_suggestions_get_opportunities(array $context, array $recommendations): array {

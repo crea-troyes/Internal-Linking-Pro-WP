@@ -2,7 +2,7 @@
 <ruleset name="ILP Internal Linking Pro">
     <description>WordPress Coding Standards configuration for the plugin.</description>
 
-    <file>crea-maillage-audit.php</file>
+    <file>internal-linking-pro.php</file>
     <file>uninstall.php</file>
     <file>includes</file>
 
@@ -15,7 +15,7 @@
     <rule ref="WordPress"/>
     <rule ref="WordPress.WP.I18n">
         <properties>
-            <property name="text_domain" type="array" value="crea-maillage-audit"/>
+            <property name="text_domain" type="array" value="internal-linking-pro"/>
         </properties>
     </rule>
 </ruleset>

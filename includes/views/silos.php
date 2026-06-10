@@ -18,7 +18,7 @@ function cma_get_score_class_fuite($score) {
 
 ?>
 
-<p><?= esc_html__('Check whether your pages are linked and organized into consistent SEO silos. Leakage measures only internal links sent outside the silo; external links are diagnosed separately.', 'crea-maillage-audit'); ?></p>
+<p><?= esc_html__('Check whether your pages are linked and organized into consistent SEO silos. Leakage measures only internal links sent outside the silo; external links are diagnosed separately.', 'internal-linking-pro'); ?></p>
 
 <div class="cma-silos cma-table-wrap">
 
@@ -26,12 +26,12 @@ function cma_get_score_class_fuite($score) {
 
 <thead>
 <tr>
-    <th><?= esc_html__('Silo', 'crea-maillage-audit'); ?></th>
-    <th class="cma-center"><?= esc_html__('Pages', 'crea-maillage-audit'); ?></th>
-    <th class="cma-center"><?= esc_html__('Coherence', 'crea-maillage-audit'); ?></th>
-    <th class="cma-center"><?= esc_html__('Leakage', 'crea-maillage-audit'); ?></th>
-    <th class="cma-center"><?= esc_html__('Issues', 'crea-maillage-audit'); ?></th>
-    <th class="cma-center"><?= esc_html__('Recommendations', 'crea-maillage-audit'); ?></th>
+    <th><?= esc_html__('Silo', 'internal-linking-pro'); ?></th>
+    <th class="cma-center"><?= esc_html__('Pages', 'internal-linking-pro'); ?></th>
+    <th class="cma-center"><?= esc_html__('Coherence', 'internal-linking-pro'); ?></th>
+    <th class="cma-center"><?= esc_html__('Leakage', 'internal-linking-pro'); ?></th>
+    <th class="cma-center"><?= esc_html__('Issues', 'internal-linking-pro'); ?></th>
+    <th class="cma-center"><?= esc_html__('Recommendations', 'internal-linking-pro'); ?></th>
 </tr>
 </thead>
 
@@ -69,7 +69,7 @@ function cma_get_score_class_fuite($score) {
             <?= intval($analysis['coherence']); ?>%
         </span>
         <small class="cma-silo-metric-detail">
-            <?= esc_html(sprintf(__('%1$d%% retained · %2$d%% lateral', 'crea-maillage-audit'), intval($analysis['retention']), intval($analysis['lateral_coverage']))); ?>
+            <?= esc_html(sprintf(__('%1$d%% retained · %2$d%% lateral', 'internal-linking-pro'), intval($analysis['retention']), intval($analysis['lateral_coverage']))); ?>
         </small>
     </td>
 
@@ -78,7 +78,7 @@ function cma_get_score_class_fuite($score) {
             <?= intval($analysis['fuite']); ?>%
         </span>
         <small class="cma-silo-metric-detail">
-            <?= esc_html(sprintf(_n('%d link outside silo', '%d links outside silo', intval($analysis['inter_silo_links']), 'crea-maillage-audit'), intval($analysis['inter_silo_links']))); ?>
+            <?= esc_html(sprintf(_n('%d link outside silo', '%d links outside silo', intval($analysis['inter_silo_links']), 'internal-linking-pro'), intval($analysis['inter_silo_links']))); ?>
         </small>
     </td>
 

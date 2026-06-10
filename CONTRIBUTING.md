@@ -12,7 +12,7 @@ Thank you for considering a contribution to ILP - Internal Linking Pro.
 
 ## Development Setup
 
-1. Clone the repository into `wp-content/plugins/crea-maillage-audit`.
+1. Clone the repository into `wp-content/plugins/internal-linking-pro`.
 2. Activate the plugin from WordPress.
 3. Open **Tools > Internal Linking** and run a scan.
 4. Test Gutenberg changes with a published content catalogue containing representative posts and pages.

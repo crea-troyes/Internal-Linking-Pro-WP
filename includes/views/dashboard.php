@@ -56,7 +56,7 @@ elseif ($value < 5) $class = 'green';
 
       <div class="card score-card loading">
 
-        <h2><?= esc_html__('Internal linking score', 'crea-maillage-audit'); ?></h2>
+        <h2><?= esc_html__('Internal linking score', 'internal-linking-pro'); ?></h2>
 
         <!-- Skeleton -->
         <div class="score-skeleton">
@@ -80,7 +80,7 @@ elseif ($value < 5) $class = 'green';
       </div>
 
       <div class="card summary-card">
-        <h2><?= esc_html__('Analyzed content', 'crea-maillage-audit'); ?></h2>
+        <h2><?= esc_html__('Analyzed content', 'internal-linking-pro'); ?></h2>
         <div class="summary-number"><?= esc_html((string)(int)$total); ?></div>
 
         <style>
@@ -107,7 +107,7 @@ elseif ($value < 5) $class = 'green';
           <div class="legend-item">
             <div class="legend-left">
               <span class="dot green"></span>
-              <span><?= esc_html__('Correct', 'crea-maillage-audit'); ?></span>
+              <span><?= esc_html__('Correct', 'internal-linking-pro'); ?></span>
             </div>
             <span class="legend-value"><?=  (int)($metrics['strong_pages'] ?? 0); ?></span>
           </div>
@@ -115,7 +115,7 @@ elseif ($value < 5) $class = 'green';
           <div class="legend-item">
             <div class="legend-left">
               <span class="dot red"></span>
-              <span><?= esc_html__('Isolated', 'crea-maillage-audit'); ?></span>
+              <span><?= esc_html__('Isolated', 'internal-linking-pro'); ?></span>
             </div>
             <span class="legend-value"><?= esc_html((string)$isolated); ?></span>
           </div>
@@ -123,7 +123,7 @@ elseif ($value < 5) $class = 'green';
           <div class="legend-item">
             <div class="legend-left">
               <span class="dot orange"></span>
-              <span><?= esc_html__('Without outgoing internal links', 'crea-maillage-audit'); ?></span>
+              <span><?= esc_html__('Without outgoing internal links', 'internal-linking-pro'); ?></span>
             </div>
             <span class="legend-value"><?= esc_html((string)$without_outgoing); ?></span>
           </div>
@@ -131,7 +131,7 @@ elseif ($value < 5) $class = 'green';
       </div>
 
       <div class="card linked-card">
-        <h2><?= esc_html__('Most linked', 'crea-maillage-audit'); ?></h2>
+        <h2><?= esc_html__('Most linked', 'internal-linking-pro'); ?></h2>
 
         <ul class="linked-list">
           <?php
@@ -151,7 +151,7 @@ elseif ($value < 5) $class = 'green';
       </div>
 
       <div class="card suggestion-card">
-        <h2><?= esc_html__('Links suggestions', 'crea-maillage-audit'); ?></h2>
+        <h2><?= esc_html__('Links suggestions', 'internal-linking-pro'); ?></h2>
 
         <div class="summary-number">
           <?= esc_html((string)count($suggestions)); ?>
@@ -169,7 +169,7 @@ elseif ($value < 5) $class = 'green';
         </ul>
 
         <a href="<?= esc_url(admin_url('tools.php?page=cma-maillage&view=suggestions')); ?>" class="button cma-dashboard-btn">
-          <?= esc_html__('View opportunities', 'crea-maillage-audit'); ?>
+          <?= esc_html__('View opportunities', 'internal-linking-pro'); ?>
         </a>
       </div>
     </div>
@@ -181,108 +181,108 @@ elseif ($value < 5) $class = 'green';
 
         <div class="stat-col">
           <span class="stat-icon stat-icon-red"><span class="dashicons dashicons-admin-links" aria-hidden="true"></span></span>
-          <div class="stat-title"><?= esc_html__('Orphans', 'crea-maillage-audit'); ?> 
+          <div class="stat-title"><?= esc_html__('Orphans', 'internal-linking-pro'); ?>
             <span class="tooltip">
               <span class="tooltip-icon">Ⓘ</span>
-              <span class="tooltip-text"><?= esc_html__('Pages or posts without incoming internal links', 'crea-maillage-audit'); ?></span>
+              <span class="tooltip-text"><?= esc_html__('Pages or posts without incoming internal links', 'internal-linking-pro'); ?></span>
             </span>
           </div>
           <div class="stat-main">
             <div class="stat-value red"><?=  $orphans; ?></div>
-            <div class="stat-label"><?= esc_html__('Without incoming internal links', 'crea-maillage-audit'); ?></div>
+            <div class="stat-label"><?= esc_html__('Without incoming internal links', 'internal-linking-pro'); ?></div>
           </div>
         </div>
 
         <div class="stat-col">
           <span class="stat-icon stat-icon-orange"><span class="dashicons dashicons-external" aria-hidden="true"></span></span>
-          <div class="stat-title"><?= esc_html__('Without outgoing links', 'crea-maillage-audit'); ?>
+          <div class="stat-title"><?= esc_html__('Without outgoing links', 'internal-linking-pro'); ?>
             <span class="tooltip">
               <span class="tooltip-icon">Ⓘ</span>
-              <span class="tooltip-text"><?= esc_html__('Pages or posts without outgoing internal links', 'crea-maillage-audit'); ?></span>
+              <span class="tooltip-text"><?= esc_html__('Pages or posts without outgoing internal links', 'internal-linking-pro'); ?></span>
             </span>
           </div>
           <div class="stat-main">
             <div class="stat-value orange"><?=  $without_outgoing; ?></div>
-            <div class="stat-label"><?= esc_html__('Without outgoing internal links', 'crea-maillage-audit'); ?></div>
+            <div class="stat-label"><?= esc_html__('Without outgoing internal links', 'internal-linking-pro'); ?></div>
           </div>
         </div>
 
         <div class="stat-col">
           <span class="stat-icon stat-icon-red"><span class="dashicons dashicons-admin-links" aria-hidden="true"></span></span>
-          <div class="stat-title"><?= esc_html__('Isolated', 'crea-maillage-audit'); ?>
+          <div class="stat-title"><?= esc_html__('Isolated', 'internal-linking-pro'); ?>
             <span class="tooltip">
               <span class="tooltip-icon">Ⓘ</span>
-              <span class="tooltip-text"><?= esc_html__('Posts without internal links from other posts', 'crea-maillage-audit'); ?></span>
+              <span class="tooltip-text"><?= esc_html__('Posts without internal links from other posts', 'internal-linking-pro'); ?></span>
             </span>
           </div>
           <div class="stat-main">
             <div class="stat-value red"><?=  $isolated; ?></div>
-            <div class="stat-label"><?= esc_html__('Unlinked', 'crea-maillage-audit'); ?></div>
+            <div class="stat-label"><?= esc_html__('Unlinked', 'internal-linking-pro'); ?></div>
           </div>
         </div>
 
         <div class="stat-col">
           <span class="stat-icon stat-icon-blue"><span class="dashicons dashicons-networking" aria-hidden="true"></span></span>
-          <div class="stat-title"><?= esc_html__('Clusters', 'crea-maillage-audit'); ?>
+          <div class="stat-title"><?= esc_html__('Clusters', 'internal-linking-pro'); ?>
             <span class="tooltip">
               <span class="tooltip-icon">Ⓘ</span>
-              <span class="tooltip-text"><?= esc_html(sprintf(__('Total number of clusters with %d links', 'crea-maillage-audit'), (int)get_option('cma_cluster_threshold', 3))); ?></span>
+              <span class="tooltip-text"><?= esc_html(sprintf(__('Total number of clusters with %d links', 'internal-linking-pro'), (int)get_option('cma_cluster_threshold', 3))); ?></span>
             </span>
           </div>
           <div class="stat-main">
             <div class="stat-value blue"><?= $total_clusters; ?></div>
-            <div class="stat-label"><?= esc_html__('Clusters', 'crea-maillage-audit'); ?></div>
+            <div class="stat-label"><?= esc_html__('Clusters', 'internal-linking-pro'); ?></div>
           </div>
         </div>
 
         <div class="stat-col">
           <span class="stat-icon stat-icon-blue"><span class="dashicons dashicons-chart-line" aria-hidden="true"></span></span>
-          <div class="stat-title"><?= esc_html__('Average links', 'crea-maillage-audit'); ?>
+          <div class="stat-title"><?= esc_html__('Average links', 'internal-linking-pro'); ?>
             <span class="tooltip">
               <span class="tooltip-icon">Ⓘ</span>
-              <span class="tooltip-text"><?= esc_html__('Average links per page or post', 'crea-maillage-audit'); ?></span>
+              <span class="tooltip-text"><?= esc_html__('Average links per page or post', 'internal-linking-pro'); ?></span>
             </span>
           </div>
           <div class="stat-main">
             <div class="stat-value blue"><?= esc_html((string)$metrics['avg_links']); ?></div>
-            <div class="stat-label"><?= esc_html__('Links', 'crea-maillage-audit'); ?></div>
+            <div class="stat-label"><?= esc_html__('Links', 'internal-linking-pro'); ?></div>
           </div>
         </div>
 
          <div class="stat-col">
           <span class="stat-icon stat-icon-blue"><span class="dashicons dashicons-admin-links" aria-hidden="true"></span></span>
-          <div class="stat-title"><?= esc_html__('Internal links', 'crea-maillage-audit'); ?>
+          <div class="stat-title"><?= esc_html__('Internal links', 'internal-linking-pro'); ?>
             <span class="tooltip">
               <span class="tooltip-icon">Ⓘ</span>
-              <span class="tooltip-text"><?= esc_html__('Total internal links on pages or posts', 'crea-maillage-audit'); ?></span>
+              <span class="tooltip-text"><?= esc_html__('Total internal links on pages or posts', 'internal-linking-pro'); ?></span>
             </span>
           </div>
           <div class="stat-main">
             <div class="stat-value blue"><?= esc_html((string)(int)$internal_links); ?></div>
-            <div class="stat-label"><?= esc_html__('Links', 'crea-maillage-audit'); ?></div>
+            <div class="stat-label"><?= esc_html__('Links', 'internal-linking-pro'); ?></div>
           </div>
         </div>
 
          <div class="stat-col">
           <span class="stat-icon stat-icon-blue"><span class="dashicons dashicons-admin-site-alt3" aria-hidden="true"></span></span>
-          <div class="stat-title"><?= esc_html__('External links', 'crea-maillage-audit'); ?>
+          <div class="stat-title"><?= esc_html__('External links', 'internal-linking-pro'); ?>
             <span class="tooltip">
               <span class="tooltip-icon">Ⓘ</span>
-              <span class="tooltip-text"><?= esc_html__('Total external links on pages or posts', 'crea-maillage-audit'); ?></span>
+              <span class="tooltip-text"><?= esc_html__('Total external links on pages or posts', 'internal-linking-pro'); ?></span>
             </span>
           </div>
           <div class="stat-main">
             <div class="stat-value blue"><?= esc_html((string)(int)$external_links); ?></div>
-            <div class="stat-label"><?= esc_html__('Links', 'crea-maillage-audit'); ?></div>
+            <div class="stat-label"><?= esc_html__('Links', 'internal-linking-pro'); ?></div>
           </div>
         </div>
 
          <div class="stat-col">
           <span class="stat-icon stat-icon-red"><span class="dashicons dashicons-media-document" aria-hidden="true"></span></span>
-          <div class="stat-title"><?= esc_html__('Link / 100 words', 'crea-maillage-audit'); ?></div>
+          <div class="stat-title"><?= esc_html__('Link / 100 words', 'internal-linking-pro'); ?></div>
           <div class="stat-main">
             <div class="stat-value <?= esc_attr($class); ?>"><?= esc_html((string)$value); ?></div>
-            <div class="stat-label"><?= esc_html__('Links', 'crea-maillage-audit'); ?></div>
+            <div class="stat-label"><?= esc_html__('Links', 'internal-linking-pro'); ?></div>
           </div>
         </div>
 
@@ -297,11 +297,11 @@ elseif ($value < 5) $class = 'green';
 
 <thead>
 <tr>
-    <th><?= esc_html__('Cluster list | Average size', 'crea-maillage-audit'); ?> : <?= esc_html((string)$avg_cluster_size); ?> | <?= esc_html__('Minimum cluster size', 'crea-maillage-audit'); ?> : <?= esc_html((string)(int)get_option('cma_cluster_threshold', 3)); ?> 
+    <th><?= esc_html__('Cluster list | Average size', 'internal-linking-pro'); ?> : <?= esc_html((string)$avg_cluster_size); ?> | <?= esc_html__('Minimum cluster size', 'internal-linking-pro'); ?> : <?= esc_html((string)(int)get_option('cma_cluster_threshold', 3)); ?>
       <a class="setting-link" href="<?= esc_url(admin_url('tools.php?page=cma-maillage&view=settings')); ?>"><span class="dashicons dashicons-admin-settings"></span></a>
     </th>
-    <th class="cma-center"><?= esc_html__('Pages', 'crea-maillage-audit'); ?></th>
-    <th class="cma-center"><?= esc_html__('Score', 'crea-maillage-audit'); ?></th>
+    <th class="cma-center"><?= esc_html__('Pages', 'internal-linking-pro'); ?></th>
+    <th class="cma-center"><?= esc_html__('Score', 'internal-linking-pro'); ?></th>
     <th class="cma-center"></th>
 </tr>
 </thead>
@@ -344,7 +344,7 @@ usort($clusters, function($a, $b) {
     </td>
 
     <td class="cma-center">
-        <button class="cma-toggle"><?= esc_html__('Details', 'crea-maillage-audit'); ?></button>
+        <button class="cma-toggle"><?= esc_html__('Details', 'internal-linking-pro'); ?></button>
     </td>
 
 </tr>
@@ -362,9 +362,9 @@ usort($clusters, function($a, $b) {
           echo '<strong>' . esc_html(strip_tags($p['title'])) . '</strong>';
 
           if (!empty($p['anchors']) && is_array($p['anchors'])) {
-              echo '<br><small><em>' . esc_html__('Anchors:', 'crea-maillage-audit') . ' ' . esc_html(implode(' | ', $p['anchors'])) . '</em></small>';
+              echo '<br><small><em>' . esc_html__('Anchors:', 'internal-linking-pro') . ' ' . esc_html(implode(' | ', $p['anchors'])) . '</em></small>';
           } else {
-              echo '<br><small><em>' . esc_html__('Anchors:', 'crea-maillage-audit') . ' —</em></small>';
+              echo '<br><small><em>' . esc_html__('Anchors:', 'internal-linking-pro') . ' —</em></small>';
           }
 
           echo '</li>';

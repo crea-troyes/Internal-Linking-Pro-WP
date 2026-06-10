@@ -4,40 +4,40 @@ if (!defined('ABSPATH')) exit;
 $view = isset($_GET['view']) ? sanitize_key(wp_unslash((string) $_GET['view'])) : 'dashboard';
 
 $col_in = ($view === "isolated_posts")
-    ? "<th>" . esc_html__('Incoming links (pages)', 'crea-maillage-audit') . "</th>"
-    : "<th>" . esc_html__('Incoming links (posts + pages)', 'crea-maillage-audit') . "</th>";
+    ? "<th>" . esc_html__('Incoming links (pages)', 'internal-linking-pro') . "</th>"
+    : "<th>" . esc_html__('Incoming links (posts + pages)', 'internal-linking-pro') . "</th>";
 
 echo '<p>' . esc_html($intro) . '</p>';
 
 echo '<div class="cma-table-wrap">';
-echo '<div class="cma-search-wrapper"><input type="text" id="cma-search" placeholder="' . esc_attr__('Search content...', 'crea-maillage-audit') . '"><div id="cma-count"></div></div>';
+echo '<div class="cma-search-wrapper"><input type="text" id="cma-search" placeholder="' . esc_attr__('Search content...', 'internal-linking-pro') . '"><div id="cma-count"></div></div>';
 echo '<table id="tableau" class="widefat cma-dynamic-table striped">';
 echo '<tr>';
-echo '<th>' . esc_html__('Type', 'crea-maillage-audit') . '</th>';
-echo '<th>' . esc_html__('Title', 'crea-maillage-audit') . '</th>';
-if ($view === "isolated_posts") { echo '<th>' . esc_html__('Incoming links (posts)', 'crea-maillage-audit') . '</th>'; }
+echo '<th>' . esc_html__('Type', 'internal-linking-pro') . '</th>';
+echo '<th>' . esc_html__('Title', 'internal-linking-pro') . '</th>';
+if ($view === "isolated_posts") { echo '<th>' . esc_html__('Incoming links (posts)', 'internal-linking-pro') . '</th>'; }
 echo $col_in;
-echo '<th>' . esc_html__('Internal outgoing links', 'crea-maillage-audit') . '</th>';
-echo '<th>' . esc_html__('External outgoing links', 'crea-maillage-audit') . '</th>';
-echo '<th title="' . esc_html__('Outbound internal links per 100 words', 'crea-maillage-audit') . '">' . esc_html__('Internal links / 100 words', 'crea-maillage-audit') . ' 
+echo '<th>' . esc_html__('Internal outgoing links', 'internal-linking-pro') . '</th>';
+echo '<th>' . esc_html__('External outgoing links', 'internal-linking-pro') . '</th>';
+echo '<th title="' . esc_html__('Outbound internal links per 100 words', 'internal-linking-pro') . '">' . esc_html__('Internal links / 100 words', 'internal-linking-pro') . '
         <span class="tooltip">
             <span class="tooltip-icon">Ⓘ</span>
             <span class="tooltip-text">
-                <strong>'. esc_html__('Internal links per 100 words', 'crea-maillage-audit').'</strong><br>
-                    '. esc_html__('Ideal:', 'crea-maillage-audit').' <strong>0.8 to 1.5</strong><br>
-                    '. esc_html__('↓ = low internal linking', 'crea-maillage-audit').'<br>
-                    '. esc_html__('↑ = overload', 'crea-maillage-audit').'
+                <strong>'. esc_html__('Internal links per 100 words', 'internal-linking-pro').'</strong><br>
+                    '. esc_html__('Ideal:', 'internal-linking-pro').' <strong>0.8 to 1.5</strong><br>
+                    '. esc_html__('↓ = low internal linking', 'internal-linking-pro').'<br>
+                    '. esc_html__('↑ = overload', 'internal-linking-pro').'
             </span>
         </span>
     </th>';
 echo '<th>PageRank</th>';
-echo '<th>' . esc_html__('Internal linking score', 'crea-maillage-audit') . '</th>';
+echo '<th>' . esc_html__('Internal linking score', 'internal-linking-pro') . '</th>';
 echo '</tr></thead><tbody class="tbodyTable">';
 
 if (empty($rows)) {
 
     echo '<tr><td colspan="' . ($view === 'isolated_posts' ? '10' : '9') . '"><em>'
-        . esc_html__('No results found.', 'crea-maillage-audit')
+        . esc_html__('No results found.', 'internal-linking-pro')
         . '</em></td></tr>';
 
 } else {
@@ -48,8 +48,8 @@ if (empty($rows)) {
 
         $type       = $r['type'] === 'Article' ? 'post' : 'page';
         $type_label = $r['type'] === 'Article'
-            ? __('Post', 'crea-maillage-audit')
-            : __('Page', 'crea-maillage-audit');
+            ? __('Post', 'internal-linking-pro')
+            : __('Page', 'internal-linking-pro');
 
         echo '<td><span class="cma-badge cma-badge-' . $type . '">'
             . esc_html($type_label)
@@ -160,7 +160,7 @@ document.getElementById('cma-search').addEventListener('input', function() {
         document.getElementById('cma-count').classList.remove('empty');
     }
 
-document.getElementById('cma-count').innerText = visibleCount + " <?php echo esc_js(__('content item(s) found', 'crea-maillage-audit')); ?>";
+document.getElementById('cma-count').innerText = visibleCount + " <?php echo esc_js(__('content item(s) found', 'internal-linking-pro')); ?>";
 
 });
 </script>
