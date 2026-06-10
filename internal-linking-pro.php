@@ -1,9 +1,11 @@
 <?php
 /**
  * Plugin Name: ILP - Internal Linking Pro
+ * Plugin URI: https://wp.crea-troyes.fr/
  * Description: Advanced internal linking audit tool (orphan pages, link graph, PageRank, clusters). Admin-only with manual scan.
  * Version: 2.3.0
  * Author: GUILLIER Alban
+ * Author URI: https://portfolio.crea-troyes.fr/
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * License: GPL-2.0-or-later
