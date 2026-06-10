@@ -180,6 +180,7 @@ elseif ($value < 5) $class = 'green';
       <div class="top-stats">
 
         <div class="stat-col">
+          <span class="stat-icon stat-icon-red"><span class="dashicons dashicons-admin-links" aria-hidden="true"></span></span>
           <div class="stat-title"><?= esc_html__('Orphans', 'crea-maillage-audit'); ?> 
             <span class="tooltip">
               <span class="tooltip-icon">Ⓘ</span>
@@ -193,6 +194,7 @@ elseif ($value < 5) $class = 'green';
         </div>
 
         <div class="stat-col">
+          <span class="stat-icon stat-icon-orange"><span class="dashicons dashicons-external" aria-hidden="true"></span></span>
           <div class="stat-title"><?= esc_html__('Without outgoing links', 'crea-maillage-audit'); ?>
             <span class="tooltip">
               <span class="tooltip-icon">Ⓘ</span>
@@ -206,6 +208,7 @@ elseif ($value < 5) $class = 'green';
         </div>
 
         <div class="stat-col">
+          <span class="stat-icon stat-icon-red"><span class="dashicons dashicons-admin-links" aria-hidden="true"></span></span>
           <div class="stat-title"><?= esc_html__('Isolated', 'crea-maillage-audit'); ?>
             <span class="tooltip">
               <span class="tooltip-icon">Ⓘ</span>
@@ -219,6 +222,7 @@ elseif ($value < 5) $class = 'green';
         </div>
 
         <div class="stat-col">
+          <span class="stat-icon stat-icon-blue"><span class="dashicons dashicons-networking" aria-hidden="true"></span></span>
           <div class="stat-title"><?= esc_html__('Clusters', 'crea-maillage-audit'); ?>
             <span class="tooltip">
               <span class="tooltip-icon">Ⓘ</span>
@@ -232,6 +236,7 @@ elseif ($value < 5) $class = 'green';
         </div>
 
         <div class="stat-col">
+          <span class="stat-icon stat-icon-blue"><span class="dashicons dashicons-chart-line" aria-hidden="true"></span></span>
           <div class="stat-title"><?= esc_html__('Average links', 'crea-maillage-audit'); ?>
             <span class="tooltip">
               <span class="tooltip-icon">Ⓘ</span>
@@ -245,6 +250,7 @@ elseif ($value < 5) $class = 'green';
         </div>
 
          <div class="stat-col">
+          <span class="stat-icon stat-icon-blue"><span class="dashicons dashicons-admin-links" aria-hidden="true"></span></span>
           <div class="stat-title"><?= esc_html__('Internal links', 'crea-maillage-audit'); ?>
             <span class="tooltip">
               <span class="tooltip-icon">Ⓘ</span>
@@ -258,6 +264,7 @@ elseif ($value < 5) $class = 'green';
         </div>
 
          <div class="stat-col">
+          <span class="stat-icon stat-icon-blue"><span class="dashicons dashicons-admin-site-alt3" aria-hidden="true"></span></span>
           <div class="stat-title"><?= esc_html__('External links', 'crea-maillage-audit'); ?>
             <span class="tooltip">
               <span class="tooltip-icon">Ⓘ</span>
@@ -271,6 +278,7 @@ elseif ($value < 5) $class = 'green';
         </div>
 
          <div class="stat-col">
+          <span class="stat-icon stat-icon-red"><span class="dashicons dashicons-media-document" aria-hidden="true"></span></span>
           <div class="stat-title"><?= esc_html__('Link / 100 words', 'crea-maillage-audit'); ?></div>
           <div class="stat-main">
             <div class="stat-value <?= esc_attr($class); ?>"><?= esc_html((string)$value); ?></div>
@@ -311,7 +319,16 @@ usort($clusters, function($a, $b) {
 <tr class="cma-tr-main">
 
     <td class="cma-td-title">
-        <?php echo esc_html($cluster['pillar']['title']); ?>
+        <strong><?php echo esc_html($cluster['pillar']['title']); ?></strong>
+        <?php
+        $pillar_url = (string)($cluster['pillar']['url'] ?? '');
+        $pillar_path = $pillar_url ? (string)parse_url($pillar_url, PHP_URL_PATH) : '';
+        ?>
+        <?php if ($pillar_url): ?>
+            <a class="cma-cluster-url" href="<?php echo esc_url($pillar_url); ?>" target="_blank" rel="noopener noreferrer">
+                <?php echo esc_html($pillar_path ?: $pillar_url); ?>
+            </a>
+        <?php endif; ?>
     </td>
 
     <td class="cma-center">

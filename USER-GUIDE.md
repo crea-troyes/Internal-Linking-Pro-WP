@@ -130,11 +130,12 @@ Internal PageRank estimates the relative importance of content within the site's
 
 ### Individual Internal-Linking Score
 
-The individual score, out of 100, depends on:
+The individual score, out of 100, combines:
 
-- incoming links, for a maximum of 60 points;
-- outgoing links, for a maximum of 40 points;
-- a 20-point penalty for isolated posts.
+- incoming-link authority, progressively scored up to 55 points;
+- outgoing-link coverage, progressively scored up to 30 points;
+- internal-link density, for up to 15 points;
+- a 10-point penalty for posts that receive no link from another post.
 
 Table colors make interpretation easier:
 
@@ -158,10 +159,11 @@ The **Internal linking score** gauge displays a global score out of 100. This sc
 
 - the proportion of content with incoming links;
 - the proportion of content with outgoing links;
-- the average depth of incoming and outgoing links;
+- the progressive depth of incoming and outgoing links;
 - the proportion of posts that are not isolated;
 - the proportion of content with both incoming and outgoing links;
 - the global internal-link density per 100 words.
+- the proportion of content contained in the site's largest connected internal-link component.
 
 ### Analyzed Content
 
@@ -255,11 +257,15 @@ For each suggestion, the table displays:
 - their URLs;
 - a relevance score (**Relevance**).
 
-The score is based on title similarity. A suggestion is displayed only when:
+The score primarily measures editorial relevance. It combines:
 
-- both content items have the same type: post to post or page to page;
-- the link does not already exist;
-- title similarity is greater than 60%.
+- overlap between significant content, title, and slug terms, with rarer terms weighted more heavily;
+- title sequence and slug similarity;
+- proximity in the existing internal-link graph, limited to 5% of the displayed relevance.
+
+Suggestions can connect a post and a page when they are topically relevant. Existing links and weak matches are excluded.
+The target's lack of incoming links is used only to order suggestions with the same relevance; it does not inflate the displayed percentage.
+Run a new scan after updating the plugin so existing cached content receives its thematic keyword profile.
 
 Suggestions are sorted by decreasing relevance and limited to the top 50 opportunities. Always validate editorial relevance before adding a link.
 
@@ -482,4 +488,3 @@ This technical view complements the **Without outgoing links** dashboard counter
 - A useful and natural link is better than an artificial addition intended only to increase a metric.
 - The plugin detects cannibalization risks, not actual Google rankings.
 - Changes made after the last scan are not fully reflected in the dashboard until a new scan is run.
-

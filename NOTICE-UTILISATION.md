@@ -130,11 +130,12 @@ Le PageRank interne estime l'importance relative d'un contenu dans le réseau de
 
 ### Score individuel de maillage interne
 
-Le score individuel, sur 100, dépend :
+Le score individuel, sur 100, combine :
 
-- du nombre de liens entrants, pour un maximum de 60 points ;
-- du nombre de liens sortants, pour un maximum de 40 points ;
-- d'une pénalité de 20 points pour les articles isolés.
+- l'autorité reçue par les liens entrants, évaluée progressivement jusqu'à 55 points ;
+- la couverture des liens sortants, évaluée progressivement jusqu'à 30 points ;
+- la densité de liens internes, pour un maximum de 15 points ;
+- une pénalité de 10 points pour les articles qui ne reçoivent aucun lien depuis un autre article.
 
 Les couleurs du tableau facilitent la lecture :
 
@@ -158,10 +159,11 @@ Le cadran **Internal linking score** affiche une note globale sur 100. Ce score 
 
 - la proportion de contenus disposant de liens entrants ;
 - la proportion de contenus disposant de liens sortants ;
-- la profondeur moyenne des liens entrants et sortants ;
+- la profondeur progressive des liens entrants et sortants ;
 - la proportion d'articles non isolés ;
 - la proportion de contenus ayant à la fois des liens entrants et sortants ;
 - la densité globale de liens internes pour 100 mots.
+- la proportion de contenus appartenant à la plus grande composante connectée du maillage interne.
 
 ### Analyzed content
 
@@ -255,11 +257,15 @@ Pour chaque suggestion, le tableau affiche :
 - leur URL ;
 - un score de pertinence (**Relevance**).
 
-Le score repose sur la proximité des titres. Une suggestion n'est affichée que si :
+Le score mesure principalement la pertinence éditoriale. Il combine :
 
-- les deux contenus sont du même type : article vers article ou page vers page ;
-- le lien n'existe pas déjà ;
-- la similarité des titres dépasse 60 %.
+- les termes significatifs communs aux contenus, aux titres et aux slugs, en donnant plus de poids aux termes rares ;
+- la proximité des séquences de titres et des slugs ;
+- la proximité dans le graphe de liens internes existant, limitée à 5 % de la pertinence affichée.
+
+Une suggestion peut relier une page et un article si leur proximité thématique est suffisante. Les liens existants et les rapprochements faibles sont exclus.
+L'absence de liens entrants vers la cible sert uniquement à départager les suggestions de même pertinence ; elle ne gonfle pas le pourcentage affiché.
+Relancez un scan après la mise à jour de l'extension afin que les contenus déjà en cache reçoivent leur profil de mots-clés thématiques.
 
 Les suggestions sont classées par pertinence décroissante et limitées aux 50 meilleures opportunités. Validez toujours la pertinence éditoriale avant d'ajouter un lien.
 
@@ -482,4 +488,3 @@ Cette vue technique complète le compteur **Without outgoing links** du tableau 
 - Un lien utile et naturel vaut mieux qu'un ajout artificiel destiné uniquement à augmenter un indicateur.
 - L'extension détecte des risques de cannibalisation, pas les positions réelles dans Google.
 - Les modifications réalisées après le dernier scan ne sont pleinement intégrées au tableau de bord qu'après un nouveau scan.
-

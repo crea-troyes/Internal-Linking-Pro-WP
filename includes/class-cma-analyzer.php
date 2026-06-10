@@ -17,31 +17,35 @@ final class CMA_Analyzer {
     /**
      * Calcul du score de maillage interne
      */
-    private function compute_score(int $incoming, int $outgoing, bool $is_isolated): int {
+    private function compute_score(int $incoming, int $outgoing, bool $is_isolated, int $words = 0): int {
+        $incoming_score = 55 * (log(1 + min(max(0, $incoming), 8)) / log(9));
+        $outgoing_score = 30 * (log(1 + min(max(0, $outgoing), 6)) / log(7));
+        $density = $words > 0 ? ($outgoing / $words) * 100 : 0;
+        $density_score = $this->compute_density_quality($density) * 1.5;
+        $isolation_penalty = $is_isolated ? 10 : 0;
 
-        $score = 0;
+        return max(0, min(100, (int)round(
+            $incoming_score +
+            $outgoing_score +
+            $density_score -
+            $isolation_penalty
+        )));
+    }
 
-        // Score entrants (max 60)
-        if ($incoming == 0) $score += 0;
-        elseif ($incoming <= 2) $score += 20;
-        elseif ($incoming <= 5) $score += 40;
-        else $score += 60;
-
-        // Score sortants (max 40)
-        if ($outgoing == 0) $score += 0;
-        elseif ($outgoing <= 2) $score += 10;
-        elseif ($outgoing <= 5) $score += 25;
-        else $score += 40;
-
-        // pénalité isolation
-        if ($is_isolated) {
-            $score -= 20;
+    private function compute_density_quality(float $links_per_100_words): float {
+        if ($links_per_100_words <= 0) {
+            return 0;
         }
 
-        if ($score < 0) $score = 0;
-        if ($score > 100) $score = 100;
+        if ($links_per_100_words < 0.8) {
+            return ($links_per_100_words / 0.8) * 10;
+        }
 
-        return $score;
+        if ($links_per_100_words <= 1.5) {
+            return 10;
+        }
+
+        return max(4, 10 - min(6, ($links_per_100_words - 1.5) * 2));
     }
 
     public function get_table_rows(string $filter): array {
@@ -57,29 +61,11 @@ final class CMA_Analyzer {
         $items = $this->data['items'] ?? [];
         $post_in  = $this->data['posts_only_in'] ?? [];
         $out_external_count = $this->data['out_external_count'] ?? [];
-        $edges = $this->data['edges'] ?? [];
         $out_internal = $this->data['out_internal'] ?? [];
+        $incoming_global = $this->data['incoming_global'] ?? [];
         $pagerank = $this->compute_pagerank();
 
         $rows = [];
-
-        $pages_incoming = [];
-
-        foreach ($edges as $e) {
-
-            $from = (int)($e['from'] ?? 0);
-            $to   = (int)($e['to'] ?? 0);
-
-            if (($items[$from]['type'] ?? '') !== 'page') {
-                continue;
-            }
-
-            if (!isset($pages_incoming[$to])) {
-                $pages_incoming[$to] = 0;
-            }
-
-            $pages_incoming[$to]++;
-        }
 
         foreach ($post_in as $id => $incoming_count) {
 
@@ -89,10 +75,11 @@ final class CMA_Analyzer {
 
             if ($incoming_count == 0) {
 
-                $out = count($this->data['posts_only_out'][$id] ?? []);
-                $score = $this->compute_score($incoming_count, $out, true);
+                $out = count($out_internal[$id] ?? []);
+                $global_incoming = (int)($incoming_global[$id] ?? 0);
 
                 $words = (int)($items[$id]['words'] ?? 0);
+                $score = $this->compute_score($global_incoming, $out, true, $words);
 
                 $ratio = 0;
                 if ($words > 0) {
@@ -105,8 +92,9 @@ final class CMA_Analyzer {
                     'url' => $items[$id]['url'] ?? '',
                     'out_int' => $out,
                     'in_int' => $post_in[$id] ?? 0,
-                    'inpage_int' => $pages_incoming[$id] ?? 0,
+                    'inpage_int' => $global_incoming,
                     'out_ext' => $out_external_count[$id] ?? 0,
+                    'is_isolated' => true,
                     'score' => $score,
                     'pagerank' => $pagerank[$id] ?? 0,
                     'ratio_links' => $ratio,
@@ -204,7 +192,7 @@ final class CMA_Analyzer {
                 }
             }
 
-            $score = $this->compute_score($in, $out_int, $is_isolated);
+            $score = $this->compute_score($in, $out_int, $is_isolated, $words);
             $score_pagerank = $pagerank[$id] ?? 0;
 
             $rows[] = [
@@ -242,7 +230,7 @@ final class CMA_Analyzer {
         }
 
         $items = $this->data['items'] ?? [];
-        $edges = $this->data['edges'] ?? [];
+        $out_internal = $this->data['out_internal'] ?? [];
 
         $nodes = array_keys($items);
         $N = count($nodes);
@@ -265,24 +253,44 @@ final class CMA_Analyzer {
             $incoming[$id] = [];
         }
 
-        // construction du graphe
-        foreach ($edges as $e) {
+        // Une source ne transmet son autorité qu'une fois par cible, même si le lien
+        // apparaît plusieurs fois dans son contenu.
+        if (empty($out_internal) && !empty($this->data['edges'])) {
+            foreach ((array)$this->data['edges'] as $edge) {
+                $from = (int)($edge['from'] ?? 0);
+                $to = (int)($edge['to'] ?? 0);
+                if ($from > 0 && $to > 0) {
+                    $out_internal[$from][] = $to;
+                }
+            }
+        }
 
-            $from = isset($e['from']) ? (int)$e['from'] : 0;
-            $to   = isset($e['to']) ? (int)$e['to'] : 0;
-
-            if (!isset($out[$from]) || !isset($incoming[$to])) {
+        foreach ($out_internal as $from_id => $targets) {
+            $from = (int)$from_id;
+            if (!isset($out[$from])) {
                 continue;
             }
 
-            $out[$from][] = $to;
-            $incoming[$to][] = $from;
+            foreach (array_values(array_unique(array_map('intval', (array)$targets))) as $to) {
+                if ($from === $to || !isset($incoming[$to])) {
+                    continue;
+                }
+
+                $out[$from][] = $to;
+                $incoming[$to][] = $from;
+            }
+        }
+
+        $edge_count = array_sum(array_map('count', $out));
+        if ($edge_count === 0) {
+            $this->pagerank_cache = array_fill_keys($nodes, 0);
+            return $this->pagerank_cache;
         }
 
         // paramètres de convergence
-        $epsilon = 0.00001;
+        $epsilon = 0.0000000001;
         $delta = 1;
-        $max_iterations = 100;
+        $max_iterations = 200;
         $iteration = 0;
 
         while ($delta > $epsilon && $iteration < $max_iterations) {
@@ -323,10 +331,13 @@ final class CMA_Analyzer {
             $iteration++;
         }
 
-        // normalisation pour affichage (0 → 100)
+        // Normalisation pour affichage : le score minimal observé devient 0 et
+        // le contenu qui reçoit le plus d'autorité devient 100.
         $max = max($rank);
+        $min = min($rank);
+        $range = $max - $min;
 
-        if ($max == 0) {
+        if ($max <= 0) {
             foreach ($rank as $id => $v) {
                 $rank[$id] = 0;
             }
@@ -334,8 +345,16 @@ final class CMA_Analyzer {
             return $rank;
         }
 
+        if ($range < 0.000000000001) {
+            foreach ($rank as $id => $v) {
+                $rank[$id] = 100;
+            }
+            $this->pagerank_cache = $rank;
+            return $rank;
+        }
+
         foreach ($rank as $id => $v) {
-            $rank[$id] = round(($v / $max) * 100);
+            $rank[$id] = round((($v - $min) / $range) * 100, 1);
         }
 
         $this->pagerank_cache = $rank;
@@ -381,7 +400,8 @@ final class CMA_Analyzer {
                 }
             }
 
-            $score = $this->compute_score($in, $out_int, $is_isolated);
+            $words = (int)($items[$id]['words'] ?? 0);
+            $score = $this->compute_score($in, $out_int, $is_isolated, $words);
 
             $rows[] = [
                 'type' => ($type === 'page') ? 'Page' : 'Article',
@@ -415,6 +435,7 @@ final class CMA_Analyzer {
         $total_words = 0;
         $orphans = 0;
         $without_internal_outgoing = 0;
+        $total_posts = 0;
         $isolated_posts = 0;
         $strong_pages = 0;
         $incoming_depth_sum = 0;
@@ -426,8 +447,8 @@ final class CMA_Analyzer {
 
             $internal_links += $outgoing;
             $total_words += $r['words'];
-            $incoming_depth_sum += min($incoming, 10) / 10;
-            $outgoing_depth_sum += min($outgoing, 6) / 6;
+            $incoming_depth_sum += log(1 + min($incoming, 8)) / log(9);
+            $outgoing_depth_sum += log(1 + min($outgoing, 6)) / log(7);
 
             if ($incoming === 0) {
                 $orphans++;
@@ -435,6 +456,10 @@ final class CMA_Analyzer {
 
             if ($outgoing === 0) {
                 $without_internal_outgoing++;
+            }
+
+            if (($r['type'] ?? '') === 'Article') {
+                $total_posts++;
             }
 
             if (!empty($r['is_isolated'])) {
@@ -446,30 +471,25 @@ final class CMA_Analyzer {
             }
         }
 
-        // Score global volontairement exigeant : la couverture seule ne suffit pas, il faut aussi une profondeur correcte.
+        // Le score combine couverture, profondeur, équilibre, isolation, densité
+        // éditoriale et cohésion du graphe, sans laisser un seul indicateur dominer.
         $incoming_coverage_score = $total ? (($total - $orphans) / $total) * 15 : 0;
-        $outgoing_coverage_score = $total ? (($total - $without_internal_outgoing) / $total) * 10 : 0;
-        $incoming_depth_score = $total ? ($incoming_depth_sum / $total) * 25 : 0;
-        $outgoing_depth_score = $total ? ($outgoing_depth_sum / $total) * 20 : 0;
-        $isolation_score = $total ? (($total - $isolated_posts) / $total) * 10 : 0;
+        $outgoing_coverage_score = $total ? (($total - $without_internal_outgoing) / $total) * 15 : 0;
+        $incoming_depth_score = $total ? ($incoming_depth_sum / $total) * 15 : 0;
+        $outgoing_depth_score = $total ? ($outgoing_depth_sum / $total) * 10 : 0;
+        $isolation_score = $total_posts ? (($total_posts - $isolated_posts) / $total_posts) * 10 : ($total ? 10 : 0);
         $balanced_pages_score = $total ? ($strong_pages / $total) * 10 : 0;
+        $connectivity_score = $this->compute_graph_connectivity() * 15;
 
-        $links_per_100_words = 0;
+        $links_per_100_words_raw = 0.0;
 
         if ($total_words > 0) {
-            $links_per_100_words = round(($internal_links / $total_words) * 100, 2);
+            $links_per_100_words_raw = ($internal_links / $total_words) * 100;
         }
 
-        if ($links_per_100_words <= 0) {
-            $density_score = 0;
-        } elseif ($links_per_100_words < 0.8) {
-            $density_score = ($links_per_100_words / 0.8) * 10;
-        } elseif ($links_per_100_words <= 1.8) {
-            $density_score = 10;
-        } else {
-            $density_score = max(4, 10 - min(6, ($links_per_100_words - 1.8) * 2));
-        }
+        $density_score = $this->compute_density_quality($links_per_100_words_raw);
 
+        $links_per_100_words = round($links_per_100_words_raw, 2);
         $global_score = (int)round(
             $incoming_coverage_score +
             $outgoing_coverage_score +
@@ -477,8 +497,12 @@ final class CMA_Analyzer {
             $outgoing_depth_score +
             $isolation_score +
             $balanced_pages_score +
-            $density_score
+            $density_score +
+            $connectivity_score
         );
+        if ($internal_links === 0) {
+            $global_score = 0;
+        }
         $global_score = max(0, min(100, $global_score));
         $avg_links = $total ? round($internal_links / $total, 2) : 0;
 
@@ -513,10 +537,79 @@ final class CMA_Analyzer {
                 'isolation' => round($isolation_score, 2),
                 'balanced_pages' => round($balanced_pages_score, 2),
                 'density' => round($density_score, 2),
+                'connectivity' => round($connectivity_score, 2),
             ],
         ];
 
         return $this->dashboard_metrics_cache;
+    }
+
+    private function compute_graph_connectivity(): float {
+        $items = $this->data['items'] ?? [];
+        $out_internal = $this->data['out_internal'] ?? [];
+        $nodes = array_map('intval', array_keys($items));
+        $total = count($nodes);
+
+        if ($total === 0) {
+            return 0;
+        }
+
+        if ($total === 1) {
+            return 1;
+        }
+
+        $adjacency = array_fill_keys($nodes, []);
+        $edge_count = 0;
+
+        foreach ($out_internal as $from_id => $targets) {
+            $from = (int)$from_id;
+            if (!isset($adjacency[$from])) {
+                continue;
+            }
+
+            foreach (array_values(array_unique(array_map('intval', (array)$targets))) as $to) {
+                if ($from === $to || !isset($adjacency[$to])) {
+                    continue;
+                }
+
+                $adjacency[$from][$to] = true;
+                $adjacency[$to][$from] = true;
+                $edge_count++;
+            }
+        }
+
+        if ($edge_count === 0) {
+            return 0;
+        }
+
+        $visited = [];
+        $largest_component = 0;
+
+        foreach ($nodes as $start) {
+            if (isset($visited[$start])) {
+                continue;
+            }
+
+            $size = 0;
+            $stack = [$start];
+            $visited[$start] = true;
+
+            while ($stack) {
+                $node = array_pop($stack);
+                $size++;
+
+                foreach (array_keys($adjacency[$node]) as $neighbor) {
+                    if (!isset($visited[$neighbor])) {
+                        $visited[$neighbor] = true;
+                        $stack[] = $neighbor;
+                    }
+                }
+            }
+
+            $largest_component = max($largest_component, $size);
+        }
+
+        return $largest_component / $total;
     }
 
 
@@ -672,6 +765,26 @@ final class CMA_Analyzer {
 
         $items = $this->data['items'] ?? [];
         $out_internal = $this->data['out_internal'] ?? [];
+        $incoming_global = $this->data['incoming_global'] ?? [];
+        $incoming_sources = [];
+        $token_documents = [];
+        $item_tokens = [];
+        $total_documents = count($items);
+
+        foreach ($items as $id => $item) {
+            $tokens = $this->cma_light_tokens($this->cma_item_topic_text($item));
+            $item_tokens[(int)$id] = $tokens;
+
+            foreach ($tokens as $token) {
+                $token_documents[$token] = ($token_documents[$token] ?? 0) + 1;
+            }
+        }
+
+        foreach ($out_internal as $source_id => $targets) {
+            foreach (array_values(array_unique(array_map('intval', (array)$targets))) as $target_id) {
+                $incoming_sources[$target_id][] = (int)$source_id;
+            }
+        }
 
         $suggestions = [];
         $candidate_pairs = $this->cma_build_title_candidate_pairs($items, 8000);
@@ -691,33 +804,88 @@ final class CMA_Analyzer {
                 $b = $items[$to_id];
 
                 // déjà lié → skip
-                if (in_array($to_id, $out_internal[$from_id] ?? [])) continue;
+                if (in_array($to_id, $out_internal[$from_id] ?? [], true)) continue;
 
-                // même type (post/page)
-                if (($a['type'] ?? '') !== ($b['type'] ?? '')) continue;
-
-                // similarité simple (title)
-                similar_text(
-                    strtolower($a['title']),
-                    strtolower($b['title']),
-                    $percent
+                $tokens_a = $item_tokens[$from_id] ?? [];
+                $tokens_b = $item_tokens[$to_id] ?? [];
+                $topic_similarity = $this->cma_weighted_token_similarity(
+                    $tokens_a,
+                    $tokens_b,
+                    $token_documents,
+                    $total_documents
+                );
+                $title_tokens_a = $this->cma_light_tokens((string)($a['title'] ?? ''));
+                $title_tokens_b = $this->cma_light_tokens((string)($b['title'] ?? ''));
+                $title_similarity = $this->cma_weighted_token_similarity(
+                    $title_tokens_a,
+                    $title_tokens_b,
+                    $token_documents,
+                    $total_documents
                 );
 
-                if ($percent > 60) {
+                similar_text(
+                    implode(' ', $title_tokens_a),
+                    implode(' ', $title_tokens_b),
+                    $title_sequence_similarity
+                );
 
-                    $suggestions[] = [
-                        'from' => $a['title'],
-                        'to'   => $b['title'],
-                        'url_from' => $a['url'],
-                        'url_to'   => $b['url'],
-                        'score' => round($percent)
-                    ];
+                $slug_similarity = $this->cma_conflicts_compare_text(
+                    str_replace('-', ' ', (string)($a['slug'] ?? '')),
+                    str_replace('-', ' ', (string)($b['slug'] ?? ''))
+                );
+                $blended_semantic_score = (
+                    ($topic_similarity * 0.55) +
+                    ($title_similarity * 0.20) +
+                    ($title_sequence_similarity * 0.10) +
+                    ($slug_similarity * 0.15)
+                );
+                $semantic_score = max($blended_semantic_score, $topic_similarity * 0.80);
+
+                if ($semantic_score < 30) {
+                    continue;
                 }
+
+                $neighbors_a = array_values(array_unique(array_merge(
+                    array_map('intval', (array)($out_internal[$from_id] ?? [])),
+                    array_map('intval', (array)($incoming_sources[$from_id] ?? []))
+                )));
+                $neighbors_b = array_values(array_unique(array_merge(
+                    array_map('intval', (array)($out_internal[$to_id] ?? [])),
+                    array_map('intval', (array)($incoming_sources[$to_id] ?? []))
+                )));
+                $graph_similarity = $this->cma_set_similarity($neighbors_a, $neighbors_b);
+                $target_incoming = (int)($incoming_global[$to_id] ?? 0);
+                $target_opportunity = $target_incoming === 0 ? 100 : ($target_incoming <= 2 ? 60 : 0);
+                $score = (int)round(
+                    ($semantic_score * 0.95) +
+                    ($graph_similarity * 0.05)
+                );
+
+                if ($score < 30) {
+                    continue;
+                }
+
+                $suggestions[] = [
+                    'from' => $a['title'],
+                    'to'   => $b['title'],
+                    'url_from' => $a['url'],
+                    'url_to'   => $b['url'],
+                    'score' => min(100, $score),
+                    'semantic_score' => round($semantic_score, 1),
+                    'graph_score' => round($graph_similarity, 1),
+                    'opportunity_score' => $target_opportunity,
+                ];
             }
         }
 
         // tri par pertinence
-        usort($suggestions, fn($a, $b) => $b['score'] <=> $a['score']);
+        usort($suggestions, static function($a, $b) {
+            $score_comparison = $b['score'] <=> $a['score'];
+
+            return $score_comparison !== 0
+                ? $score_comparison
+                : (($b['opportunity_score'] ?? 0) <=> ($a['opportunity_score'] ?? 0));
+        });
 
         $this->link_suggestions_cache = array_slice($suggestions, 0, 50);
 
@@ -727,9 +895,20 @@ final class CMA_Analyzer {
     private function cma_build_title_candidate_pairs(array $items, int $limit): array {
         $pairs = [];
         $index = [];
+        $ids = array_map('intval', array_keys($items));
+
+        if (count($ids) <= 125) {
+            for ($i = 0; $i < count($ids); $i++) {
+                for ($j = $i + 1; $j < count($ids); $j++) {
+                    $pairs[] = [$ids[$i], $ids[$j]];
+                }
+            }
+
+            return array_slice($pairs, 0, $limit);
+        }
 
         foreach ($items as $id => $item) {
-            $tokens = $this->cma_light_tokens((string)($item['title'] ?? ''));
+            $tokens = $this->cma_light_tokens($this->cma_item_topic_text($item));
 
             foreach ($tokens as $token) {
                 $index[$token][] = (int)$id;
@@ -759,6 +938,53 @@ final class CMA_Analyzer {
         return array_values($pairs);
     }
 
+    private function cma_weighted_token_similarity(array $tokens_a, array $tokens_b, array $document_frequency, int $document_count): float {
+        if (empty($tokens_a) || empty($tokens_b) || $document_count === 0) {
+            return 0;
+        }
+
+        $common = array_values(array_intersect($tokens_a, $tokens_b));
+        if (empty($common)) {
+            return 0;
+        }
+
+        $weight = static function(string $token) use ($document_frequency, $document_count): float {
+            return log(($document_count + 1) / (($document_frequency[$token] ?? 0) + 1)) + 1;
+        };
+        $sum_a = array_sum(array_map($weight, $tokens_a));
+        $sum_b = array_sum(array_map($weight, $tokens_b));
+        $sum_common = array_sum(array_map($weight, $common));
+        $coverage = $sum_common / max(0.0001, min($sum_a, $sum_b));
+        $jaccard = $sum_common / max(0.0001, $sum_a + $sum_b - $sum_common);
+        $multi_term_bonus = min(15, max(0, count($common) - 1) * 7.5);
+
+        return min(100, ((($coverage * 0.70) + ($jaccard * 0.30)) * 100) + $multi_term_bonus);
+    }
+
+    private function cma_set_similarity(array $values_a, array $values_b): float {
+        if (empty($values_a) || empty($values_b)) {
+            return 0;
+        }
+
+        $intersection = array_intersect($values_a, $values_b);
+        $union = array_unique(array_merge($values_a, $values_b));
+
+        return count($union) ? (count($intersection) / count($union)) * 100 : 0;
+    }
+
+    private function cma_item_topic_text(array $item): string {
+        $keywords = $item['keywords'] ?? [];
+        if (!is_array($keywords)) {
+            $keywords = [];
+        }
+
+        return trim(implode(' ', [
+            (string)($item['title'] ?? ''),
+            str_replace('-', ' ', (string)($item['slug'] ?? '')),
+            implode(' ', array_map('strval', $keywords)),
+        ]));
+    }
+
     private function cma_light_tokens(string $text): array {
         $text = remove_accents(wp_strip_all_tags($text));
         $text = strtolower($text);
@@ -770,7 +996,10 @@ final class CMA_Analyzer {
             return [];
         }
 
-        $stopwords = ['les','des','une','un','dans','pour','avec','sans','sur','aux','par','que','qui','comment','faire','guide','tuto','wordpress','site','page','article'];
+        $stopwords = array_merge($this->cma_conflicts_stopwords(), [
+            'the','and','for','with','without','from','into','your','you','our','this','that','these',
+            'those','how','what','why','are','was','were','best','tutorial','example',
+        ]);
 
         return array_values(array_unique(array_filter($parts, static function($word) use ($stopwords) {
             return strlen($word) > 2 && !in_array($word, $stopwords, true);
@@ -1243,9 +1472,10 @@ final class CMA_Analyzer {
             $incoming = (int)($incoming_global[$id] ?? 0);
             $outgoing = count($out_internal[$id] ?? []);
             $is_isolated = (($posts_only_in[$id] ?? 0) == 0);
+            $words = (int)($item['words'] ?? 0);
 
             $scores[(int)$id] = [
-                'score' => $this->compute_score($incoming, $outgoing, $is_isolated),
+                'score' => $this->compute_score($incoming, $outgoing, $is_isolated, $words),
                 'incoming' => $incoming,
                 'outgoing' => $outgoing,
                 'pagerank' => $pagerank[$id] ?? 0,

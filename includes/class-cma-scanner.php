@@ -44,6 +44,7 @@ final class CMA_Scanner {
                 'date'     => $p->post_date,
                 'modified' => $p->post_modified,
                 'words'    => 0, // initialisation
+                'keywords' => [],
             ];
             $out_internal[$p->ID] = [];
             $incoming_global[$p->ID] = 0;
@@ -67,6 +68,9 @@ final class CMA_Scanner {
             }
             $word_count = $this->count_words_clean($content);
             $items[$post->ID]['words'] = $word_count;
+            $items[$post->ID]['keywords'] = $this->extract_significant_terms(
+                $post->post_title . ' ' . $content
+            );
 
             $previous_libxml_state = libxml_use_internal_errors(true);
             $dom = new DOMDocument();
@@ -209,6 +213,39 @@ final class CMA_Scanner {
         $words = str_word_count(strtolower($text), 1);
 
         return count($words);
+    }
+
+    private function extract_significant_terms(string $content): array {
+        $text = remove_accents(wp_strip_all_tags($content));
+        $text = strtolower($text);
+        $text = preg_replace('/[^a-z0-9\s-]/', ' ', (string)$text);
+        $parts = preg_split('/[\s-]+/', trim((string)$text));
+
+        if (!is_array($parts)) {
+            return [];
+        }
+
+        $stopwords = [
+            'les','des','une','un','dans','pour','avec','sans','sur','sous','aux','par','que','qui',
+            'quoi','dont','est','sont','vous','nous','vos','nos','leur','leurs','plus','moins','tout',
+            'tous','toute','comment','faire','creer','creation','guide','tuto','tutoriel','meilleur',
+            'meilleure','exemple','exemples','wordpress','site','page','article',
+            'the','and','for','with','without','from','into','your','you','our','this','that','these',
+            'those','how','what','why','are','is','was','were','best','guide','tutorial','example',
+        ];
+        $counts = [];
+
+        foreach ($parts as $word) {
+            if (strlen($word) <= 2 || ctype_digit($word) || in_array($word, $stopwords, true)) {
+                continue;
+            }
+
+            $counts[$word] = ($counts[$word] ?? 0) + 1;
+        }
+
+        arsort($counts);
+
+        return array_slice(array_keys($counts), 0, 30);
     }
 
 }

@@ -26,8 +26,7 @@ echo '<th title="' . esc_html__('Outbound internal links per 100 words', 'crea-m
                 <strong>'. esc_html__('Internal links per 100 words', 'crea-maillage-audit').'</strong><br>
                     '. esc_html__('Ideal:', 'crea-maillage-audit').' <strong>0.8 to 1.5</strong><br>
                     '. esc_html__('↓ = low internal linking', 'crea-maillage-audit').'<br>
-                    '. esc_html__('↑ = overload', 'crea-maillage-audit').'<br>
-                    '. esc_html__('Use only natural and relevant links.', 'crea-maillage-audit').'
+                    '. esc_html__('↑ = overload', 'crea-maillage-audit').'
             </span>
         </span>
     </th>';
@@ -114,8 +113,10 @@ if (empty($rows)) {
             $class_score = "vert-score";
         }
 
+        $pagerank = isset($r['pagerank']) ? (float)$r['pagerank'] : 0.0;
+
         echo '<td><span class="cma-badge pagerank-badge">'
-            . esc_html((string) $r['pagerank'])
+            . esc_html(number_format($pagerank, 1, '.', ''))
             . '</span></td>';
 
         echo '<td>

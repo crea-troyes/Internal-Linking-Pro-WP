@@ -1,5 +1,5 @@
 === ILP - Internal Linking Pro ===
-Contributors: guillieralban
+Contributors: creatroyes
 Tags: seo, internal links, gutenberg, pagerank, content audit
 Requires at least: 6.0
 Tested up to: 7.0
