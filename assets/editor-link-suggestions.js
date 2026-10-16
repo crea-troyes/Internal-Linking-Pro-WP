@@ -531,7 +531,7 @@
       postId: editorContext.postId,
       title: editorContext.title,
       slug: editorContext.slug,
-      content: editorContext.content,
+      content: (editorContext.content || '').slice(0, 100000),
       selection: selectionText,
       blockContext,
     }), [editorContext.postId, editorContext.title, editorContext.slug, editorContext.content, selectionText, blockContext]);
@@ -548,7 +548,7 @@
         setState((prev) => ({ ...prev, loading: true, error: '' }));
 
         apiFetch({
-          path: (config && config.restPath) || '/cma/v1/link-suggestions',
+          path: (config && config.restPath) || '/crea3-internal-linking-pro/v1/link-suggestions',
           method: 'POST',
           data: requestBody,
         }).then((data) => {
@@ -596,4 +596,4 @@
     render: CmaGutenbergSuggestionsPanel,
     icon: 'admin-links',
   });
-})(window.wp, window.CMAGutenbergSuggestions || {});
+})(window.wp, window.crea3IlpEditor || {});

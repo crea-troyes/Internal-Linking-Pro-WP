@@ -1,0 +1,1100 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Crea3 Internal Linking Pro 2.7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-15 15:56+0200\n"
+"PO-Revision-Date: 2026-10-15 16:00+0200\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Crea3 translation workflow\n"
+
+#. translators: 1: retained links percentage, 2: lateral coverage percentage.
+#: includes/views/silos.php:72
+#, php-format
+msgid "%1$d%% retained · %2$d%% lateral"
+msgstr "%1$d%% beibehalten · %2$d%% querverlinkt"
+
+#. translators: %d: number of links pointing outside the silo.
+#: includes/views/silos.php:81
+#, php-format
+msgid "%d link outside silo"
+msgid_plural "%d links outside silo"
+msgstr[0] "%d Link außerhalb des Silos"
+msgstr[1] "%d Links außerhalb des Silos"
+
+#. translators: %d: number of conflict results for the active filter.
+#: includes/views/conflict.php:175
+#, php-format
+msgid "%d result for this filter"
+msgid_plural "%d results for this filter"
+msgstr[0] "%d Ergebnis für diesen Filter"
+msgstr[1] "%d Ergebnisse für diesen Filter"
+
+#: includes/views/setting.php:67
+msgid "3 = weak"
+msgstr "3 = schwach"
+
+#: includes/views/setting.php:68
+msgid "8–10 = strong cluster"
+msgstr "8–10 = starker Cluster"
+
+#. Plugin description.
+#: crea-maillage-audit.php
+msgid ""
+"Advanced internal linking audit tool (orphan pages, link graph, PageRank, "
+"clusters). Admin-only with manual scan."
+msgstr ""
+"Erweitertes internes Link-Audit-Tool (verwaiste Seiten, Linkdiagramm, "
+"PageRank, Cluster). Nur für Administratoren mit manuellem Scan."
+
+#: includes/class-crea3-ilp-admin.php:66
+msgid "AJAX error. A server timeout may have occurred."
+msgstr "AJAX-Fehler. Möglicherweise ist ein Server-Timeout aufgetreten."
+
+#: includes/class-crea3-ilp-admin.php:108
+#: includes/class-crea3-ilp-admin.php:373
+#: includes/class-crea3-ilp-admin.php:402
+#: includes/class-crea3-ilp-admin.php:554
+#: includes/class-crea3-ilp-admin.php:579
+msgid "Access denied."
+msgstr "Zugriff verweigert."
+
+#: includes/views/conflict.php:207
+msgid "Action"
+msgstr "Aktion"
+
+#: includes/class-crea3-ilp-analyzer.php:888
+msgid ""
+"Add contextual links between complementary pages to strengthen the silo "
+"journey."
+msgstr ""
+"Fügen Sie kontextbezogene Links zwischen ergänzenden Seiten hinzu, um die "
+"Nutzerführung innerhalb des Silos zu stärken."
+
+#: includes/class-crea3-ilp-analyzer.php:880
+msgid ""
+"Add contextual links between the pillar page and the silo member pages."
+msgstr ""
+"Fügen Sie kontextbezogene Links zwischen der Pillar-Seite und den Silo-"
+"Mitgliederseiten hinzu."
+
+#: includes/class-crea3-ilp-gutenberg.php:58
+msgid "Add link"
+msgstr "Link hinzufügen"
+
+#: includes/class-crea3-ilp-analyzer.php:904
+msgid ""
+"Add links from the pillar page to priority member pages to distribute "
+"internal authority more effectively."
+msgstr ""
+"Fügen Sie Links von der Pillar-Seite zu vorrangigen Mitgliederseiten hinzu, "
+"um interne Autorität effektiver zu verteilen."
+
+#: includes/views/conflict.php:143 includes/views/conflict.php:203
+msgid "Affected content"
+msgstr "Betroffener Inhalt"
+
+#: includes/views/conflict.php:182
+msgid "All"
+msgstr "Alle"
+
+#: includes/views/conflict.php:88
+msgid "Analysis from"
+msgstr "Analyse von"
+
+#: includes/views/dashboard.php:83
+msgid "Analyzed content"
+msgstr "Analysierter Inhalt"
+
+#: includes/class-crea3-ilp-gutenberg.php:61
+msgid "Analyzed selection"
+msgstr "Analysierte Auswahl"
+
+#: includes/class-crea3-ilp-gutenberg.php:62
+msgid "Analyzing..."
+msgstr "Analysieren..."
+
+#: includes/class-crea3-ilp-admin.php:85
+msgid "Anchor"
+msgstr "Anker"
+
+#: includes/views/dashboard.php:351 includes/views/dashboard.php:353
+msgid "Anchors:"
+msgstr "Anker:"
+
+#: includes/views/dashboard.php:226
+msgid "Average links"
+msgstr "Durchschnittliche Links"
+
+#: includes/views/dashboard.php:229
+msgid "Average links per page or post"
+msgstr "Durchschnittliche Links pro Seite oder Beitrag"
+
+#: includes/class-crea3-ilp-admin.php:589
+msgid "Cache cleared successfully."
+msgstr "Cache erfolgreich geleert."
+
+#: includes/class-crea3-ilp-admin.php:71
+msgid "Calculating map..."
+msgstr "Karte wird berechnet..."
+
+#: includes/views/conflict.php:81
+msgid "Cannibalization conflicts"
+msgstr "Kannibalisierungskonflikte"
+
+#: includes/class-crea3-ilp-admin.php:140
+msgid "Cannibalization conflicts recalculated."
+msgstr "Kannibalisierungskonflikte neu berechnet."
+
+#: includes/class-crea3-ilp-analyzer.php:898
+msgid ""
+"Check that links to other silos are intentional and add a relevant internal "
+"link when it improves the journey."
+msgstr ""
+"Überprüfen Sie, ob Links zu anderen Silos beabsichtigt sind, und fügen Sie "
+"einen relevanten internen Link hinzu, wenn dies die Nutzerführung verbessert."
+
+#: includes/views/silos.php:21
+msgid ""
+"Check whether your pages are linked and organized into consistent SEO silos."
+" Leakage measures only internal links sent outside the silo; external links "
+"are diagnosed separately."
+msgstr ""
+"Überprüfen Sie, ob Ihre Seiten verlinkt und in konsistenten SEO-Silos "
+"organisiert sind. Linkverluste berücksichtigen nur interne Links, die aus "
+"dem Silo herausführen; externe Links werden gesondert geprüft."
+
+#: includes/class-crea3-ilp-admin.php:246
+msgid "Clear cache"
+msgstr "Cache leeren"
+
+#: includes/class-crea3-ilp-admin.php:68
+msgid "Clearing cache..."
+msgstr "Cache leeren..."
+
+#: includes/class-crea3-ilp-admin.php:329
+msgid "Click a graph node to display SEO details."
+msgstr "Klicken Sie auf einen Diagrammknoten, um SEO-Details anzuzeigen."
+
+#: includes/class-crea3-ilp-admin.php:80 includes/views/conflict.php:303
+msgid "Cluster"
+msgstr "Cluster"
+
+#: includes/views/dashboard.php:286
+msgid "Cluster list | Average size"
+msgstr "Clusterliste | Durchschnittliche Größe"
+
+#: includes/class-crea3-ilp-admin.php:81
+msgid "Cluster score"
+msgstr "Cluster-Score"
+
+#: includes/views/setting.php:46
+msgid "Cluster settings"
+msgstr "Clustereinstellungen"
+
+#: includes/views/dashboard.php:212 includes/views/dashboard.php:220
+msgid "Clusters"
+msgstr "Cluster"
+
+#: includes/views/silos.php:31
+msgid "Coherence"
+msgstr "Kohärenz"
+
+#: includes/class-crea3-ilp-analyzer.php:1391
+msgid "Combined weak signals"
+msgstr "Kombinierte schwache Signale"
+
+#: includes/views/conflict.php:291
+msgid "Competing content"
+msgstr "Konkurrierende Inhalte"
+
+#: includes/class-crea3-ilp-analyzer.php:1389
+msgid "Competing internal links to multiple similar pages"
+msgstr "Konkurrierende interne Links zu mehreren ähnlichen Seiten"
+
+#: includes/class-crea3-ilp-gutenberg.php:807
+msgid "Complementary"
+msgstr "Komplementär"
+
+#: includes/views/conflict.php:109
+msgid "Conflict summary"
+msgstr "Konfliktzusammenfassung"
+
+#: includes/views/conflict.php:205
+msgid "Conflict type"
+msgstr "Konflikttyp"
+
+#: includes/class-crea3-ilp-admin.php:211
+msgid "Conflicts"
+msgstr "Konflikte"
+
+#: includes/views/conflict.php:116
+msgid "Conflicts to review"
+msgstr "Zu überprüfende Konflikte"
+
+#: includes/class-crea3-ilp-analyzer.php:920
+msgid ""
+"Consistent silo: maintain the linking structure and monitor future "
+"publications."
+msgstr ""
+"Konsistentes Silo: Behalten Sie die Verknüpfungsstruktur bei und überwachen "
+"Sie zukünftige Veröffentlichungen."
+
+#: includes/class-crea3-ilp-analyzer.php:1388
+msgid "Content in the same cluster with similar intent"
+msgstr "Inhalte im selben Cluster mit ähnlicher Absicht"
+
+#: includes/class-crea3-ilp-admin.php:293
+msgid "Content without internal incoming links based on current filter."
+msgstr ""
+"Inhalte ohne interne eingehende Links basierend auf dem aktuellen Filter."
+
+#: includes/views/setting.php:49
+msgid "Control how clusters are detected based on internal linking strength."
+msgstr ""
+"Steuern Sie, wie Cluster basierend auf der internen Linkstärke erkannt "
+"werden."
+
+#: includes/views/dashboard.php:96
+msgid "Correct"
+msgstr "Richtig"
+
+#: includes/views/conflict.php:25 includes/views/conflict.php:119
+#: includes/views/conflict.php:183
+msgid "Critical"
+msgstr "Kritisch"
+
+#: includes/class-crea3-ilp-admin.php:198
+msgid "Dashboard"
+msgstr "Armaturenbrett"
+
+#: includes/class-crea3-ilp-analyzer.php:1429
+msgid "Define primary content, then merge or redirect overlapping content."
+msgstr ""
+"Definieren Sie primäre Inhalte und führen Sie dann überlappende Inhalte "
+"zusammen oder leiten Sie sie um."
+
+#: includes/views/setting.php:22
+msgid ""
+"Define which pages should be ignored during the internal linking analysis."
+msgstr ""
+"Legen Sie fest, welche Seiten bei der internen Verlinkungsanalyse ignoriert "
+"werden sollen."
+
+#: includes/class-crea3-ilp-admin.php:67
+msgid "Delete the cached analysis?"
+msgstr "Zwischengespeicherte Analyse löschen?"
+
+#: includes/class-crea3-ilp-admin.php:69 includes/views/dashboard.php:333
+#: includes/views/conflict.php:265
+msgid "Details"
+msgstr "Einzelheiten"
+
+#: includes/views/conflict.php:171
+msgid "Detected conflicts"
+msgstr "Erkannte Konflikte"
+
+#: includes/class-crea3-ilp-gutenberg.php:57
+msgid "Detected expression"
+msgstr "Ausdruck erkannt"
+
+#: includes/class-crea3-ilp-gutenberg.php:67
+msgid "Detected opportunities"
+msgstr "Chancen erkannt"
+
+#: includes/class-crea3-ilp-admin.php:228
+msgid "Display filter:"
+msgstr "Anzeigefilter:"
+
+#: includes/views/conflict.php:78
+msgid "Editorial analysis"
+msgstr "Redaktionelle Analyse"
+
+#: includes/views/conflict.php:276
+msgid "Editorial conflict"
+msgstr "Redaktioneller Konflikt"
+
+#: includes/views/setting.php:36
+msgid "Example: sponsored articles, legal pages, temporary campaigns."
+msgstr ""
+"Beispiel: gesponserte Artikel, juristische Seiten, temporäre Kampagnen."
+
+#: includes/views/setting.php:19
+msgid "Excluded content"
+msgstr "Ausgeschlossener Inhalt"
+
+#: includes/views/conflict.php:202
+msgid "Expression or topic"
+msgstr "Ausdruck oder Thema"
+
+#: includes/views/dashboard.php:254
+msgid "External links"
+msgstr "Externe Links"
+
+#: includes/views/render_table.php:22
+msgid "External outgoing links"
+msgstr "Externe ausgehende Links"
+
+#: includes/views/conflict.php:179
+msgid "Filter conflicts"
+msgstr "Konflikte filtern"
+
+#: includes/views/suggestions.php:14
+msgid "From"
+msgstr "Aus"
+
+#. translators: %d: number of orphaned content items.
+#: includes/class-crea3-ilp-admin.php:204
+#, php-format
+msgid "Global orphans (%d)"
+msgstr "Global verwaiste Inhalte (%d)"
+
+#: includes/class-crea3-ilp-admin.php:275
+msgid "Global overview based on current filter."
+msgstr "Globale Übersicht basierend auf dem aktuellen Filter."
+
+#: includes/views/conflict.php:279
+msgid "Global score"
+msgstr "Globale Punktzahl"
+
+#: includes/class-crea3-ilp-admin.php:213
+msgid "Graph view"
+msgstr "Diagrammansicht"
+
+#: includes/class-crea3-ilp-admin.php:70
+msgid "Hide"
+msgstr "Verstecken"
+
+#. translators: %d: percentage of internal links leaving the silo.
+#: includes/class-crea3-ilp-analyzer.php:893
+#, php-format
+msgid "High internal leakage: %d%% of internal links leave the silo."
+msgstr "Hohe interne Leckage: %d%% interner Links verlassen das Silo."
+
+#: includes/views/setting.php:25
+msgid "IDs to exclude"
+msgstr "Auszuschließende IDs"
+
+#: includes/views/render_table.php:28
+msgid "Ideal:"
+msgstr "Ideal:"
+
+#: includes/views/conflict.php:83
+msgid ""
+"Identify content that may compete in Google and prioritize the most "
+"impactful fixes."
+msgstr ""
+"Identifizieren Sie Inhalte, die mit Google konkurrieren könnten, und "
+"priorisieren Sie die wirksamsten Korrekturen."
+
+#: includes/views/conflict.php:148
+msgid "Impacted scope"
+msgstr "Betroffener Umfang"
+
+#: includes/class-crea3-ilp-admin.php:76 includes/views/conflict.php:301
+msgid "Incoming links"
+msgstr "Eingehende Links"
+
+#: includes/views/render_table.php:8
+msgid "Incoming links (pages)"
+msgstr "Eingehende Links (Seiten)"
+
+#: includes/views/render_table.php:9
+msgid "Incoming links (posts + pages)"
+msgstr "Eingehende Links (Beiträge + Seiten)"
+
+#: includes/views/render_table.php:19
+msgid "Incoming links (posts)"
+msgstr "Eingehende Links (Beiträge)"
+
+#: includes/class-crea3-ilp-gutenberg.php:55
+msgid "Insert link"
+msgstr "Link einfügen"
+
+#. translators: %d: percentage of pages with lateral links.
+#: includes/class-crea3-ilp-analyzer.php:909
+#, php-format
+msgid ""
+"Insufficient lateral links: only %d%% of pages link to complementary silo "
+"content."
+msgstr ""
+"Unzureichende seitliche Links: Nur %d%% der Seiten verweisen auf ergänzende "
+"Siloinhalte."
+
+#: includes/class-crea3-ilp-admin.php:23
+msgid "Internal Linking"
+msgstr "Interne Verlinkung"
+
+#: includes/class-crea3-ilp-admin.php:146
+msgid "Internal Linking Audit"
+msgstr "Internes Link-Audit"
+
+#: includes/class-crea3-ilp-admin.php:22
+#: includes/class-crea3-ilp-admin.php:146
+msgid "Internal Linking Pro"
+msgstr "Interne Verlinkung Pro"
+
+#. translators: %d: percentage of internal links leaving the silo.
+#: includes/class-crea3-ilp-analyzer.php:897
+#, php-format
+msgid "Internal leakage to monitor: %d%% of internal links leave the silo."
+msgstr ""
+"Zu überwachende interne Lecks: %d%% interner Links verlassen das Silo."
+
+#: includes/views/dashboard.php:59 includes/views/render_table.php:35
+msgid "Internal linking score"
+msgstr "Interner Link-Score"
+
+#: includes/class-crea3-ilp-gutenberg.php:59 includes/views/suggestions.php:7
+msgid "Internal linking suggestions"
+msgstr "Vorschläge zur internen Verlinkung"
+
+#: includes/views/dashboard.php:240
+msgid "Internal links"
+msgstr "Interne Links"
+
+#: includes/views/render_table.php:23
+msgid "Internal links / 100 words"
+msgstr "Interne Links / 100 Wörter"
+
+#: includes/views/render_table.php:27
+msgid "Internal links per 100 words"
+msgstr "Interne Links pro 100 Wörter"
+
+#: includes/views/render_table.php:21
+msgid "Internal outgoing links"
+msgstr "Interne ausgehende Links"
+
+#: includes/views/conflict.php:300
+msgid "Internal score"
+msgstr "Interne Punktzahl"
+
+#. translators: %d: silo consistency percentage.
+#: includes/class-crea3-ilp-analyzer.php:887
+#, php-format
+msgid "Internal structure needs improvement: %d%% consistency."
+msgstr "Die interne Struktur muss verbessert werden: %d%% Konsistenz."
+
+#: includes/views/dashboard.php:104 includes/views/dashboard.php:198
+msgid "Isolated"
+msgstr "Isoliert"
+
+#: includes/class-crea3-ilp-admin.php:72
+msgid "Isolated content"
+msgstr "Isolierter Inhalt"
+
+#. translators: %d: number of isolated posts.
+#: includes/class-crea3-ilp-admin.php:202
+#, php-format
+msgid "Isolated posts (%d)"
+msgstr "Isolierte Beiträge (%d)"
+
+#: includes/views/silos.php:33
+msgid "Issues"
+msgstr "Probleme"
+
+#: includes/class-crea3-ilp-analyzer.php:916
+msgid ""
+"Keep useful external sources, but ensure they do not overshadow links to "
+"your related content."
+msgstr ""
+"Behalten Sie nützliche externe Quellen bei, aber stellen Sie sicher, dass "
+"diese nicht die Links zu Ihren verwandten Inhalten überschatten."
+
+#: includes/views/conflict.php:152
+msgid "Key insights"
+msgstr "Wichtige Erkenntnisse"
+
+#. translators: %s: date and time of the last scan.
+#: includes/class-crea3-ilp-admin.php:348
+#, php-format
+msgid "Last scan: %s"
+msgstr "Letzter Scan: %s"
+
+#: includes/views/silos.php:32
+msgid "Leakage"
+msgstr "Linkverluste"
+
+#: includes/views/conflict.php:27 includes/views/conflict.php:30
+#: includes/views/conflict.php:135 includes/views/conflict.php:185
+msgid "Light"
+msgstr "Licht"
+
+#: includes/views/dashboard.php:268
+msgid "Link / 100 words"
+msgstr "Link / 100 Wörter"
+
+#: includes/class-crea3-ilp-gutenberg.php:54
+msgid "Link inserted"
+msgstr "Link eingefügt"
+
+#: includes/class-crea3-ilp-analyzer.php:910
+msgid ""
+"Link member pages when they answer complementary questions without adding "
+"artificial links."
+msgstr ""
+"Verlinken Sie Mitgliederseiten, wenn diese ergänzende Fragen beantworten, "
+"ohne künstliche Links hinzuzufügen."
+
+#: includes/class-crea3-ilp-admin.php:208
+msgid "Link suggestions"
+msgstr "Linkvorschläge"
+
+#. translators: %d: number of link suggestions.
+#: includes/class-crea3-ilp-admin.php:207
+#, php-format
+msgid "Link suggestions (%d)"
+msgstr "Linkvorschläge (%d)"
+
+#: includes/views/dashboard.php:234 includes/views/dashboard.php:248
+#: includes/views/dashboard.php:262 includes/views/dashboard.php:271
+msgid "Links"
+msgstr "Links"
+
+#: includes/views/dashboard.php:140
+msgid "Links suggestions"
+msgstr "Linkvorschläge"
+
+#: includes/class-crea3-ilp-gutenberg.php:63
+msgid "Loading error."
+msgstr "Fehler beim Laden."
+
+#: includes/class-crea3-ilp-admin.php:148
+msgid ""
+"Manual scan. Results are cached to avoid any front-end performance impact."
+msgstr ""
+"Manueller Scan. Die Ergebnisse werden zwischengespeichert, um jegliche "
+"Auswirkungen auf die Front-End-Leistung zu vermeiden."
+
+#. translators: %d: percentage of outgoing links that target external sites.
+#: includes/class-crea3-ilp-analyzer.php:915
+#, php-format
+msgid "Many external links: %d%% of outgoing links go to third-party sites."
+msgstr ""
+"Viele externe Links: %d%% ausgehender Links führen zu Websites Dritter."
+
+#: includes/views/conflict.php:26 includes/views/conflict.php:127
+#: includes/views/conflict.php:184
+msgid "Medium"
+msgstr "Medium"
+
+#: includes/views/dashboard.php:286
+msgid "Minimum cluster size"
+msgstr "Mindestclustergröße"
+
+#: includes/views/setting.php:53
+msgid "Minimum incoming links"
+msgstr "Mindestanzahl an eingehenden Links"
+
+#: includes/views/conflict.php:140
+msgid "Monitor"
+msgstr "Monitor"
+
+#: includes/views/conflict.php:262 includes/views/conflict.php:354
+msgid "Monitor only"
+msgstr "Nur überwachen"
+
+#: includes/class-crea3-ilp-analyzer.php:1444
+msgid ""
+"Monitor only, or add differentiating internal links if rankings overlap."
+msgstr ""
+"Überwachen Sie nur oder fügen Sie differenzierende interne Links hinzu, wenn"
+" sich die Rankings überschneiden."
+
+#: includes/views/conflict.php:156
+msgid "Most affected cluster"
+msgstr "Am stärksten betroffener Cluster"
+
+#: includes/views/conflict.php:163
+msgid "Most involved expression"
+msgstr "Am meisten beteiligter Ausdruck"
+
+#: includes/views/dashboard.php:120
+msgid "Most linked"
+msgstr "Am meisten verlinkt"
+
+#: includes/views/conflict.php:300 includes/views/conflict.php:301
+#: includes/views/conflict.php:302 includes/views/conflict.php:303
+msgid "N/A"
+msgstr "N / A"
+
+#: includes/views/conflict.php:132
+msgid "Needs review"
+msgstr "Muss überprüft werden"
+
+#: includes/class-crea3-ilp-admin.php:255
+msgid "No cached analysis found. Click Run Scan."
+msgstr ""
+"Keine zwischengespeicherte Analyse gefunden. Klicken Sie auf Scan ausführen."
+
+#: includes/views/conflict.php:216
+msgid "No conflicts found with this filter."
+msgstr "Mit diesem Filter wurden keine Konflikte gefunden."
+
+#: includes/class-crea3-ilp-gutenberg.php:66
+msgid "No relevant suggestions at this time."
+msgstr "Derzeit liegen keine relevanten Vorschläge vor."
+
+#: includes/views/render_table.php:41
+msgid "No results found."
+msgstr "Keine Ergebnisse gefunden."
+
+#: includes/views/conflict.php:325
+msgid "No shared anchors detected."
+msgstr "Keine gemeinsamen Anker erkannt."
+
+#: includes/views/conflict.php:316
+msgid "No specific expression detected."
+msgstr "Kein spezifischer Ausdruck erkannt."
+
+#: includes/class-crea3-ilp-analyzer.php:879
+msgid "No usable internal links detected in this silo."
+msgstr "In diesem Silo wurden keine verwendbaren internen Links erkannt."
+
+#: includes/views/conflict.php:38 includes/views/conflict.php:157
+#: includes/views/conflict.php:164
+msgid "Not available"
+msgstr "Nicht verfügbar"
+
+#: includes/class-crea3-ilp-admin.php:83
+msgid "Open content"
+msgstr "Inhalt öffnen"
+
+#: includes/class-crea3-ilp-gutenberg.php:809
+msgid "Orphan content to strengthen"
+msgstr "Verwaiste Inhalte zur Stärkung"
+
+#: includes/views/dashboard.php:170
+msgid "Orphans"
+msgstr "Verwaiste Inhalte"
+
+#: includes/views/render_table.php:23
+msgid "Outbound internal links per 100 words"
+msgstr "Ausgehende interne Links pro 100 Wörter"
+
+#: includes/class-crea3-ilp-admin.php:77 includes/views/conflict.php:302
+msgid "Outgoing links"
+msgstr "Ausgehende Links"
+
+#: includes/class-crea3-ilp-admin.php:74 includes/views/render_table.php:53
+msgid "Page"
+msgstr "Seite"
+
+#: includes/class-crea3-ilp-admin.php:232 includes/views/silos.php:30
+#: includes/views/dashboard.php:289
+msgid "Pages"
+msgstr "Seiten"
+
+#: includes/class-crea3-ilp-admin.php:339
+msgid "Pages or posts without any outgoing internal links."
+msgstr "Seiten oder Beiträge ohne ausgehende interne Links."
+
+#: includes/views/dashboard.php:173
+msgid "Pages or posts without incoming internal links"
+msgstr "Seiten oder Beiträge ohne eingehende interne Links"
+
+#: includes/views/dashboard.php:187
+msgid "Pages or posts without outgoing internal links"
+msgstr "Seiten oder Beiträge ohne ausgehende interne Links"
+
+#: includes/class-crea3-ilp-gutenberg.php:808
+msgid "Pillar content"
+msgstr "Pillar-Inhalt"
+
+#: includes/class-crea3-ilp-admin.php:79
+msgid "Pillar page"
+msgstr "Pillar-Seite"
+
+#. translators: %d: percentage of silo pages linked from the pillar page.
+#: includes/class-crea3-ilp-analyzer.php:903
+#, php-format
+msgid ""
+"Pillar page distributes too little: it links to %d%% of the silo pages."
+msgstr ""
+"Die Pillar-Seite verteilt zu wenig: Sie verlinkt auf %d%% der Siloseiten."
+
+#: includes/class-crea3-ilp-gutenberg.php:137
+msgid "Please wait before requesting more suggestions."
+msgstr "Bitte warten Sie, bevor Sie weitere Vorschläge anfordern."
+
+#: includes/class-crea3-ilp-admin.php:75 includes/views/render_table.php:52
+msgid "Post"
+msgstr "Post"
+
+#: includes/class-crea3-ilp-admin.php:231
+msgid "Posts"
+msgstr "Beiträge"
+
+#: includes/class-crea3-ilp-admin.php:233
+msgid "Posts + Pages"
+msgstr "Beiträge + Seiten"
+
+#: includes/views/dashboard.php:201
+msgid "Posts without internal links from other posts"
+msgstr "Beiträge ohne interne Links von anderen Beiträgen"
+
+#: includes/class-crea3-ilp-admin.php:284
+msgid "Posts without internal links from other posts."
+msgstr "Beiträge ohne interne Links von anderen Beiträgen."
+
+#: includes/class-crea3-ilp-analyzer.php:884
+msgid ""
+"Prioritize links between related content and return links from the pillar "
+"page."
+msgstr ""
+"Priorisieren Sie Links zwischen verwandten Inhalten und geben Sie Links von "
+"der Pillar-Seite zurück."
+
+#: includes/views/conflict.php:98
+msgid "Recalculate conflicts"
+msgstr "Konflikte neu berechnen"
+
+#: includes/views/conflict.php:206
+msgid "Recommendation"
+msgstr "Empfehlung"
+
+#: includes/views/silos.php:34
+msgid "Recommendations"
+msgstr "Empfehlungen"
+
+#: includes/views/conflict.php:353
+msgid "Recommended action"
+msgstr "Empfohlene Maßnahme"
+
+#: includes/class-crea3-ilp-gutenberg.php:60
+msgid "Recommended content to strengthen your internal linking."
+msgstr "Empfohlene Inhalte zur Stärkung Ihrer internen Verlinkung."
+
+#: includes/class-crea3-ilp-gutenberg.php:806
+#: includes/class-crea3-ilp-analyzer.php:1424 includes/views/conflict.php:238
+msgid "Related topic"
+msgstr "Verwandtes Thema"
+
+#: includes/views/suggestions.php:17
+msgid "Relevance"
+msgstr "Relevanz"
+
+#: includes/class-crea3-ilp-analyzer.php:1433
+msgid ""
+"Reorient content toward a different intent and use more distinct internal "
+"anchors."
+msgstr ""
+"Richten Sie Inhalte auf eine andere Absicht aus und verwenden Sie "
+"deutlichere interne Anker."
+
+#: includes/class-crea3-ilp-analyzer.php:894
+msgid ""
+"Review links to other topics: keep useful links and strengthen links within "
+"the silo to rebalance distribution."
+msgstr ""
+"Überprüfen Sie Links zu anderen Themen: Behalten Sie nützliche Links bei und"
+" stärken Sie die Links innerhalb des Silos, um die Verteilung neu "
+"auszubalancieren."
+
+#: includes/views/conflict.php:275
+msgid "Risk analysis"
+msgstr "Risikoanalyse"
+
+#. translators: 1: risk score from 0 to 100, 2: comma-separated risk factors.
+#: includes/class-crea3-ilp-analyzer.php:1450
+#, php-format
+msgid ""
+"Risk score %1$d/100 based on: %2$s. This content may send overly similar "
+"topical signals to Google."
+msgstr ""
+"Risikobewertung %1$d/100 basierend auf: %2$s. Dieser Inhalt sendet "
+"möglicherweise zu ähnliche thematische Signale an Google."
+
+#: includes/class-crea3-ilp-admin.php:78
+msgid "Role"
+msgstr "Rolle"
+
+#: includes/class-crea3-ilp-gutenberg.php:64
+msgid "Run a dashboard scan to enrich suggestions."
+msgstr "Führen Sie einen Dashboard-Scan durch, um Vorschläge zu ergänzen."
+
+#: includes/views/conflict.php:217
+msgid "Run a recalculation after your next editorial changes."
+msgstr ""
+"Führen Sie nach Ihren nächsten redaktionellen Änderungen eine Neuberechnung "
+"durch."
+
+#: includes/class-crea3-ilp-admin.php:241
+msgid "Run scan"
+msgstr "Führen Sie den Scan durch"
+
+#: includes/class-crea3-ilp-gutenberg.php:805
+msgid "Same cluster"
+msgstr "Gleicher Cluster"
+
+#: includes/class-crea3-ilp-analyzer.php:1387
+msgid "Same important expressions"
+msgstr "Gleiche wichtige Ausdrücke"
+
+#: includes/views/setting.php:78
+msgid "Save settings"
+msgstr "Einstellungen speichern"
+
+#: includes/class-crea3-ilp-admin.php:567
+msgid "Scan completed successfully."
+msgstr "Scan erfolgreich abgeschlossen."
+
+#: includes/class-crea3-ilp-admin.php:64
+msgid "Scan in progress... Do not close this page."
+msgstr "Scan läuft... Schließen Sie diese Seite nicht."
+
+#: includes/views/dashboard.php:290
+msgid "Score"
+msgstr "Punktzahl"
+
+#: includes/views/render_table.php:14
+msgid "Search content..."
+msgstr "Inhalt durchsuchen..."
+
+#: includes/class-crea3-ilp-gutenberg.php:56
+msgid "Select the text again in the content and retry."
+msgstr "Wählen Sie den Text im Inhalt erneut aus und versuchen Sie es erneut."
+
+#: includes/views/setting.php:32
+msgid "Separate IDs with commas, spaces or line breaks."
+msgstr "Trennen Sie IDs durch Kommas, Leerzeichen oder Zeilenumbrüche."
+
+#: includes/class-crea3-ilp-admin.php:214
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: includes/class-crea3-ilp-admin.php:132
+msgid "Settings saved successfully."
+msgstr "Einstellungen erfolgreich gespeichert."
+
+#: includes/views/conflict.php:201
+msgid "Severity"
+msgstr "Schwere"
+
+#: includes/views/conflict.php:320
+msgid "Shared anchors"
+msgstr "Gemeinsame Anker"
+
+#: includes/views/conflict.php:311
+msgid "Shared expressions"
+msgstr "Geteilte Ausdrücke"
+
+#: includes/views/silos.php:29
+msgid "Silo"
+msgstr "Silo"
+
+#: includes/class-crea3-ilp-admin.php:212
+msgid "Silos"
+msgstr "Silos"
+
+#: includes/class-crea3-ilp-analyzer.php:1386
+msgid "Similar internal anchors"
+msgstr "Ähnliche interne Anker"
+
+#: includes/class-crea3-ilp-analyzer.php:1385
+msgid "Similar slugs"
+msgstr "Ähnliche Schnecken"
+
+#: includes/views/conflict.php:204
+msgid "Similarity"
+msgstr "Ähnlichkeit"
+
+#: includes/views/conflict.php:332
+msgid "Simplified link map"
+msgstr "Vereinfachte Linkkarte"
+
+#: includes/views/conflict.php:105
+msgid "Some data is not yet available to enrich this analysis."
+msgstr ""
+"Einige Daten zur Bereicherung dieser Analyse stehen noch nicht zur "
+"Verfügung."
+
+#: includes/class-crea3-ilp-gutenberg.php:812
+msgid "Strategic content"
+msgstr "Strategische Inhalte"
+
+#: includes/class-crea3-ilp-analyzer.php:1437
+msgid ""
+"Strengthen links to the primary content and differentiate links to the "
+"secondary content."
+msgstr ""
+"Stärken Sie die Links zum primären Inhalt und differenzieren Sie die Links "
+"zum sekundären Inhalt."
+
+#: includes/class-crea3-ilp-gutenberg.php:810
+msgid "Strong SEO potential"
+msgstr "Starkes SEO-Potenzial"
+
+#: includes/class-crea3-ilp-gutenberg.php:53
+msgid "Suggested anchors"
+msgstr "Empfohlene Anker"
+
+#: includes/views/conflict.php:289
+msgid "Suggested primary content"
+msgstr "Vorgeschlagener Hauptinhalt"
+
+#: includes/class-crea3-ilp-gutenberg.php:65
+msgid "Suggestions found"
+msgstr "Vorschläge gefunden"
+
+#. translators: %d: number of content items.
+#: includes/class-crea3-ilp-admin.php:200
+#, php-format
+msgid "Table (%d)"
+msgstr "Tabelle (%d)"
+
+#: includes/views/conflict.php:333
+msgid "The suggested primary content is highlighted."
+msgstr "Der vorgeschlagene Hauptinhalt wird hervorgehoben."
+
+#: includes/class-crea3-ilp-gutenberg.php:975
+msgid "The topic is closely related to the content being edited."
+msgstr "Das Thema steht in engem Zusammenhang mit den bearbeiteten Inhalten."
+
+#: includes/views/conflict.php:347
+msgid ""
+"These contents cover a similar editorial scope and may compete in search "
+"results."
+msgstr ""
+"Diese Inhalte decken einen ähnlichen redaktionellen Umfang ab und können in "
+"den Suchergebnissen konkurrieren."
+
+#: includes/class-crea3-ilp-gutenberg.php:971
+msgid ""
+"This content belongs to the same cluster and strengthens silo consistency."
+msgstr ""
+"Dieser Inhalt gehört zum selben Cluster und stärkt die Silokonsistenz."
+
+#: includes/class-crea3-ilp-gutenberg.php:978
+msgid ""
+"This content complements the topic and can improve the internal journey."
+msgstr ""
+"Dieser Inhalt ergänzt das Thema und kann die interne Nutzerführung verbessern."
+
+#: includes/views/render_table.php:18
+msgid "Title"
+msgstr "Titel"
+
+#: includes/views/suggestions.php:16
+msgid "To"
+msgstr "Zu"
+
+#: includes/views/conflict.php:124
+msgid "Top priority"
+msgstr "Oberste Priorität"
+
+#: includes/views/conflict.php:111
+msgid "Total detected"
+msgstr "Insgesamt erkannt"
+
+#: includes/views/dashboard.php:257
+msgid "Total external links on pages or posts"
+msgstr "Gesamtzahl der externen Links auf Seiten oder Beiträgen"
+
+#: includes/views/dashboard.php:243
+msgid "Total internal links on pages or posts"
+msgstr "Gesamtzahl der internen Links auf Seiten oder Beiträgen"
+
+#. translators: %d: minimum number of links in a cluster.
+#: includes/views/dashboard.php:215
+#, php-format
+msgid "Total number of clusters with %d links"
+msgstr "Gesamtzahl der Cluster mit %d Links"
+
+#: includes/class-crea3-ilp-admin.php:73 includes/views/render_table.php:17
+msgid "Type"
+msgstr "Typ"
+
+#: includes/class-crea3-ilp-admin.php:65
+msgid "Unknown error."
+msgstr "Unbekannter Fehler."
+
+#: includes/views/dashboard.php:206
+msgid "Unlinked"
+msgstr "Nicht verknüpft"
+
+#: includes/class-crea3-ilp-admin.php:84 includes/views/conflict.php:293
+#: includes/views/conflict.php:339
+msgid "Untitled"
+msgstr "Ohne Titel"
+
+#: includes/class-crea3-ilp-analyzer.php:1441
+msgid ""
+"Update H1 headings or SEO titles to clearly separate each content intent."
+msgstr ""
+"Aktualisieren Sie H1-Überschriften oder SEO-Titel, um die einzelnen "
+"Inhaltsabsichten klar zu trennen."
+
+#: includes/views/conflict.php:299
+msgid "Updated"
+msgstr "Aktualisiert"
+
+#: includes/class-crea3-ilp-analyzer.php:1384
+msgid "Very similar titles"
+msgstr "Sehr ähnliche Titel"
+
+#. translators: %s: requested administration view name.
+#: includes/class-crea3-ilp-admin.php:101
+#, php-format
+msgid "View not found: %s"
+msgstr "Ansicht nicht gefunden: %s"
+
+#: includes/views/dashboard.php:158
+msgid "View opportunities"
+msgstr "Möglichkeiten ansehen"
+
+#: includes/class-crea3-ilp-admin.php:82
+msgid "Warning"
+msgstr "Warnung"
+
+#. translators: %d: silo consistency percentage.
+#: includes/class-crea3-ilp-analyzer.php:883
+#, php-format
+msgid "Weak internal structure: %d%% consistency."
+msgstr "Schwache interne Struktur: %d%% Konsistenz."
+
+#: includes/views/dashboard.php:178
+msgid "Without incoming internal links"
+msgstr "Ohne eingehende interne Links"
+
+#: includes/views/dashboard.php:112 includes/views/dashboard.php:192
+msgid "Without outgoing internal links"
+msgstr "Ohne ausgehende interne Links"
+
+#: includes/views/dashboard.php:184
+msgid "Without outgoing links"
+msgstr "Ohne ausgehende Links"
+
+#: includes/class-crea3-ilp-admin.php:322
+msgid "You can zoom and drag the graph."
+msgstr "Sie können das Diagramm zoomen und ziehen."
+
+#: includes/views/conflict.php:85
+msgid "affected content"
+msgstr "betroffene Inhalte"
+
+#: includes/class-crea3-ilp-admin.php:87
+msgid "content item(s) found"
+msgstr "Inhaltselement(e) gefunden"
+
+#: includes/class-crea3-ilp-admin.php:86 includes/views/conflict.php:246
+msgid "content items"
+msgstr "Inhaltselemente"
+
+#: includes/views/conflict.php:86
+msgid "displayed results"
+msgstr "angezeigte Ergebnisse"
+
+#: includes/views/render_table.php:30
+msgid "↑ = overload"
+msgstr "↑ = Überlastung"
+
+#: includes/views/render_table.php:29
+msgid "↓ = low internal linking"
+msgstr "↓ = geringe interne Verlinkung"

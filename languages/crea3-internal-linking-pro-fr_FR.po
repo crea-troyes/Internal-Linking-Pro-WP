@@ -1,0 +1,751 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Crea3 Internal Linking Pro 2.7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-15 15:56+0200\n"
+"PO-Revision-Date: 2026-10-15 16:00+0200\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.8\n"
+
+#. translators: 1: retained links percentage, 2: lateral coverage percentage.
+#, php-format
+msgid "%1$d%% retained · %2$d%% lateral"
+msgstr "%1$d%% retenus · %2$d%% latéraux"
+
+#. translators: %d: number of links pointing outside the silo.
+#, php-format
+msgid "%d link outside silo"
+msgid_plural "%d links outside silo"
+msgstr[0] "%d lien hors silo"
+msgstr[1] "%d liens hors silo"
+
+#. translators: %d: number of conflict results for the active filter.
+#, php-format
+msgid "%d result for this filter"
+msgid_plural "%d results for this filter"
+msgstr[0] "%d résultat pour ce filtre"
+msgstr[1] "%d résultats pour ce filtre"
+
+msgid "3 = weak"
+msgstr "3 = faible"
+
+msgid "8–10 = strong cluster"
+msgstr "8–10 = cluster solide"
+
+#. Plugin description.
+msgid "Advanced internal linking audit tool (orphan pages, link graph, PageRank, clusters). Admin-only with manual scan."
+msgstr "Outil avancé d’analyse du maillage interne (pages orphelines, graphe de liens, PageRank, clusters). Accessible uniquement en administration avec analyse manuelle."
+
+msgid "AJAX error. A server timeout may have occurred."
+msgstr "Erreur AJAX. Le serveur a peut-être dépassé le délai autorisé."
+
+msgid "Access denied."
+msgstr "Accès refusé."
+
+msgid "Action"
+msgstr "Action"
+
+msgid "Add contextual links between complementary pages to strengthen the silo journey."
+msgstr "Ajoutez des liens contextuels entre pages complémentaires pour consolider le parcours dans le silo."
+
+msgid "Add contextual links between the pillar page and the silo member pages."
+msgstr "Ajoutez des liens contextuels entre la page pilier et les pages membres du silo."
+
+msgid "Add link"
+msgstr "Ajouter le lien"
+
+msgid "Add links from the pillar page to priority member pages to distribute internal authority more effectively."
+msgstr "Ajoutez depuis la page pilier des liens vers les pages membres prioritaires afin de mieux répartir l’autorité interne."
+
+msgid "Affected content"
+msgstr "Contenus concernés"
+
+msgid "All"
+msgstr "Tous"
+
+msgid "Analysis from"
+msgstr "Analyse du"
+
+msgid "Analyzed content"
+msgstr "Contenus analysés"
+
+msgid "Analyzed selection"
+msgstr "Sélection analysée"
+
+msgid "Analyzing..."
+msgstr "Analyse en cours..."
+
+msgid "Anchor"
+msgstr "Ancre"
+
+msgid "Anchors:"
+msgstr "Ancres :"
+
+msgid "Average links"
+msgstr "Moyenne"
+
+msgid "Average links per page or post"
+msgstr "Liens en moyenne par pages ou articles"
+
+msgid "Cache cleared successfully."
+msgstr "Cache supprimé avec succès."
+
+msgid "Calculating map..."
+msgstr "Calcul de la cartographie..."
+
+msgid "Cannibalization conflicts"
+msgstr "Conflits de cannibalisation"
+
+msgid "Cannibalization conflicts recalculated."
+msgstr "Conflits de cannibalisation recalculés."
+
+msgid "Check that links to other silos are intentional and add a relevant internal link when it improves the journey."
+msgstr "Vérifiez que les liens vers d’autres silos sont intentionnels et ajoutez un lien interne pertinent lorsque cela améliore le parcours."
+
+msgid "Check whether your pages are linked and organized into consistent SEO silos. Leakage measures only internal links sent outside the silo; external links are diagnosed separately."
+msgstr "Vérifiez que vos pages sont liées et organisées en silos SEO cohérents. La fuite mesure uniquement les liens internes envoyés hors du silo ; les liens externes sont diagnostiqués séparément."
+
+msgid "Clear cache"
+msgstr "Vider le cache"
+
+msgid "Clearing cache..."
+msgstr "Suppression du cache..."
+
+msgid "Click a graph node to display SEO details."
+msgstr "Cliquez sur un nœud du graphe pour afficher les détails SEO."
+
+msgid "Cluster"
+msgstr "Cluster"
+
+msgid "Cluster list | Average size"
+msgstr "Liste des clusters | Taille moyenne"
+
+msgid "Cluster score"
+msgstr "Score du cluster"
+
+msgid "Cluster settings"
+msgstr "Paramètres des clusters"
+
+msgid "Clusters"
+msgstr "Clusters"
+
+msgid "Coherence"
+msgstr "Cohérence"
+
+msgid "Combined weak signals"
+msgstr "Signaux faibles combinés"
+
+msgid "Competing content"
+msgstr "Contenu concurrent"
+
+msgid "Competing internal links to multiple similar pages"
+msgstr "Liens internes concurrents vers plusieurs pages similaires"
+
+msgid "Complementary"
+msgstr "Complémentaire"
+
+msgid "Conflict summary"
+msgstr "Résumé des conflits"
+
+msgid "Conflict type"
+msgstr "Type de conflit"
+
+msgid "Conflicts"
+msgstr "Conflits"
+
+msgid "Conflicts to review"
+msgstr "Conflits à examiner"
+
+msgid "Consistent silo: maintain the linking structure and monitor future publications."
+msgstr "Silo cohérent : maintenez le maillage et surveillez les futures publications."
+
+msgid "Content in the same cluster with similar intent"
+msgstr "Contenus du même cluster avec intention proche"
+
+msgid "Content without internal incoming links based on current filter."
+msgstr "Contenus sans lien interne entrant selon le filtre actuel."
+
+msgid "Control how clusters are detected based on internal linking strength."
+msgstr "Définissez comment les clusters sont détectés en fonction du maillage interne."
+
+msgid "Correct"
+msgstr "Correcte"
+
+msgid "Critical"
+msgstr "Critique"
+
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+msgid "Define primary content, then merge or redirect overlapping content."
+msgstr "Définissez un contenu principal, puis fusionnez ou redirigez les contenus qui se chevauchent."
+
+msgid "Define which pages should be ignored during the internal linking analysis."
+msgstr "Entrez les IDs des articles ou pages à ignorer lors de l’analyse du maillage interne."
+
+msgid "Delete the cached analysis?"
+msgstr "Supprimer l’analyse mise en cache ?"
+
+msgid "Details"
+msgstr "Détails"
+
+msgid "Detected conflicts"
+msgstr "Conflits détectés"
+
+msgid "Detected expression"
+msgstr "Expression détectée"
+
+msgid "Detected opportunities"
+msgstr "Opportunités détectées"
+
+msgid "Display filter:"
+msgstr "Filtre d’affichage :"
+
+msgid "Editorial analysis"
+msgstr "Analyse éditoriale"
+
+msgid "Editorial conflict"
+msgstr "Conflit éditorial"
+
+msgid "Example: sponsored articles, legal pages, temporary campaigns."
+msgstr "Exemple : articles sponsorisés, pages saisonnières, pages de voeux, pages légales, etc."
+
+msgid "Excluded content"
+msgstr "Contenus exclus de l’analyse"
+
+msgid "Expression or topic"
+msgstr "Expression ou sujet"
+
+msgid "External links"
+msgstr "Liens externes"
+
+msgid "External outgoing links"
+msgstr "Liens externes sortants"
+
+msgid "Filter conflicts"
+msgstr "Filtrer les conflits"
+
+msgid "From"
+msgstr "Depuis"
+
+#. translators: %d: number of orphaned content items.
+#, php-format
+msgid "Global orphans (%d)"
+msgstr "Sans lien interne entrant (%d)"
+
+msgid "Global overview based on current filter."
+msgstr "Vue globale selon le filtre actuel."
+
+msgid "Global score"
+msgstr "Score global"
+
+msgid "Graph view"
+msgstr "Cartographie"
+
+msgid "Hide"
+msgstr "Masquer"
+
+#. translators: %d: percentage of internal links leaving the silo.
+#, php-format
+msgid "High internal leakage: %d%% of internal links leave the silo."
+msgstr "Fuite interne élevée : %d%% des liens internes sortent du silo."
+
+msgid "IDs to exclude"
+msgstr "ID à exclure"
+
+msgid "Ideal:"
+msgstr "Idéal :"
+
+msgid "Identify content that may compete in Google and prioritize the most impactful fixes."
+msgstr "Identifiez les contenus susceptibles de se concurrencer dans Google et priorisez les corrections qui auront le plus d’impact."
+
+msgid "Impacted scope"
+msgstr "Périmètre impacté"
+
+msgid "Incoming links"
+msgstr "Liens entrants"
+
+msgid "Incoming links (pages)"
+msgstr "Liens entrants (pages)"
+
+msgid "Incoming links (posts + pages)"
+msgstr "Liens entrants (articles + pages)"
+
+msgid "Incoming links (posts)"
+msgstr "Liens entrants (articles)"
+
+msgid "Insert link"
+msgstr "Insérer le lien"
+
+#. translators: %d: percentage of pages with lateral links.
+#, php-format
+msgid "Insufficient lateral links: only %d%% of pages link to complementary silo content."
+msgstr "Liens latéraux insuffisants : seulement %d%% des pages lient un contenu complémentaire du silo."
+
+msgid "Internal Linking"
+msgstr "Maillage interne"
+
+msgid "Internal Linking Audit"
+msgstr "Audit du maillage interne"
+
+msgid "Internal Linking Pro"
+msgstr "Maillage interne Pro"
+
+#. translators: %d: percentage of internal links leaving the silo.
+#, php-format
+msgid "Internal leakage to monitor: %d%% of internal links leave the silo."
+msgstr "Fuite interne à surveiller : %d%% des liens internes sortent du silo."
+
+msgid "Internal linking score"
+msgstr "Score du maillage"
+
+msgid "Internal linking suggestions"
+msgstr "Suggestions de maillage interne"
+
+msgid "Internal links"
+msgstr "Liens internes"
+
+msgid "Internal links / 100 words"
+msgstr "Liens interne / 100 mots"
+
+msgid "Internal links per 100 words"
+msgstr "Liens internes pour 100 mots"
+
+msgid "Internal outgoing links"
+msgstr "Liens internes sortants"
+
+msgid "Internal score"
+msgstr "Score interne"
+
+#. translators: %d: silo consistency percentage.
+#, php-format
+msgid "Internal structure needs improvement: %d%% consistency."
+msgstr "Structure interne perfectible : cohérence de %d%%."
+
+msgid "Isolated"
+msgstr "Isolées"
+
+msgid "Isolated content"
+msgstr "Contenu isolé"
+
+#. translators: %d: number of isolated posts.
+#, php-format
+msgid "Isolated posts (%d)"
+msgstr "Articles isolés (%d)"
+
+msgid "Issues"
+msgstr "Problèmes"
+
+msgid "Keep useful external sources, but ensure they do not overshadow links to your related content."
+msgstr "Conservez les sources externes utiles, mais vérifiez qu’elles n’éclipsent pas les liens vers vos contenus associés."
+
+msgid "Key insights"
+msgstr "Points d’attention"
+
+#. translators: %s: date and time of the last scan.
+#, php-format
+msgid "Last scan: %s"
+msgstr "Dernière analyse : %s"
+
+msgid "Leakage"
+msgstr "Fuite"
+
+msgid "Light"
+msgstr "Léger"
+
+msgid "Link / 100 words"
+msgstr "Lien / 100 mots"
+
+msgid "Link inserted"
+msgstr "Lien inséré"
+
+msgid "Link member pages when they answer complementary questions without adding artificial links."
+msgstr "Reliez les pages membres entre elles lorsqu’elles répondent à des questions complémentaires, sans multiplier les liens artificiels."
+
+msgid "Link suggestions"
+msgstr "Suggestions de liens"
+
+#. translators: %d: number of link suggestions.
+#, php-format
+msgid "Link suggestions (%d)"
+msgstr "Suggestions (%d)"
+
+msgid "Links"
+msgstr "Liens"
+
+msgid "Links suggestions"
+msgstr "Suggestions de liens"
+
+msgid "Loading error."
+msgstr "Erreur de chargement."
+
+msgid "Manual scan. Results are cached to avoid any front-end performance impact."
+msgstr "Analyse manuelle du maillage interne. Les résultats sont mis en cache pour éviter tout impact côté front-end."
+
+#. translators: %d: percentage of outgoing links that target external sites.
+#, php-format
+msgid "Many external links: %d%% of outgoing links go to third-party sites."
+msgstr "Liens externes nombreux : %d%% des sorties vont vers des sites tiers."
+
+msgid "Medium"
+msgstr "Moyen"
+
+msgid "Minimum cluster size"
+msgstr "Taille minimale du cluster"
+
+msgid "Minimum incoming links"
+msgstr "Nombre minimum de liens entrants"
+
+msgid "Monitor"
+msgstr "À surveiller"
+
+msgid "Monitor only"
+msgstr "Surveiller uniquement"
+
+msgid "Monitor only, or add differentiating internal links if rankings overlap."
+msgstr "Surveillez uniquement, ou ajoutez des liens internes différenciants si les positions se chevauchent."
+
+msgid "Most affected cluster"
+msgstr "Cluster le plus exposé"
+
+msgid "Most involved expression"
+msgstr "Expression la plus impliquée"
+
+msgid "Most linked"
+msgstr "Les plus liés"
+
+msgid "N/A"
+msgstr "N/D"
+
+msgid "Needs review"
+msgstr "À arbitrer"
+
+msgid "No cached analysis found. Click Run Scan."
+msgstr "Aucune analyse en cache trouvée. Cliquez sur Lancer l'analyse."
+
+msgid "No conflicts found with this filter."
+msgstr "Aucun conflit trouvé avec ce filtre."
+
+msgid "No relevant suggestions at this time."
+msgstr "Aucune suggestion pertinente pour le moment."
+
+msgid "No results found."
+msgstr "Aucun résultat."
+
+msgid "No shared anchors detected."
+msgstr "Aucune ancre commune détectée."
+
+msgid "No specific expression detected."
+msgstr "Aucune expression précise détectée."
+
+msgid "No usable internal links detected in this silo."
+msgstr "Aucun lien interne exploitable détecté dans ce silo."
+
+msgid "Not available"
+msgstr "Non disponible"
+
+msgid "Open content"
+msgstr "Ouvrir le contenu"
+
+msgid "Orphan content to strengthen"
+msgstr "Contenu orphelin à renforcer"
+
+msgid "Orphans"
+msgstr "Orphelins"
+
+msgid "Outbound internal links per 100 words"
+msgstr "Nombre de lien interne sortant tous les 100 mots"
+
+msgid "Outgoing links"
+msgstr "Liens sortants"
+
+msgid "Page"
+msgstr "Page"
+
+msgid "Pages"
+msgstr "Pages"
+
+msgid "Pages or posts without any outgoing internal links."
+msgstr "Pages ou articles sans aucun lien interne sortant."
+
+msgid "Pages or posts without incoming internal links"
+msgstr "Pages ou articles sans lien interne entrant"
+
+msgid "Pages or posts without outgoing internal links"
+msgstr "Pages ou articles sans liens internes sortants"
+
+msgid "Pillar content"
+msgstr "Contenu pilier"
+
+msgid "Pillar page"
+msgstr "Page pilier"
+
+#. translators: %d: percentage of silo pages linked from the pillar page.
+#, php-format
+msgid "Pillar page distributes too little: it links to %d%% of the silo pages."
+msgstr "Page pilier peu redistributive : elle pointe vers %d%% des pages du silo."
+
+msgid "Please wait before requesting more suggestions."
+msgstr "Veuillez patienter avant de demander d’autres suggestions."
+
+msgid "Post"
+msgstr "Article"
+
+msgid "Posts"
+msgstr "Articles"
+
+msgid "Posts + Pages"
+msgstr "Articles + Pages"
+
+msgid "Posts without internal links from other posts"
+msgstr "Articles sans lien vers d'autres articles"
+
+msgid "Posts without internal links from other posts."
+msgstr "Articles sans lien interne depuis d'autres articles."
+
+msgid "Prioritize links between related content and return links from the pillar page."
+msgstr "Renforcez en priorité les liens entre contenus proches et les liens de retour depuis la page pilier."
+
+msgid "Recalculate conflicts"
+msgstr "Recalculer les conflits"
+
+msgid "Recommendation"
+msgstr "Recommandation"
+
+msgid "Recommendations"
+msgstr "Recommandations"
+
+msgid "Recommended action"
+msgstr "Action recommandée"
+
+msgid "Recommended content to strengthen your internal linking."
+msgstr "Contenus recommandés pour renforcer votre maillage interne."
+
+msgid "Related topic"
+msgstr "Sujet proche"
+
+msgid "Relevance"
+msgstr "Pertinence"
+
+msgid "Reorient content toward a different intent and use more distinct internal anchors."
+msgstr "Réorientez un contenu vers une intention différente et utilisez des ancres internes plus distinctes."
+
+msgid "Review links to other topics: keep useful links and strengthen links within the silo to rebalance distribution."
+msgstr "Réexaminez les liens vers d’autres thématiques : conservez les liens utiles et renforcez les liens internes au silo pour rééquilibrer la distribution."
+
+msgid "Risk analysis"
+msgstr "Analyse du risque"
+
+#. translators: 1: risk score from 0 to 100, 2: comma-separated risk factors.
+#, php-format
+msgid "Risk score %1$d/100 based on: %2$s. This content may send overly similar topical signals to Google."
+msgstr "Score de risque %1$d/100 basé sur : %2$s. Ces contenus peuvent envoyer des signaux thématiques trop proches à Google."
+
+msgid "Role"
+msgstr "Rôle"
+
+msgid "Run a dashboard scan to enrich suggestions."
+msgstr "Lancez une analyse depuis le tableau de bord pour enrichir les suggestions."
+
+msgid "Run a recalculation after your next editorial changes."
+msgstr "Lancez un recalcul après vos prochaines modifications éditoriales."
+
+msgid "Run scan"
+msgstr "Lancer l’analyse"
+
+msgid "Same cluster"
+msgstr "Même cluster"
+
+msgid "Same important expressions"
+msgstr "Mêmes expressions importantes"
+
+msgid "Save settings"
+msgstr "Enregistrer les paramètres"
+
+msgid "Scan completed successfully."
+msgstr "Analyse terminée avec succès."
+
+msgid "Scan in progress... Do not close this page."
+msgstr "Analyse en cours... Ne fermez pas cette page."
+
+msgid "Score"
+msgstr "Score"
+
+msgid "Search content..."
+msgstr "Rechercher un contenu..."
+
+msgid "Select the text again in the content and retry."
+msgstr "Resélectionnez le texte dans le contenu puis réessayez."
+
+msgid "Separate IDs with commas, spaces or line breaks."
+msgstr "Séparer les IDs par des virgules."
+
+msgid "Settings"
+msgstr "Paramètres"
+
+msgid "Settings saved successfully."
+msgstr "Paramètres enregistrés avec succès."
+
+msgid "Severity"
+msgstr "Gravité"
+
+msgid "Shared anchors"
+msgstr "Ancres communes"
+
+msgid "Shared expressions"
+msgstr "Expressions communes"
+
+msgid "Silo"
+msgstr "Silo"
+
+msgid "Silos"
+msgstr "Silos"
+
+msgid "Similar internal anchors"
+msgstr "Ancres internes similaires"
+
+msgid "Similar slugs"
+msgstr "Slugs proches"
+
+msgid "Similarity"
+msgstr "Similarité"
+
+msgid "Simplified link map"
+msgstr "Vue simplifiée du maillage"
+
+msgid "Some data is not yet available to enrich this analysis."
+msgstr "Certaines données ne sont pas encore disponibles pour enrichir cette analyse."
+
+msgid "Strategic content"
+msgstr "Contenu stratégique"
+
+msgid "Strengthen links to the primary content and differentiate links to the secondary content."
+msgstr "Renforcez le maillage vers le contenu principal et différenciez les liens vers le contenu secondaire."
+
+msgid "Strong SEO potential"
+msgstr "Fort potentiel SEO"
+
+msgid "Suggested anchors"
+msgstr "Ancres suggérées"
+
+msgid "Suggested primary content"
+msgstr "Contenu principal suggéré"
+
+msgid "Suggestions found"
+msgstr "Suggestions trouvées"
+
+#. translators: %d: number of content items.
+#, php-format
+msgid "Table (%d)"
+msgstr "Liste (%d)"
+
+msgid "The suggested primary content is highlighted."
+msgstr "Le contenu principal suggéré est mis en avant."
+
+msgid "The topic is closely related to the content being edited."
+msgstr "Le sujet est très proche du contenu en cours de rédaction."
+
+msgid "These contents cover a similar editorial scope and may compete in search results."
+msgstr "Ces contenus couvrent un périmètre éditorial proche et peuvent entrer en concurrence dans les résultats de recherche."
+
+msgid "This content belongs to the same cluster and strengthens silo consistency."
+msgstr "Ce contenu appartient au même cluster et renforce la cohérence du silo."
+
+msgid "This content complements the topic and can improve the internal journey."
+msgstr "Ce contenu complète le sujet traité et peut enrichir le parcours interne."
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "To"
+msgstr "Vers"
+
+msgid "Top priority"
+msgstr "À traiter en priorité"
+
+msgid "Total detected"
+msgstr "Total détecté"
+
+msgid "Total external links on pages or posts"
+msgstr "Total de liens externesn vers d'autres sites web, sur les  pages ou articles"
+
+msgid "Total internal links on pages or posts"
+msgstr "Total de liens internes sur les pages ou articles"
+
+#. translators: %d: minimum number of links in a cluster.
+#, php-format
+msgid "Total number of clusters with %d links"
+msgstr "Nombre total de clusters comportant %d liens"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Unknown error."
+msgstr "Erreur inconnue."
+
+msgid "Unlinked"
+msgstr "Non reliés"
+
+msgid "Untitled"
+msgstr "Sans titre"
+
+msgid "Update H1 headings or SEO titles to clearly separate each content intent."
+msgstr "Modifiez les H1 ou les titres SEO pour séparer clairement l’intention de chaque contenu."
+
+msgid "Updated"
+msgstr "Mise à jour"
+
+msgid "Very similar titles"
+msgstr "Titres très proches"
+
+#. translators: %s: requested administration view name.
+#, php-format
+msgid "View not found: %s"
+msgstr "Vue introuvable : %s"
+
+msgid "View opportunities"
+msgstr "Voir les opportunités"
+
+msgid "Warning"
+msgstr "Attention"
+
+#. translators: %d: silo consistency percentage.
+#, php-format
+msgid "Weak internal structure: %d%% consistency."
+msgstr "Structure interne faible : cohérence de %d%%."
+
+msgid "Without incoming internal links"
+msgstr "Sans lien entrant"
+
+msgid "Without outgoing internal links"
+msgstr "Sans liens internes sortants"
+
+msgid "Without outgoing links"
+msgstr "Sans sortie"
+
+msgid "You can zoom and drag the graph."
+msgstr "Vous pouvez zoomer et déplacer le graphe."
+
+msgid "affected content"
+msgstr "contenus concernés"
+
+msgid "content item(s) found"
+msgstr "contenu(s) trouvé(s)"
+
+msgid "content items"
+msgstr "contenus"
+
+msgid "displayed results"
+msgstr "résultats affichés"
+
+msgid "↑ = overload"
+msgstr "↑ = surcharge"
+
+msgid "↓ = low internal linking"
+msgstr "↓ = maillage interne faible"

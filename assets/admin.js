@@ -1,5 +1,5 @@
 jQuery(function ($) {
-  const i18n = (window.CMA && CMA.i18n) || {};
+  const i18n = (window.crea3IlpAdmin && crea3IlpAdmin.i18n) || {};
 
   function setStatus(txt, isError) {
     $('#cma-status')
@@ -10,9 +10,9 @@ jQuery(function ($) {
   $('#cma-run-scan').on('click', function () {
     setStatus(i18n.scanRunning || 'Scan in progress... Do not close this page.', false);
 
-    $.post(CMA.ajaxUrl, {
-      action: 'cma_run_scan',
-      nonce: CMA.nonce
+    $.post(crea3IlpAdmin.ajaxUrl, {
+      action: 'crea3_ilp_run_scan',
+      nonce: crea3IlpAdmin.nonce
     })
       .done(function (res) {
         if (res && res.success) {
@@ -32,9 +32,9 @@ jQuery(function ($) {
 
     setStatus(i18n.clearingCache || 'Clearing cache...', false);
 
-    $.post(CMA.ajaxUrl, {
-      action: 'cma_clear_scan',
-      nonce: CMA.nonce
+    $.post(crea3IlpAdmin.ajaxUrl, {
+      action: 'crea3_ilp_clear_scan',
+      nonce: crea3IlpAdmin.nonce
     })
       .done(function (res) {
         if (res && res.success) {
@@ -51,7 +51,7 @@ jQuery(function ($) {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  const i18n = (window.CMA && CMA.i18n) || {};
+  const i18n = (window.crea3IlpAdmin && crea3IlpAdmin.i18n) || {};
   document.querySelectorAll('.cma-conflicts-toggle').forEach(function (button) {
     button.addEventListener('click', function () {
       const targetId = button.getAttribute('aria-controls');
@@ -117,7 +117,7 @@ jQuery(document).ready(function($) {
 
 
 (function () {
-  const i18n = (window.CMA && CMA.i18n) || {};
+  const i18n = (window.crea3IlpAdmin && crea3IlpAdmin.i18n) || {};
   const graphContainer = document.getElementById('cma-graph');
   const wrapper = document.getElementById('cma-graph-wrapper');
 
@@ -846,7 +846,7 @@ jQuery(document).ready(function($) {
 })();
 
 
-function cmaToast(message, type = 'info', duration = 4000) {
+function crea3IlpToast(message, type = 'info', duration = 4000) {
 
     const container = document.getElementById('cma-toast-container');
 
@@ -866,16 +866,16 @@ function cmaToast(message, type = 'info', duration = 4000) {
 
     // Fermeture manuelle
     toast.querySelector('.cma-toast-close').addEventListener('click', () => {
-        removeToast(toast);
+        crea3IlpRemoveToast(toast);
     });
 
     // Auto suppression
     setTimeout(() => {
-        removeToast(toast);
+        crea3IlpRemoveToast(toast);
     }, duration);
 }
 
-function removeToast(toast) {
+function crea3IlpRemoveToast(toast) {
     toast.classList.add('cma-toast-out');
     setTimeout(() => toast.remove(), 300);
 }
@@ -930,4 +930,121 @@ window.addEventListener("load", () => {
     }, 800 + index * 200); // 👈 effet cascade propre
   });
 
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const config = window.crea3IlpAdmin || {};
+  const i18n = config.i18n || {};
+
+  (config.toasts || []).forEach(function (toast) {
+    crea3IlpToast(toast.message, toast.type);
+  });
+
+  document.querySelectorAll('.summary-bar [data-width]').forEach(function (bar) {
+    const width = Math.max(0, Math.min(100, parseInt(bar.dataset.width, 10) || 0));
+    bar.style.width = width + '%';
+  });
+
+  const search = document.getElementById('cma-search');
+  const count = document.getElementById('cma-count');
+  if (search && count) {
+    search.addEventListener('input', function () {
+      const words = search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+      let visibleCount = 0;
+
+      document.querySelectorAll('.cma-row').forEach(function (row) {
+        const title = row.dataset.title || '';
+        const matches = words.every(function (word) { return title.includes(word); });
+        row.style.display = matches ? '' : 'none';
+        if (matches) visibleCount++;
+      });
+
+      count.classList.toggle('empty', visibleCount === 0);
+      count.textContent = visibleCount + ' ' + (i18n.contentItemsFound || 'content item(s) found');
+    });
+  }
+
+  const threshold = document.getElementById('crea3_ilp_cluster_threshold');
+  if (threshold) {
+    const updateThresholdColor = function () {
+      const value = parseInt(threshold.value, 10) || 0;
+      threshold.style.borderColor = value <= 3 ? '#f59e0b' : (value <= 7 ? '#3b82f6' : '#10b981');
+    };
+    threshold.addEventListener('input', updateThresholdColor);
+    updateThresholdColor();
+  }
+
+  document.querySelectorAll('.cma-toggle').forEach(function (button) {
+    button.addEventListener('click', function () {
+      const row = button.closest('tr');
+      const details = row ? row.nextElementSibling : null;
+      if (details) details.style.display = details.style.display === 'table-row' ? 'none' : 'table-row';
+    });
+  });
+
+  const clusterTable = document.querySelector('.cma-table-clusters');
+  if (clusterTable) {
+    const headers = clusterTable.querySelectorAll('th');
+    const body = clusterTable.querySelector('tbody');
+    const directions = {};
+    headers.forEach(function (header, index) {
+      if (index === headers.length - 1) return;
+      header.addEventListener('click', function () {
+        directions[index] = !directions[index];
+        const groups = Array.from(body.querySelectorAll('.cma-tr-main')).map(function (row) {
+          return { main: row, details: row.nextElementSibling };
+        });
+        groups.sort(function (a, b) {
+          let left = a.main.children[index].innerText.trim();
+          let right = b.main.children[index].innerText.trim();
+          const leftNumber = Number(left);
+          const rightNumber = Number(right);
+          if (!Number.isNaN(leftNumber) && !Number.isNaN(rightNumber)) {
+            left = leftNumber;
+            right = rightNumber;
+          } else {
+            left = left.toLowerCase();
+            right = right.toLowerCase();
+          }
+          if (left === right) return 0;
+          return (left < right ? -1 : 1) * (directions[index] ? 1 : -1);
+        });
+        headers.forEach(function (item) { item.classList.remove('sort-asc', 'sort-desc'); });
+        header.classList.add(directions[index] ? 'sort-asc' : 'sort-desc');
+        groups.forEach(function (group) {
+          body.appendChild(group.main);
+          if (group.details) body.appendChild(group.details);
+        });
+      });
+    });
+  }
+
+  const siloTable = document.querySelector('.cma-table-silos');
+  if (siloTable) {
+    const headers = siloTable.querySelectorAll('th');
+    const body = siloTable.querySelector('tbody');
+    let currentIndex = null;
+    let direction = 'asc';
+    headers.forEach(function (header, index) {
+      header.classList.add('crea3-ilp-sortable');
+      header.addEventListener('click', function () {
+        direction = currentIndex === index && direction === 'asc' ? 'desc' : 'asc';
+        currentIndex = index;
+        headers.forEach(function (item) { item.removeAttribute('data-sort-dir'); });
+        header.setAttribute('data-sort-dir', direction);
+        const rows = Array.from(body.querySelectorAll('tr'));
+        rows.sort(function (a, b) {
+          const leftText = a.children[index].innerText.trim();
+          const rightText = b.children[index].innerText.trim();
+          const leftNumber = parseFloat(leftText.replace('%', '').replace(',', '.').replace(/\s/g, ''));
+          const rightNumber = parseFloat(rightText.replace('%', '').replace(',', '.').replace(/\s/g, ''));
+          let result;
+          if (!Number.isNaN(leftNumber) && !Number.isNaN(rightNumber)) result = leftNumber - rightNumber;
+          else result = leftText.localeCompare(rightText, undefined, { numeric: true, sensitivity: 'base' });
+          return direction === 'asc' ? result : -result;
+        });
+        rows.forEach(function (row) { body.appendChild(row); });
+      });
+    });
+  }
 });
