@@ -35,7 +35,7 @@ L'analyse est lancée manuellement et mise en cache. L'extension n'ajoute aucun 
 ### Compatibilité
 
 - WordPress `6.0+`
-- Testé jusqu'à WordPress `7.0`
+- Testé jusqu'à WordPress `7.1.3`
 - PHP `7.4+`
 - Éditeur de blocs Gutenberg moderne
 
